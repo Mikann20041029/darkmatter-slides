@@ -28,7 +28,10 @@
 
 ## 文献
 
-- A. Kimura (2019), "Confidence interval for correlation estimator between latent processes", Japanese Journal of Statistics and Data Science, arXiv:1710.06683。漸近分散の推定量を 2 種類提案し、二重確率 Poisson 過程のシミュレーションで比べている。本レポートの「区間の付け方を 2 通り作り、仮想データで当たる割合を比べる」はこの構成を借りた
+- B. Efron, R. J. Tibshirani (1993), An Introduction to the Bootstrap。区間 (B) の方法
+- 中村和幸 (2017), 数理解析研究所講究録 2057, 59–66。§3.3「システムノイズ (モデル化誤差) と観測ノイズを区別して統一的に扱う」。σ が膨らむ原因の解釈 (尤度に GALPROP 型紙の誤差が入っていない) に使う
+
+- A. Kimura (2019), "Confidence interval for correlation estimator between latent processes", Japanese Journal of Statistics and Data Science, arXiv:1710.06683。漸近分散の推定量を 2 種類提案し、二重確率 Poisson 過程のシミュレーションで比べている。**[2026-10-02 追記] スライドからは外した**。比べ方の形が似ているだけで、論文の中身 (潜在過程の相関推定) は使っていないため
 
 ## ローカルで実行してほしいこと
 

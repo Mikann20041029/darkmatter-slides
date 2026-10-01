@@ -1,4 +1,112 @@
-~$*
-*.tmp
+# Temporary working files
+tmp/
+data/raw/
+
+# Fermi-LAT data files (large binary / generated)
+*.fits
+*.fit
+data/*.csv
+data/*.png
+
+# Secrets and local environment
+.env
+.env.*
+*.local
+
+# OS-generated files
 .DS_Store
 Thumbs.db
+
+# Editor and IDE settings
+.idea/
+.vscode/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+
+# JavaScript / TypeScript
+node_modules/
+
+# Build and coverage artifacts
+build/
+dist/
+coverage/
+.cache/
+
+# C / C++ / Fortran build artifacts
+*.o
+*.obj
+*.so
+*.a
+*.la
+*.lo
+*.dll
+*.dylib
+*.exe
+*.out
+*.app
+*.i
+*.ii
+*.s
+*.d
+*.mod
+*.smod
+*.cmd
+*.gcno
+*.gcda
+*.gcov
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+Makefile
+makedep*
+libtool
+autom4te.cache/
+m4/
+
+# myself
+data/CSV/
+
+#git
+*Zone.Identifier
+
+# 大きいファイル (GitHub 100MB 制限対応)
+aogaku/Photo.pdf
+aogaku/*.pdf
+data/CSV/allsky_780w.csv
+data/CSV/filtered_events_week780.csv
+data/CSV/m31_cluster/*.csv
+tools/galprop/galprop
+/tmp/fermi_*
+/tmp/ppt_*
+
+# GALPROP webrun生データ(76MB、必要な部分はref/galprop_webrun_10000001/に抽出済み)
+GALPLOP/
+
+# GALPROP webrun 10050003 (SLZ6R30T150C2, 正しいgaldef) の生healpixマップ本体(1.3GB)
+# galdef/log/diff/import-logはテキストで小さいためgit管理下に残す
+ref/galprop_webrun_10050003/*.gz
+
+# Office (PowerPoint/Word) lock files
+~$*.pptx
+~$*.docx
+~$*.xlsx
+
+# 大学院入試対策: 答案スキャン (338 MB) と組版済み PDF (11 MB) はリポジトリに入れない
+aogaku/yosou-resolved/
+aogaku/yosou_2027/pdf/
+aogaku/yosou_2027/eigo/_build/
+aogaku/yosou_2027/eigo/__pycache__/

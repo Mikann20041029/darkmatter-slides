@@ -1,0 +1,84 @@
+# |b|<10° (銀河面) 除外、および「全120ピクセル」グリッドの選定根拠
+# 想定質問: 「|b|<10°を除くのは Fermi-LAT の標準的な決め方？」
+#           「120ピクセルという数字はどこから来た？ Totani の 12×12 セルと関係ある？」
+# 出典: ref/20Gev_gamma_ray.paper.2025-Nov-23.pdf §2.1 (p.3) — pdftotext -layout で全文抽出し直接確認
+# 関連コード: code/all_bins_nfw_fit.py:46-49,57-64
+
+## 1. |b|<10° 除外の根拠 — Totani 自身の選択であり、Fermi-LAT チーム標準とは異なる
+
+Totani (2025) §2.1 (p.3) の原文:
+
+  "The region of interest (ROI) in this study is set to |l| ≤ 60° and |b| ≤ 60°
+   around the GC, and **the disk area of |b| < 10° is excluded from the dark
+   matter search**."
+
+→ |b|<10° の除外は **Totani 自身が ROI 設定として明記した選択**であり、本解析は
+  これと完全に同じ値 (|l|≤60°, |b|≤60°, |b|<10°除外) を採用している
+  (`all_bins_nfw_fit.py:46-48`: `L_MAX=60.0, B_MIN=10.0, B_MAX=60.0`)。
+
+[重要な事実誤認の防止] 「Fermi-LAT 標準 ROI 由来」という誤解に注意。
+Totani 自身が §4.3.2 (p.18) で次のように明記しており、**LAT チーム自身の標準解析の
+ROI は全く別の値**である:
+
+  "It should also be noted that the ROI of the LAT team's analysis
+   (5° ≤ |b| ≤ 15°, |l| ≤ 80°) is much narrower in the Galactic latitude
+   than that of this study."
+
+  つまり LAT チーム標準 ROI は |b|∈[5°,15°] (幅10°の狭い帯) であるのに対し、
+  Totani (および本解析) の ROI は |b|∈[10°,60°] (幅50°の広い帯)。
+  「|b|<10°除外」は Fermi-LAT の慣習ではなく、**Totani が「銀河面の拡散放射が
+  強すぎてダークマター探索の系統誤差が支配的になる」という物理的判断で独自に
+  設定した閾値**であり、本解析はそれを踏襲している、と正確に説明すべきである。
+
+## 2. 「全120ピクセル」グリッドの由来 — Totani の数値からの借用ではなく、自前の (角度範囲)/(ピクセル幅) の帰結
+
+`all_bins_nfw_fit.py:57-60` のグリッド生成:
+
+  l_centers = arange(-60° + 0.5°, 60°, 1°)  → 120 点
+  b_centers = arange(-60° + 0.5°, 60°, 1°)  → 120 点
+  → 120 × 120 = 14,400 セル/ビン （`write_all_notes.py:118` のスライド記載と一致）
+
+  120 という数字は単純に
+
+      (ROI 全角度範囲 120° = [-60°, +60°]) ÷ (本解析のピクセル幅 1°) = 120
+
+  という**本解析自身の設計選択（ROI 範囲 ±60° と 1° ピクセル）の帰結**であり、
+  Totani の数値から借用したものではない。
+
+[要確認・誤解しやすい点] Totani §2.1 (p.3) には「12 × 12 セル」という記述があるが、
+これは本解析の「120 ピクセル」とは**全く別物**である:
+
+  "we divide the ROI into 12 × 12 cells with a width of ∆lc = ∆bc = 10°
+   and calculate the likelihood based on photon counts and expectations
+   in these cells" (§2.1, p.3)
+
+  - これは Totani が**尤度 (likelihood) 計算用に粗視化した二次的なセル分割**
+    （幅10°のセルを 12×12 = 144 個、計算コスト削減のため）であり、
+    Totani 自身の「光子数マップ」自体は ∆lp=∆bp=0.125° の 960×960 ピクセル
+    （"resulting in 960×960 pixels in the ROI including the disk region", §2.1 p.3）
+  - 偶然にも 12 セル × 10° = 120° で、本解析の「120 ピクセル × 1°」と
+    同じ全角度範囲 (120°) に一致するが、これは**両者が同じ ROI (|l|,|b|≤60°) を
+    使っているから生じる偶然の一致**であり、「120」という数自体に直接的な対応関係は無い
+
+## 3. ピクセル数比のついでに: write_all_notes.py / 発表台本に存在した「0.1°」の誤記を修正
+
+本資料作成のため §2.1 を直接確認したところ、本解析のスライド・台本の一部
+（`write_all_notes.py:129,152,279,322,673`、`add_speaking_scripts.py:64,78`、
+slide 6 の notes/script）に **「Totani は 0.1°/pixel」という記述**があったが、
+論文原文は **0.125°** (`∆lp = ∆bp = 0.125°`, "resulting in 960×960 pixels") であり、
+0.1° は誤りであることが判明した。なお `fill_ppt_notes.py:54,77,355` には
+正しい 0.125° が記載されており、後段の `add_speaking_scripts.py` (785e117) が
+誤った数値で notes を追記・上書きしたものと考えられる。
+
+  [修正済み] 配布用 pptx (`/mnt/c/Users/arsei/Downloads/slides_v3_detailed.pptx`,
+  `slides_v3_detailed_18pt.pptx`) のスライド6 ノート内 2 箇所を
+  「Totani の 0.1°」→「Totani の 0.125°」に修正済み（面積比は 100倍ではなく
+  (1.0°/0.125°)² = **64倍**、`960/120 = 8` がピクセル幅比に一致することも確認）
+
+## 4. 結論（スライド用一文）
+
+「|b|<10° の除外は Fermi-LAT チームの標準 ROI (|b|∈[5°,15°]) とは異なる、
+ Totani 自身が銀河面の系統誤差を避けるために設定した閾値であり、本解析はそれを
+ 完全に踏襲している。また「120 ピクセル」は ROI の全角度範囲 120° を 1° で割った
+ 本解析独自の値で、Totani の 0.125° ピクセル (960×960) や 12×12 尤度セルとは
+ 別物である。」

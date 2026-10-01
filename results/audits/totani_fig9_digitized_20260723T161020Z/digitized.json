@@ -1,0 +1,107 @@
+{
+ "source": "ref/20Gev_gamma_ray.paper.2025-Nov-23.pdf",
+ "page_index": 13,
+ "dpi": 400,
+ "series": "NFW-rho2 (本研究 baseline と同じ halo プロファイル)",
+ "axis_calibration": {
+  "x_tick_col": {
+   "1.0": 1028,
+   "10.0": 1527,
+   "100.0": 2027,
+   "1000.0": 2525
+  },
+  "y_tick_row": {
+   "100.0": 654,
+   "50.0": 1063,
+   "0.0": 1471
+  },
+  "frame": {
+   "left": 928,
+   "right": 2526,
+   "top": 490,
+   "bottom": 1635
+  }
+ },
+ "commit": "7ca0f1595d8227268f6ea26d68e72687bb40e988",
+ "timestamp_utc": "20260723T161020Z",
+ "bins": [
+  {
+   "e_center_gev": 1.51,
+   "delta_lnL": 102.10118319053441,
+   "marker_center_row": 637,
+   "ring_match_fraction": 0.642
+  },
+  {
+   "e_center_gev": 2.55,
+   "delta_lnL": -0.10199918400663004,
+   "marker_center_row": 1472,
+   "ring_match_fraction": 0.573
+  },
+  {
+   "e_center_gev": 4.31,
+   "delta_lnL": 20.828233374132914,
+   "marker_center_row": 1301,
+   "ring_match_fraction": 0.502
+  },
+  {
+   "e_center_gev": 7.28,
+   "delta_lnL": 79.57976336189304,
+   "marker_center_row": 821,
+   "ring_match_fraction": 0.688
+  },
+  {
+   "e_center_gev": 12.29,
+   "delta_lnL": 93.2884536923704,
+   "marker_center_row": 709,
+   "ring_match_fraction": 0.692
+  },
+  {
+   "e_center_gev": 20.76,
+   "delta_lnL": 102.10118319053441,
+   "marker_center_row": 637,
+   "ring_match_fraction": 0.683
+  },
+  {
+   "e_center_gev": 35.06,
+   "delta_lnL": 50.938392492859975,
+   "marker_center_row": 1055,
+   "ring_match_fraction": 0.485
+  },
+  {
+   "e_center_gev": 59.22,
+   "delta_lnL": 23.276213790289585,
+   "marker_center_row": 1281,
+   "ring_match_fraction": 0.595
+  },
+  {
+   "e_center_gev": 100.02,
+   "delta_lnL": 7.976336189310387,
+   "marker_center_row": 1406,
+   "ring_match_fraction": 0.496
+  },
+  {
+   "e_center_gev": 168.93,
+   "delta_lnL": 6.38514891880855,
+   "marker_center_row": 1419,
+   "ring_match_fraction": 0.562
+  },
+  {
+   "e_center_gev": 285.33,
+   "delta_lnL": 1.2443900448795395,
+   "marker_center_row": 1461,
+   "ring_match_fraction": 0.502
+  },
+  {
+   "e_center_gev": 481.93,
+   "delta_lnL": 0.14279885760903716,
+   "marker_center_row": 1470,
+   "ring_match_fraction": 0.317
+  },
+  {
+   "e_center_gev": 814.0,
+   "delta_lnL": 0.26519787841687076,
+   "marker_center_row": 1469,
+   "ring_match_fraction": 0.407
+  }
+ ]
+}

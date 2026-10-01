@@ -1,0 +1,7 @@
+{
+  "l_min": -60.0,
+  "l_max": 60.0,
+  "b_min": -60.0,
+  "b_max": 60.0,
+  "description": "ROI外(|b|<10 or |b|>60)はNaN(白抜き)。l=銀経[deg], b=銀緯[deg]"
+}

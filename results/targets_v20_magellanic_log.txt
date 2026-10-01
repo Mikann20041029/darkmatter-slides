@@ -1,0 +1,6 @@
+読み込み: allsky_events_ultraclean.csv
+  events=35551436  露出は 779 週分 (HEALPix NSIDE=32)  対象 2 天体
+[  1/2] LMC                Bin6  +4.57σ  最大  +9.69σ @ 4.3 GeV  (9s)
+[  2/2] SMC                Bin6  +1.34σ  最大 +14.79σ @ 1.5 GeV  (6s)
+
+完了 0.6分 → results/mcmc_allbins_gasICS_v20_constructsplit/other_celestial_body/systematics_magellanic_keepext

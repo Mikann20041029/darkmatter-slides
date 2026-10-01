@@ -1,0 +1,300 @@
+{
+  "utc": "2026-07-31T08:15:25Z",
+  "bands_deg": [
+    [
+      10,
+      20
+    ],
+    [
+      20,
+      30
+    ],
+    [
+      30,
+      40
+    ],
+    [
+      40,
+      50
+    ],
+    [
+      50,
+      60
+    ]
+  ],
+  "bins": {
+    "1": {
+      "e_center_gev": 1.51,
+      "f_iso_v20": 0.0012267247314866492,
+      "f_iso_totani": 0.20602696665130052,
+      "ratio_v20_over_totani": 0.0059541949844016,
+      "bands": [
+        {
+          "b_range": [
+            10,
+            20
+          ],
+          "observed": 804165.0,
+          "model_v20": 758502.3122533185,
+          "resid_frac_v20": 0.056782734571489066,
+          "model_iso_totani": 794591.6374942618,
+          "resid_frac_iso_totani": 0.011904724162004263,
+          "iso_share_if_totani": 0.045690759284968255
+        },
+        {
+          "b_range": [
+            20,
+            30
+          ],
+          "observed": 494872.0,
+          "model_v20": 479621.38783171924,
+          "resid_frac_v20": 0.03081728642614809,
+          "model_iso_totani": 513759.6331132541,
+          "resid_frac_iso_totani": -0.038166703942138766,
+          "iso_share_if_totani": 0.06684590686058962
+        },
+        {
+          "b_range": [
+            30,
+            40
+          ],
+          "observed": 326793.0,
+          "model_v20": 324077.82947953686,
+          "resid_frac_v20": 0.008308533293134013,
+          "model_iso_totani": 355151.22907150385,
+          "resid_frac_iso_totani": -0.08677734551077855,
+          "iso_share_if_totani": 0.0880175044869063
+        },
+        {
+          "b_range": [
+            40,
+            50
+          ],
+          "observed": 230950.0,
+          "model_v20": 236017.041075514,
+          "resid_frac_v20": -0.021939991667088068,
+          "model_iso_totani": 262088.13930431096,
+          "resid_frac_iso_totani": -0.13482632303230552,
+          "iso_share_if_totani": 0.10007038289122629
+        },
+        {
+          "b_range": [
+            50,
+            60
+          ],
+          "observed": 152137.0,
+          "model_v20": 158468.9425562537,
+          "resid_frac_v20": -0.041620004050649695,
+          "model_iso_totani": 179698.11675965233,
+          "resid_frac_iso_totani": -0.1811598543395251,
+          "iso_share_if_totani": 0.11884561933741475
+        }
+      ]
+    },
+    "2": {
+      "e_center_gev": 2.55,
+      "f_iso_v20": 0.00059189025095539,
+      "f_iso_totani": 0.10332812545729085,
+      "ratio_v20_over_totani": 0.00572825886791142,
+      "bands": [
+        {
+          "b_range": [
+            10,
+            20
+          ],
+          "observed": 417191.0,
+          "model_v20": 392731.65984385693,
+          "resid_frac_v20": 0.058628638096562644,
+          "model_iso_totani": 410835.5515757972,
+          "resid_frac_iso_totani": 0.015233905870938725,
+          "iso_share_if_totani": 0.04431990587225885
+        },
+        {
+          "b_range": [
+            20,
+            30
+          ],
+          "observed": 256849.0,
+          "model_v20": 248760.70602492732,
+          "resid_frac_v20": 0.03149046317125113,
+          "model_iso_totani": 265885.8557019894,
+          "resid_frac_iso_totani": -0.03518353469154786,
+          "iso_share_if_totani": 0.06477897098426036
+        },
+        {
+          "b_range": [
+            30,
+            40
+          ],
+          "observed": 169823.0,
+          "model_v20": 168629.61526103108,
+          "resid_frac_v20": 0.007027226812439529,
+          "model_iso_totani": 184217.31212708596,
+          "resid_frac_iso_totani": -0.08476067509751892,
+          "iso_share_if_totani": 0.08510330257731302
+        },
+        {
+          "b_range": [
+            40,
+            50
+          ],
+          "observed": 121785.0,
+          "model_v20": 124427.62049645821,
+          "resid_frac_v20": -0.021699063895046302,
+          "model_iso_totani": 137505.95699944856,
+          "resid_frac_iso_totani": -0.12908779405878035,
+          "iso_share_if_totani": 0.09565901360383777
+        },
+        {
+          "b_range": [
+            50,
+            60
+          ],
+          "observed": 79674.0,
+          "model_v20": 83501.04931433586,
+          "resid_frac_v20": -0.04803385438582049,
+          "model_iso_totani": 94150.47733137193,
+          "resid_frac_iso_totani": -0.18169637938815592,
+          "iso_share_if_totani": 0.1137623775625763
+        }
+      ]
+    },
+    "3": {
+      "e_center_gev": 4.31,
+      "f_iso_v20": 0.00353279493793521,
+      "f_iso_totani": 0.05225449257342318,
+      "ratio_v20_over_totani": 0.06760748720258365,
+      "bands": [
+        {
+          "b_range": [
+            10,
+            20
+          ],
+          "observed": 195608.0,
+          "model_v20": 184861.9842160307,
+          "resid_frac_v20": 0.05493648411092242,
+          "model_iso_totani": 193447.5853646195,
+          "resid_frac_iso_totani": 0.0110446128756518,
+          "iso_share_if_totani": 0.04760018257266573
+        },
+        {
+          "b_range": [
+            20,
+            30
+          ],
+          "observed": 122982.0,
+          "model_v20": 118140.66972218537,
+          "resid_frac_v20": 0.03936616966559848,
+          "model_iso_totani": 126262.11161513143,
+          "resid_frac_iso_totani": -0.026671477249771793,
+          "iso_share_if_totani": 0.06898605585804306
+        },
+        {
+          "b_range": [
+            30,
+            40
+          ],
+          "observed": 81619.0,
+          "model_v20": 81088.20062995145,
+          "resid_frac_v20": 0.006503379973395326,
+          "model_iso_totani": 88480.51992232449,
+          "resid_frac_iso_totani": -0.08406767936784922,
+          "iso_share_if_totani": 0.08960541869648787
+        },
+        {
+          "b_range": [
+            40,
+            50
+          ],
+          "observed": 60083.0,
+          "model_v20": 61090.858930638075,
+          "resid_frac_v20": -0.016774444196163217,
+          "model_iso_totani": 67293.13756576726,
+          "resid_frac_iso_totani": -0.12000295534123231,
+          "iso_share_if_totani": 0.0988511480451467
+        },
+        {
+          "b_range": [
+            50,
+            60
+          ],
+          "observed": 39374.0,
+          "model_v20": 41329.66279378848,
+          "resid_frac_v20": -0.049668887940988386,
+          "model_iso_totani": 46380.05432112886,
+          "resid_frac_iso_totani": -0.17793605732536344,
+          "iso_share_if_totani": 0.11678713844415217
+        }
+      ]
+    },
+    "6": {
+      "e_center_gev": 20.76,
+      "f_iso_v20": 0.003730875235937266,
+      "f_iso_totani": 0.005837323123512926,
+      "ratio_v20_over_totani": 0.6391414621042958,
+      "bands": [
+        {
+          "b_range": [
+            10,
+            20
+          ],
+          "observed": 16843.0,
+          "model_v20": 16128.224170578062,
+          "resid_frac_v20": 0.04243756037653259,
+          "model_iso_totani": 16499.416519792085,
+          "resid_frac_iso_totani": 0.020399185430618968,
+          "iso_share_if_totani": 0.06234382509990445
+        },
+        {
+          "b_range": [
+            20,
+            30
+          ],
+          "observed": 11408.0,
+          "model_v20": 10970.405779179198,
+          "resid_frac_v20": 0.03835853969326802,
+          "model_iso_totani": 11321.530533645964,
+          "resid_frac_iso_totani": 0.0075797218052275446,
+          "iso_share_if_totani": 0.08594474378218873
+        },
+        {
+          "b_range": [
+            30,
+            40
+          ],
+          "observed": 8007.0,
+          "model_v20": 7803.562360006737,
+          "resid_frac_v20": 0.025407473459880425,
+          "model_iso_totani": 8123.164018270017,
+          "resid_frac_iso_totani": -0.01450780795179426,
+          "iso_share_if_totani": 0.10903020195116264
+        },
+        {
+          "b_range": [
+            40,
+            50
+          ],
+          "observed": 6328.0,
+          "model_v20": 6314.364176420453,
+          "resid_frac_v20": 0.0021548393772988185,
+          "model_iso_totani": 6582.515274661483,
+          "resid_frac_iso_totani": -0.04022049220314208,
+          "iso_share_if_totani": 0.11288876432635242
+        },
+        {
+          "b_range": [
+            50,
+            60
+          ],
+          "observed": 4067.0,
+          "model_v20": 4385.327101863239,
+          "resid_frac_v20": -0.0782707405614061,
+          "model_iso_totani": 4603.677181611842,
+          "resid_frac_iso_totani": -0.1319589824469736,
+          "iso_share_if_totani": 0.131435144591611
+        }
+      ]
+    }
+  },
+  "commit": "c6a1425"
+}

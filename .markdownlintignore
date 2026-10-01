@@ -1,0 +1,5 @@
+.template/
+.dev/teams/
+.dev/issues/issue-*/
+results/
+node_modules/

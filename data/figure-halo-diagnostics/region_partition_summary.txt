@@ -1,0 +1,13 @@
+# 3領域分割再フィット (2026-07-13, diagnose_halo_degeneracy.py の追加検証)
+# region A = バブル領域(|l|<22, 10<|b|<55)  region B = 10<=|b|<30 かつバブル領域外  region C = |b|>=30 かつバブル領域外
+
+Bin 5 [A:バブル領域               ] n_pix= 3487 n_evt=   44414  f_halo=+5.289  sig=9.78sigma
+Bin 5 [B:10-30度・バブル外         ] n_pix= 2600 n_evt=   31144  f_halo=-3.045  sig=2.68sigma
+Bin 5 [C:30-60度・バブル外         ] n_pix= 4538 n_evt=   22036  f_halo=-18.84  sig=15.77sigma
+Bin 5 [BC:バブル領域除外(全緯度)       ] n_pix= 7138 n_evt=   53180  f_halo=-20.69  sig=28.48sigma
+
+Bin 6 [A:バブル領域               ] n_pix= 3487 n_evt=   20721  f_halo=+1.729  sig=7.78sigma
+Bin 6 [B:10-30度・バブル外         ] n_pix= 2600 n_evt=   13667  f_halo=+0.6704  sig=1.66sigma
+Bin 6 [C:30-60度・バブル外         ] n_pix= 4538 n_evt=   10044  f_halo=-4.157  sig=9.04sigma
+Bin 6 [BC:バブル領域除外(全緯度)       ] n_pix= 7138 n_evt=   23711  f_halo=-4.098  sig=14.68sigma
+

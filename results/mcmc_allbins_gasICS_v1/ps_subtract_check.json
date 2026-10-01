@@ -1,0 +1,38 @@
+{
+  "description": "点源処理: 現行headline(NaNマスク) vs 補正版(Totani式スペクトル差し引き、実測露出反映)の比較。headlineファイルは上書きしていない。",
+  "results": [
+    {
+      "bin": 6,
+      "e_center_gev": 20.76,
+      "n_point_sources_subtracted": 1369,
+      "n_negative_pixels_clipped": 127,
+      "total_negative_deficit_clipped": 330.51875582987344,
+      "A_nan_mask": {
+        "f_gas": 1.418637524340595,
+        "f_ics": 0.6041099059250978,
+        "f_halo": 3.6638349756004938,
+        "sig": 25.445982812314362,
+        "n_valid_pixels": 10625,
+        "convergence": {
+          "fun_spread_no_halo": 3.637978807091713e-12,
+          "fun_spread_with_halo": 0.0,
+          "tau_max": 213.66308990523788,
+          "meets_50tau_recommendation": false
+        }
+      },
+      "B_spectral_subtract_corrected": {
+        "f_gas": 1.3625681423969471,
+        "f_ics": 0.5299137008482426,
+        "f_halo": 3.4433245685197247,
+        "sig": 26.397108332771413,
+        "n_valid_pixels": 12000,
+        "convergence": {
+          "fun_spread_no_halo": 3.637978807091713e-12,
+          "fun_spread_with_halo": 7.275957614183426e-12,
+          "tau_max": 215.8438835805239,
+          "meets_50tau_recommendation": false
+        }
+      }
+    }
+  ]
+}

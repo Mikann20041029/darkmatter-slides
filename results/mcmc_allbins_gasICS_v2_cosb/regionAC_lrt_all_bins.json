@@ -1,0 +1,3307 @@
+{
+  "description": "領域A(フェルミバブル内)/C(バブル外高緯度)でf_haloを共有した場合の尤度比検定(LRT)、全13ビン。モデル1=領域A/C独立7パラメータフィット、モデル2=6背景パラメータは領域独立・f_haloのみ共有した13パラメータ同時フィット。MCMC事後分布は取得していない(L-BFGS-B多点始動によるMLE点推定のみ、spec.md §5により必須ではないため省略)。f_halo_A/f_halo_C/f_halo_sharedはMCMC事後中央値ではなくL-BFGS-B点推定値である。解釈(球対称ハロー仮説と整合的か否か)はこのスクリプトでは行わず、数値のみ報告する。",
+  "region_definition": {
+    "BUBBLE_REGION": "(|L_GRID|<22) & (10<|B_GRID|<55)",
+    "region_A": "valid & BUBBLE_REGION",
+    "region_C": "valid & (|BG|>=30) & ~BUBBLE_REGION"
+  },
+  "reproducibility_seed": 42,
+  "environment": {
+    "git_commit": "f1d158c4ff7f16d91aa85b35e14dcfbf79d144bf",
+    "git_working_tree_dirty": "True",
+    "python": "3.12.3",
+    "numpy": "2.5.1",
+    "scipy": "1.18.0",
+    "emcee": "3.1.6"
+  },
+  "pixel_solid_angle_note": "[2026-07-17] テンプレートは mfa.build_templates_for_bin 経由で cos(b) 込みのピクセル立体角 PIX_SOLID_ANGLE_SR を使用(DPIX_SR cos(b) 修正版)。",
+  "mcmc_omitted": true,
+  "n_bins_total": 13,
+  "n_bins_fit": 13,
+  "n_bins_delta_lnL_LRT_nonneg": 13,
+  "n_bins_convergence_ok_fun_spread_below_1em6": 10,
+  "nfw_calibration": {
+    "flux": 6.802721088435374e-14,
+    "exp_ref": 550094463856.4194,
+    "j_ref": 29.77540845750705,
+    "b_ref": -59.5
+  },
+  "bins": [
+    {
+      "bin": 1,
+      "e_center_gev": 1.51,
+      "n_masked_point_sources": 1375,
+      "n_valid_pixels_A": 3487,
+      "n_valid_pixels_C": 4538,
+      "n_events_A": 794451.0,
+      "n_events_C": 427973.0,
+      "f_halo_A_pointest": 145.20513336268644,
+      "f_halo_C_pointest": 0.0,
+      "f_halo_shared_pointest": 51.5800419987648,
+      "lnL_A_independent": 3680950.934180935,
+      "lnL_C_independent": 1556557.5363347488,
+      "lnL_unconstrained": 5237508.470515683,
+      "lnL_shared": 5237502.975924747,
+      "delta_lnL_LRT": 5.494590936228633,
+      "test_statistic": 10.989181872457266,
+      "p_value": 0.0009164525721475054,
+      "equivalent_sigma": 3.3149934950852114,
+      "fun_spread_max": 0.02971089445054531,
+      "convergence_flag_ok": false,
+      "delta_lnL_nonneg_ok": true,
+      "region_A_fit_detail": {
+        "best_params": [
+          1.1979725632230467,
+          1.4885533033629634,
+          0.0,
+          0.0,
+          0.687423705963789,
+          -1.9258658736869927,
+          145.20513336268644
+        ],
+        "lnL_no_halo": 3680944.221553584,
+        "convexity_check": {
+          "no_halo": {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              -3680944.2215535836,
+              -3680944.2215535836,
+              -3680944.221553584,
+              -3680944.2215535836,
+              -3680944.2215535836
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 4.656612873077393e-10,
+            "n_failed_starts": 0
+          },
+          "with_halo": {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              -3680950.934180935,
+              -3680950.934180935,
+              -3680950.934180935,
+              -3680950.934180935,
+              -3680950.934180935
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 0.0,
+            "n_failed_starts": 0
+          }
+        }
+      },
+      "region_C_fit_detail": {
+        "best_params": [
+          1.1941630493327324,
+          0.0,
+          0.0,
+          0.3850537340400194,
+          1.3059502321235406,
+          -1.952932478139722,
+          0.0
+        ],
+        "lnL_no_halo": 1556557.5363347488,
+        "convexity_check": {
+          "no_halo": {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              -1556557.5363347486,
+              -1556557.5363347488,
+              -1556557.5363347486,
+              -1556557.5363347486,
+              -1556557.5363347484
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 4.656612873077393e-10,
+            "n_failed_starts": 0
+          },
+          "with_halo": {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              -1556557.5363347484,
+              -1556557.5363347484,
+              -1556557.5360825825,
+              -1556557.5363344601,
+              -1556557.5363347486
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 0.00025216606445610523,
+            "n_failed_starts": 0
+          }
+        }
+      },
+      "model2_shared_fit_detail": {
+        "best_params_13": [
+          1.1989814139533295,
+          1.5856768522807339,
+          0.0,
+          0.0,
+          0.6856309377761696,
+          -1.9581407206552173,
+          1.1871131617013702,
+          0.0,
+          0.0,
+          0.0,
+          1.3044766205264042,
+          -1.9583019236172297,
+          51.5800419987648
+        ],
+        "lnL_shared": 5237502.975924747,
+        "f_halo_shared_pointest": 51.5800419987648,
+        "halo0_candidates": [
+          0.0,
+          0.5,
+          145.205133362686
+        ],
+        "convexity_check_per_halo0": [
+          {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              -5237502.975924742,
+              -5237502.975924734,
+              -5237502.975924747,
+              -5237502.975924744,
+              -5237502.975924746
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 1.30385160446167e-08,
+            "n_failed_starts": 0
+          },
+          {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              -5237502.975924745,
+              -5237502.975924747,
+              -5237502.975924747,
+              -5237502.975924744,
+              -5237502.975924745
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 2.7939677238464355e-09,
+            "n_failed_starts": 0
+          },
+          {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              -5237502.975924746,
+              -5237502.946213853,
+              -5237502.975924744,
+              -5237502.975924746,
+              -5237502.975924747
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 0.02971089445054531,
+            "n_failed_starts": 0
+          }
+        ],
+        "fun_spread_across_halo0_candidates": 0.0
+      },
+      "elapsed_sec": 4.120103120803833
+    },
+    {
+      "bin": 2,
+      "e_center_gev": 2.55,
+      "n_masked_point_sources": 1375,
+      "n_valid_pixels_A": 3487,
+      "n_valid_pixels_C": 4538,
+      "n_events_A": 404454.0,
+      "n_events_C": 210439.0,
+      "f_halo_A_pointest": 117.82580121544784,
+      "f_halo_C_pointest": 0.0,
+      "f_halo_shared_pointest": 76.35647927037972,
+      "lnL_A_independent": 1597865.6917048844,
+      "lnL_C_independent": 616052.8050037735,
+      "lnL_unconstrained": 2213918.496708658,
+      "lnL_shared": 2213906.910886648,
+      "delta_lnL_LRT": 11.585822009947151,
+      "test_statistic": 23.171644019894302,
+      "p_value": 1.4816608215061928e-06,
+      "equivalent_sigma": 4.813693386568602,
+      "fun_spread_max": 1.0244548320770264e-08,
+      "convergence_flag_ok": true,
+      "delta_lnL_nonneg_ok": true,
+      "region_A_fit_detail": {
+        "best_params": [
+          1.2788061163517523,
+          1.3536871399225336,
+          0.0,
+          0.0,
+          0.5437991218320599,
+          -1.6216268555116151,
+          117.82580121544784
+        ],
+        "lnL_no_halo": 1597835.6499508473,
+        "convexity_check": {
+          "no_halo": {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              -1597835.649950847,
+              -1597835.649950847,
+              -1597835.6499508473,
+              -1597835.649950847,
+              -1597835.649950847
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 2.3283064365386963e-10,
+            "n_failed_starts": 0
+          },
+          "with_halo": {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              -1597865.6917048842,
+              -1597865.6917048844,
+              -1597865.6917048842,
+              -1597865.6917048842,
+              -1597865.6917048842
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 2.3283064365386963e-10,
+            "n_failed_starts": 0
+          }
+        }
+      },
+      "region_C_fit_detail": {
+        "best_params": [
+          1.2863116573082378,
+          0.0,
+          0.0,
+          0.0,
+          0.9330612091055882,
+          -1.5768580961883654,
+          0.0
+        ],
+        "lnL_no_halo": 616052.8050037735,
+        "convexity_check": {
+          "no_halo": {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              -616052.8050037735,
+              -616052.8050037735,
+              -616052.8050037734,
+              -616052.8050037735,
+              -616052.8050037735
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 1.1641532182693481e-10,
+            "n_failed_starts": 0
+          },
+          "with_halo": {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              -616052.8050037735,
+              -616052.8050037735,
+              -616052.8050037732,
+              -616052.8050037735,
+              -616052.8050037735
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 3.4924596548080444e-10,
+            "n_failed_starts": 0
+          }
+        }
+      },
+      "model2_shared_fit_detail": {
+        "best_params_13": [
+          1.280887035401362,
+          1.4975000752445773,
+          0.0,
+          0.0,
+          0.5419205639305134,
+          -1.661347020976456,
+          1.2420426973595158,
+          0.0,
+          0.0,
+          0.0,
+          0.9262143439021143,
+          -1.6001360791815105,
+          76.35647927037972
+        ],
+        "lnL_shared": 2213906.910886648,
+        "f_halo_shared_pointest": 76.35647927037972,
+        "halo0_candidates": [
+          0.0,
+          0.5,
+          117.825801215448
+        ],
+        "convexity_check_per_halo0": [
+          {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              -2213906.9108866462,
+              -2213906.910886648,
+              -2213906.910886647,
+              -2213906.910886648,
+              -2213906.9108866476
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 1.862645149230957e-09,
+            "n_failed_starts": 0
+          },
+          {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              -2213906.9108866476,
+              -2213906.910886648,
+              -2213906.910886638,
+              -2213906.910886647,
+              -2213906.910886648
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 1.0244548320770264e-08,
+            "n_failed_starts": 0
+          },
+          {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              -2213906.9108866467,
+              -2213906.9108866476,
+              -2213906.910886648,
+              -2213906.910886648,
+              -2213906.910886648
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 1.3969838619232178e-09,
+            "n_failed_starts": 0
+          }
+        ],
+        "fun_spread_across_halo0_candidates": 0.0
+      },
+      "elapsed_sec": 3.390089988708496
+    },
+    {
+      "bin": 3,
+      "e_center_gev": 4.31,
+      "n_masked_point_sources": 1375,
+      "n_valid_pixels_A": 3487,
+      "n_valid_pixels_C": 4538,
+      "n_events_A": 194565.0,
+      "n_events_C": 99884.0,
+      "f_halo_A_pointest": 26.502185592205493,
+      "f_halo_C_pointest": 55.65063955211518,
+      "f_halo_shared_pointest": 35.8910183885211,
+      "lnL_A_independent": 623679.7070668428,
+      "lnL_C_independent": 218234.98031450796,
+      "lnL_unconstrained": 841914.6873813508,
+      "lnL_shared": 841910.9418949331,
+      "delta_lnL_LRT": 3.7454864176688716,
+      "test_statistic": 7.490972835337743,
+      "p_value": 0.006200904754271367,
+      "equivalent_sigma": 2.7369641640580067,
+      "fun_spread_max": 1.0477378964424133e-09,
+      "convergence_flag_ok": true,
+      "delta_lnL_nonneg_ok": true,
+      "region_A_fit_detail": {
+        "best_params": [
+          1.392890630620376,
+          1.6887753002109258,
+          0.0,
+          0.0,
+          0.46178108190605227,
+          -1.6926382281727688,
+          26.502185592205493
+        ],
+        "lnL_no_halo": 623670.0625144681,
+        "convexity_check": {
+          "no_halo": {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              -623670.0625144681,
+              -623670.0625144681,
+              -623670.062514468,
+              -623670.0625144681,
+              -623670.0625144681
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 1.1641532182693481e-10,
+            "n_failed_starts": 0
+          },
+          "with_halo": {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              -623679.7070668427,
+              -623679.7070668427,
+              -623679.7070668427,
+              -623679.7070668427,
+              -623679.7070668428
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 1.1641532182693481e-10,
+            "n_failed_starts": 0
+          }
+        }
+      },
+      "region_C_fit_detail": {
+        "best_params": [
+          1.3468238891532693,
+          0.0,
+          0.0,
+          0.0,
+          0.6849142024946564,
+          -1.4507354721637915,
+          55.65063955211518
+        ],
+        "lnL_no_halo": 218220.38325921254,
+        "convexity_check": {
+          "no_halo": {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              -218220.38325921254,
+              -218220.38325921254,
+              -218220.38325921242,
+              -218220.38325921254,
+              -218220.38325921254
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 1.1641532182693481e-10,
+            "n_failed_starts": 0
+          },
+          "with_halo": {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              -218234.98031450788,
+              -218234.98031450796,
+              -218234.98031450796,
+              -218234.98031450796,
+              -218234.98031450796
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 8.731149137020111e-11,
+            "n_failed_starts": 0
+          }
+        }
+      },
+      "model2_shared_fit_detail": {
+        "best_params_13": [
+          1.3907373325703671,
+          1.5786928580720698,
+          0.0,
+          0.0,
+          0.46279478849067673,
+          -1.6681583370674697,
+          1.3955755973194173,
+          0.0,
+          0.0,
+          0.0,
+          0.6899233819394084,
+          -1.4334569421332715,
+          35.8910183885211
+        ],
+        "lnL_shared": 841910.9418949331,
+        "f_halo_shared_pointest": 35.8910183885211,
+        "halo0_candidates": [
+          0.5,
+          26.502185592205,
+          55.650639552115
+        ],
+        "convexity_check_per_halo0": [
+          {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              -841910.941894933,
+              -841910.941894933,
+              -841910.9418949329,
+              -841910.9418949329,
+              -841910.9418949329
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 1.1641532182693481e-10,
+            "n_failed_starts": 0
+          },
+          {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              -841910.9418949331,
+              -841910.9418949329,
+              -841910.941894933,
+              -841910.9418949321,
+              -841910.9418949329
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 1.0477378964424133e-09,
+            "n_failed_starts": 0
+          },
+          {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              -841910.9418949329,
+              -841910.9418949329,
+              -841910.9418949329,
+              -841910.9418949329,
+              -841910.9418949327
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 2.3283064365386963e-10,
+            "n_failed_starts": 0
+          }
+        ],
+        "fun_spread_across_halo0_candidates": 2.3283064365386963e-10
+      },
+      "elapsed_sec": 3.3501601219177246
+    },
+    {
+      "bin": 4,
+      "e_center_gev": 7.28,
+      "n_masked_point_sources": 1375,
+      "n_valid_pixels_A": 3487,
+      "n_valid_pixels_C": 4538,
+      "n_events_A": 92584.0,
+      "n_events_C": 46376.0,
+      "f_halo_A_pointest": 21.45319886950873,
+      "f_halo_C_pointest": 22.471024258199897,
+      "f_halo_shared_pointest": 21.792615094735936,
+      "lnL_A_independent": 225800.9325155841,
+      "lnL_C_independent": 64816.50292003765,
+      "lnL_unconstrained": 290617.43543562177,
+      "lnL_shared": 290617.40743862157,
+      "delta_lnL_LRT": 0.0279970002011396,
+      "test_statistic": 0.0559940004022792,
+      "p_value": 0.812943445242845,
+      "equivalent_sigma": 0.23663051452059009,
+      "fun_spread_max": 1.1641532182693481e-10,
+      "convergence_flag_ok": true,
+      "delta_lnL_nonneg_ok": true,
+      "region_A_fit_detail": {
+        "best_params": [
+          1.475604095322404,
+          1.2907101707541722,
+          0.0,
+          0.0,
+          0.41270375342489507,
+          -1.1859790038282991,
+          21.45319886950873
+        ],
+        "lnL_no_halo": 225763.50944730378,
+        "convexity_check": {
+          "no_halo": {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              -225763.50944730378,
+              -225763.50944730378,
+              -225763.50944730378,
+              -225763.50944730378,
+              -225763.50944730378
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 0.0,
+            "n_failed_starts": 0
+          },
+          "with_halo": {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              -225800.93251558408,
+              -225800.93251558408,
+              -225800.93251558408,
+              -225800.93251558408,
+              -225800.9325155841
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 2.9103830456733704e-11,
+            "n_failed_starts": 0
+          }
+        }
+      },
+      "region_C_fit_detail": {
+        "best_params": [
+          1.3268181760229345,
+          0.0,
+          0.0,
+          0.0,
+          0.4231518052689424,
+          -1.0446328672800067,
+          22.471024258199897
+        ],
+        "lnL_no_halo": 64806.84239208777,
+        "convexity_check": {
+          "no_halo": {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              -64806.84239208777,
+              -64806.842392087754,
+              -64806.84239208777,
+              -64806.84239208776,
+              -64806.84239208776
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 1.4551915228366852e-11,
+            "n_failed_starts": 0
+          },
+          "with_halo": {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              -64816.502920037645,
+              -64816.50292003765,
+              -64816.502920037645,
+              -64816.502920037645,
+              -64816.502920037645
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 7.275957614183426e-12,
+            "n_failed_starts": 0
+          }
+        }
+      },
+      "model2_shared_fit_detail": {
+        "best_params_13": [
+          1.4752432820180292,
+          1.27696842397426,
+          0.0,
+          0.0,
+          0.412777998966286,
+          -1.183479661732884,
+          1.3339945386295218,
+          0.0,
+          0.0,
+          0.0,
+          0.4235916211169004,
+          -1.042937781771862,
+          21.792615094735936
+        ],
+        "lnL_shared": 290617.40743862157,
+        "f_halo_shared_pointest": 21.792615094735936,
+        "halo0_candidates": [
+          0.5,
+          21.453198869509,
+          22.4710242582
+        ],
+        "convexity_check_per_halo0": [
+          {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              -290617.4074386215,
+              -290617.4074386215,
+              -290617.4074386215,
+              -290617.40743862145,
+              -290617.40743862157
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 1.1641532182693481e-10,
+            "n_failed_starts": 0
+          },
+          {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              -290617.40743862157,
+              -290617.40743862157,
+              -290617.4074386215,
+              -290617.4074386215,
+              -290617.40743862157
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 5.820766091346741e-11,
+            "n_failed_starts": 0
+          },
+          {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              -290617.4074386215,
+              -290617.40743862157,
+              -290617.40743862157,
+              -290617.4074386215,
+              -290617.40743862145
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 1.1641532182693481e-10,
+            "n_failed_starts": 0
+          }
+        ],
+        "fun_spread_across_halo0_candidates": 0.0
+      },
+      "elapsed_sec": 3.1226954460144043
+    },
+    {
+      "bin": 5,
+      "e_center_gev": 12.29,
+      "n_masked_point_sources": 1375,
+      "n_valid_pixels_A": 3487,
+      "n_valid_pixels_C": 4538,
+      "n_events_A": 44414.0,
+      "n_events_C": 22036.0,
+      "f_halo_A_pointest": 7.941055023423507,
+      "f_halo_C_pointest": 9.22828465196301,
+      "f_halo_shared_pointest": 8.373302263822639,
+      "lnL_A_independent": 75139.3448645362,
+      "lnL_C_independent": 14219.675746645866,
+      "lnL_unconstrained": 89359.02061118206,
+      "lnL_shared": 89358.7469166387,
+      "delta_lnL_LRT": 0.2736945433571236,
+      "test_statistic": 0.5473890867142472,
+      "p_value": 0.45938647861057647,
+      "equivalent_sigma": 0.7398574772983288,
+      "fun_spread_max": 1.7462298274040222e-10,
+      "convergence_flag_ok": true,
+      "delta_lnL_nonneg_ok": true,
+      "region_A_fit_detail": {
+        "best_params": [
+          1.5557552241893933,
+          1.294939027345113,
+          0.0,
+          0.0,
+          0.36522921753040466,
+          -0.9778253141950165,
+          7.941055023423507
+        ],
+        "lnL_no_halo": 75108.28362366749,
+        "convexity_check": {
+          "no_halo": {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              -75108.28362366749,
+              -75108.28362366749,
+              -75108.28362366749,
+              -75108.28362366749,
+              -75108.28362366749
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 0.0,
+            "n_failed_starts": 0
+          },
+          "with_halo": {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              -75139.3448645362,
+              -75139.34486453618,
+              -75139.3448645362,
+              -75139.3448645362,
+              -75139.3448645362
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 1.4551915228366852e-11,
+            "n_failed_starts": 0
+          }
+        }
+      },
+      "region_C_fit_detail": {
+        "best_params": [
+          1.3898002128222429,
+          0.0,
+          0.0,
+          0.0,
+          0.24558587175898428,
+          -0.9009593093764087,
+          9.22828465196301
+        ],
+        "lnL_no_halo": 14209.703768141044,
+        "convexity_check": {
+          "no_halo": {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              -14209.703768141044,
+              -14209.703768141044,
+              -14209.703768141044,
+              -14209.703768141044,
+              -14209.703768141044
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 0.0,
+            "n_failed_starts": 0
+          },
+          "with_halo": {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              -14219.675746645866,
+              -14219.675746645864,
+              -14219.675746645866,
+              -14219.675746645866,
+              -14219.675746645864
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 1.8189894035458565e-12,
+            "n_failed_starts": 0
+          }
+        }
+      },
+      "model2_shared_fit_detail": {
+        "best_params_13": [
+          1.5536402418322661,
+          1.232550384741413,
+          0.0,
+          0.0,
+          0.36541992796019335,
+          -0.9688260760428993,
+          1.4277675200411566,
+          0.0,
+          0.0,
+          0.0,
+          0.24703228916878947,
+          -0.8947432042823401,
+          8.373302263822639
+        ],
+        "lnL_shared": 89358.7469166387,
+        "f_halo_shared_pointest": 8.373302263822639,
+        "halo0_candidates": [
+          0.5,
+          7.941055023424,
+          9.228284651963
+        ],
+        "convexity_check_per_halo0": [
+          {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              -89358.74691663869,
+              -89358.74691663869,
+              -89358.7469166387,
+              -89358.74691663869,
+              -89358.74691663867
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 2.9103830456733704e-11,
+            "n_failed_starts": 0
+          },
+          {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              -89358.74691663869,
+              -89358.74691663867,
+              -89358.74691663851,
+              -89358.74691663867,
+              -89358.74691663867
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 1.7462298274040222e-10,
+            "n_failed_starts": 0
+          },
+          {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              -89358.7469166387,
+              -89358.74691663869,
+              -89358.74691663867,
+              -89358.74691663867,
+              -89358.74691663869
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 2.9103830456733704e-11,
+            "n_failed_starts": 0
+          }
+        ],
+        "fun_spread_across_halo0_candidates": 1.4551915228366852e-11
+      },
+      "elapsed_sec": 3.078244924545288
+    },
+    {
+      "bin": 6,
+      "e_center_gev": 20.76,
+      "n_masked_point_sources": 1375,
+      "n_valid_pixels_A": 3487,
+      "n_valid_pixels_C": 4538,
+      "n_events_A": 20721.0,
+      "n_events_C": 10044.0,
+      "f_halo_A_pointest": 3.1962336743132536,
+      "f_halo_C_pointest": 3.2451045156979914,
+      "f_halo_shared_pointest": 3.2134822061186377,
+      "lnL_A_independent": 19055.40044958201,
+      "lnL_C_independent": -1480.607285779706,
+      "lnL_unconstrained": 17574.793163802307,
+      "lnL_shared": 17574.790622775337,
+      "delta_lnL_LRT": 0.002541026969993254,
+      "test_statistic": 0.005082053939986508,
+      "p_value": 0.9431681269173491,
+      "equivalent_sigma": 0.07128852600514697,
+      "fun_spread_max": 2.1827872842550278e-11,
+      "convergence_flag_ok": true,
+      "delta_lnL_nonneg_ok": true,
+      "region_A_fit_detail": {
+        "best_params": [
+          1.6385762084580668,
+          0.9034063480074045,
+          0.0,
+          0.0,
+          0.31262072384199263,
+          -0.7930953409883322,
+          3.1962336743132536
+        ],
+        "lnL_no_halo": 19024.743041889014,
+        "convexity_check": {
+          "no_halo": {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              -19024.743041889014,
+              -19024.743041889014,
+              -19024.743041889014,
+              -19024.74304188901,
+              -19024.74304188901
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 3.637978807091713e-12,
+            "n_failed_starts": 0
+          },
+          "with_halo": {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              -19055.40044958201,
+              -19055.40044958201,
+              -19055.40044958201,
+              -19055.40044958201,
+              -19055.40044958201
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 0.0,
+            "n_failed_starts": 0
+          }
+        }
+      },
+      "region_C_fit_detail": {
+        "best_params": [
+          1.2559006185157997,
+          0.0,
+          0.0,
+          0.0,
+          0.14535165879255768,
+          -0.7351531185893214,
+          3.2451045156979914
+        ],
+        "lnL_no_halo": -1486.390086675678,
+        "convexity_check": {
+          "no_halo": {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              1486.390086675678,
+              1486.390086675678,
+              1486.3900866756783,
+              1486.390086675678,
+              1486.390086675678
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 2.2737367544323206e-13,
+            "n_failed_starts": 0
+          },
+          "with_halo": {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              1480.6072857797062,
+              1480.607285779706,
+              1480.607285779706,
+              1480.6072857797062,
+              1480.607285779706
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 2.2737367544323206e-13,
+            "n_failed_starts": 0
+          }
+        }
+      },
+      "model2_shared_fit_detail": {
+        "best_params_13": [
+          1.6381999676862498,
+          0.8942922940741951,
+          0.0,
+          0.0,
+          0.3126253989815537,
+          -0.7921014681527438,
+          1.2616741945937626,
+          0.0,
+          0.0,
+          0.0,
+          0.1455042842236311,
+          -0.7344974108855704,
+          3.2134822061186377
+        ],
+        "lnL_shared": 17574.790622775337,
+        "f_halo_shared_pointest": 3.2134822061186377,
+        "halo0_candidates": [
+          0.5,
+          3.196233674313,
+          3.245104515698
+        ],
+        "convexity_check_per_halo0": [
+          {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              -17574.79062277533,
+              -17574.790622775334,
+              -17574.790622775337,
+              -17574.79062277533,
+              -17574.790622775316
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 2.1827872842550278e-11,
+            "n_failed_starts": 0
+          },
+          {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              -17574.79062277532,
+              -17574.79062277532,
+              -17574.790622775337,
+              -17574.79062277533,
+              -17574.790622775337
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 1.8189894035458565e-11,
+            "n_failed_starts": 0
+          },
+          {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              -17574.790622775337,
+              -17574.79062277533,
+              -17574.790622775337,
+              -17574.790622775334,
+              -17574.790622775337
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 7.275957614183426e-12,
+            "n_failed_starts": 0
+          }
+        ],
+        "fun_spread_across_halo0_candidates": 0.0
+      },
+      "elapsed_sec": 3.027506113052368
+    },
+    {
+      "bin": 7,
+      "e_center_gev": 35.06,
+      "n_masked_point_sources": 1375,
+      "n_valid_pixels_A": 3487,
+      "n_valid_pixels_C": 4538,
+      "n_events_A": 10203.0,
+      "n_events_C": 4710.0,
+      "f_halo_A_pointest": 1.2028357227749027,
+      "f_halo_C_pointest": 0.5552303106607953,
+      "f_halo_shared_pointest": 0.9814086643763718,
+      "lnL_A_independent": 2047.0393279146574,
+      "lnL_C_independent": -4292.771030717722,
+      "lnL_unconstrained": -2245.7317028030648,
+      "lnL_shared": -2248.47543796763,
+      "delta_lnL_LRT": 2.7437351645653507,
+      "test_statistic": 5.487470329130701,
+      "p_value": 0.019153236312080973,
+      "equivalent_sigma": 2.3425350219646024,
+      "fun_spread_max": 1.8189894035458565e-12,
+      "convergence_flag_ok": true,
+      "delta_lnL_nonneg_ok": true,
+      "region_A_fit_detail": {
+        "best_params": [
+          1.660931359701591,
+          0.7301141378303965,
+          0.0,
+          0.0,
+          0.3589526074140068,
+          -0.6353660585316271,
+          1.2028357227749027
+        ],
+        "lnL_no_halo": 2019.8027797116551,
+        "convexity_check": {
+          "no_halo": {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              -2019.8027797116551,
+              -2019.802779711655,
+              -2019.8027797116551,
+              -2019.8027797116542,
+              -2019.802779711655
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 9.094947017729282e-13,
+            "n_failed_starts": 0
+          },
+          "with_halo": {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              -2047.039327914657,
+              -2047.039327914657,
+              -2047.0393279146574,
+              -2047.039327914657,
+              -2047.039327914657
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 4.547473508864641e-13,
+            "n_failed_starts": 0
+          }
+        }
+      },
+      "region_C_fit_detail": {
+        "best_params": [
+          1.63922884473383,
+          0.0,
+          0.0,
+          0.0,
+          0.0884590424774592,
+          -0.5656736745757178,
+          0.5552303106607953
+        ],
+        "lnL_no_halo": -4294.284370212593,
+        "convexity_check": {
+          "no_halo": {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              4294.284370212593,
+              4294.284370212593,
+              4294.284370212593,
+              4294.284370212593,
+              4294.284370212593
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 0.0,
+            "n_failed_starts": 0
+          },
+          "with_halo": {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              4292.771030717722,
+              4292.771030717722,
+              4292.771030717722,
+              4292.771030717722,
+              4292.771030717722
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 0.0,
+            "n_failed_starts": 0
+          }
+        }
+      },
+      "model2_shared_fit_detail": {
+        "best_params_13": [
+          1.68088254947257,
+          1.1782881343827722,
+          0.0,
+          0.0,
+          0.35985486289801744,
+          -0.6706071114061345,
+          1.3171886290594672,
+          0.0,
+          0.0,
+          0.0,
+          0.08290737261078868,
+          -0.5908377764821608,
+          0.9814086643763718
+        ],
+        "lnL_shared": -2248.47543796763,
+        "f_halo_shared_pointest": 0.9814086643763718,
+        "halo0_candidates": [
+          0.5,
+          0.555230310661,
+          1.202835722775
+        ],
+        "convexity_check_per_halo0": [
+          {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              2248.475437967631,
+              2248.4754379676306,
+              2248.4754379676315,
+              2248.4754379676306,
+              2248.4754379676315
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 9.094947017729282e-13,
+            "n_failed_starts": 0
+          },
+          {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              2248.4754379676306,
+              2248.4754379676324,
+              2248.4754379676306,
+              2248.4754379676315,
+              2248.475437967631
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 1.8189894035458565e-12,
+            "n_failed_starts": 0
+          },
+          {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              2248.47543796763,
+              2248.4754379676315,
+              2248.475437967632,
+              2248.4754379676306,
+              2248.4754379676315
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 1.8189894035458565e-12,
+            "n_failed_starts": 0
+          }
+        ],
+        "fun_spread_across_halo0_candidates": 4.547473508864641e-13
+      },
+      "elapsed_sec": 3.039257287979126
+    },
+    {
+      "bin": 8,
+      "e_center_gev": 59.22,
+      "n_masked_point_sources": 1375,
+      "n_valid_pixels_A": 3487,
+      "n_valid_pixels_C": 4538,
+      "n_events_A": 4681.0,
+      "n_events_C": 2190.0,
+      "f_halo_A_pointest": 0.2992101268625555,
+      "f_halo_C_pointest": 0.11788957422146885,
+      "f_halo_shared_pointest": 0.2389805315271758,
+      "lnL_A_independent": -2722.3413169406144,
+      "lnL_C_independent": -3656.883169812613,
+      "lnL_unconstrained": -6379.224486753227,
+      "lnL_shared": -6380.538238066973,
+      "delta_lnL_LRT": 1.3137513137453425,
+      "test_statistic": 2.627502627490685,
+      "p_value": 0.10502679273395027,
+      "equivalent_sigma": 1.6209573182199088,
+      "fun_spread_max": 4.9112713895738125e-11,
+      "convergence_flag_ok": true,
+      "delta_lnL_nonneg_ok": true,
+      "region_A_fit_detail": {
+        "best_params": [
+          2.2123833090717624,
+          0.44144653297040526,
+          0.1547114433721427,
+          0.0,
+          0.32731920619280724,
+          -0.5439221050347788,
+          0.2992101268625555
+        ],
+        "lnL_no_halo": -2733.0204686221887,
+        "convexity_check": {
+          "no_halo": {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              2733.0204686221887,
+              2733.0204686221896,
+              2733.020468622189,
+              2733.0204686221887,
+              2733.0204686221887
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 9.094947017729282e-13,
+            "n_failed_starts": 0
+          },
+          "with_halo": {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              2722.341316940615,
+              2722.3413169406153,
+              2722.3413169406144,
+              2722.341316940615,
+              2722.341316940615
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 9.094947017729282e-13,
+            "n_failed_starts": 0
+          }
+        }
+      },
+      "region_C_fit_detail": {
+        "best_params": [
+          1.9363497598876795,
+          0.0,
+          0.0,
+          0.0,
+          0.12241892269711258,
+          -0.4510369404126167,
+          0.11788957422146885
+        ],
+        "lnL_no_halo": -3657.617741121606,
+        "convexity_check": {
+          "no_halo": {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              3657.6177411216063,
+              3657.617741121606,
+              3657.6177411216063,
+              3657.6177411216063,
+              3657.6177411216063
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 4.547473508864641e-13,
+            "n_failed_starts": 0
+          },
+          "with_halo": {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              3656.8831698126132,
+              3656.8831698126132,
+              3656.8831698126132,
+              3656.883169812613,
+              3656.883169812613
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 4.547473508864641e-13,
+            "n_failed_starts": 0
+          }
+        }
+      },
+      "model2_shared_fit_detail": {
+        "best_params_13": [
+          2.2412674503720416,
+          0.9309391128129058,
+          0.20750844481644967,
+          0.0,
+          0.325890993968742,
+          -0.5765213035983203,
+          1.55599520095357,
+          0.0,
+          0.0,
+          0.0,
+          0.11671381703337994,
+          -0.47148453941526614,
+          0.2389805315271758
+        ],
+        "lnL_shared": -6380.538238066973,
+        "f_halo_shared_pointest": 0.2389805315271758,
+        "halo0_candidates": [
+          0.117889574221,
+          0.299210126863,
+          0.5
+        ],
+        "convexity_check_per_halo0": [
+          {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              6380.538238066973,
+              6380.5382380669735,
+              6380.538238066973,
+              6380.538238066977,
+              6380.538238066985
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 1.2732925824820995e-11,
+            "n_failed_starts": 0
+          },
+          {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              6380.538238066973,
+              6380.5382380669735,
+              6380.538238066976,
+              6380.538238067022,
+              6380.538238066973
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 4.9112713895738125e-11,
+            "n_failed_starts": 0
+          },
+          {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              6380.538238066983,
+              6380.538238066983,
+              6380.538238066973,
+              6380.538238066997,
+              6380.538238066973
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 2.4556356947869062e-11,
+            "n_failed_starts": 0
+          }
+        ],
+        "fun_spread_across_halo0_candidates": 0.0
+      },
+      "elapsed_sec": 3.286914587020874
+    },
+    {
+      "bin": 9,
+      "e_center_gev": 100.02,
+      "n_masked_point_sources": 1375,
+      "n_valid_pixels_A": 3487,
+      "n_valid_pixels_C": 4538,
+      "n_events_A": 2034.0,
+      "n_events_C": 900.0,
+      "f_halo_A_pointest": 0.10421333869631415,
+      "f_halo_C_pointest": 0.0031700190864460223,
+      "f_halo_shared_pointest": 0.06795646568644129,
+      "lnL_A_independent": -2904.173755583288,
+      "lnL_C_independent": -2311.328726751449,
+      "lnL_unconstrained": -5215.502482334737,
+      "lnL_shared": -5218.240993085694,
+      "delta_lnL_LRT": 2.7385107509571753,
+      "test_statistic": 5.477021501914351,
+      "p_value": 0.019268063440921652,
+      "equivalent_sigma": 2.3403037200146377,
+      "fun_spread_max": 2.091837814077735e-11,
+      "convergence_flag_ok": true,
+      "delta_lnL_nonneg_ok": true,
+      "region_A_fit_detail": {
+        "best_params": [
+          1.9473507801633783,
+          0.0,
+          0.033467468018560105,
+          0.0,
+          0.2305116708965723,
+          -0.32297144931749106,
+          0.10421333869631415
+        ],
+        "lnL_no_halo": -2912.0601614187617,
+        "convexity_check": {
+          "no_halo": {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              2912.0601614187617,
+              2912.0601614187617,
+              2912.0601614187617,
+              2912.0601614187617,
+              2912.0601614187617
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 0.0,
+            "n_failed_starts": 0
+          },
+          "with_halo": {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              2904.1737555832883,
+              2904.1737555832883,
+              2904.173755583288,
+              2904.1737555832888,
+              2904.1737555832883
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 9.094947017729282e-13,
+            "n_failed_starts": 0
+          }
+        }
+      },
+      "region_C_fit_detail": {
+        "best_params": [
+          1.9430211661590544,
+          0.0,
+          0.0,
+          0.0,
+          0.08966155772431453,
+          -0.32921262437497445,
+          0.0031700190864460223
+        ],
+        "lnL_no_halo": -2311.332904858322,
+        "convexity_check": {
+          "no_halo": {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              2311.3329048583223,
+              2311.332904858322,
+              2311.332904858322,
+              2311.332904858322,
+              2311.332904858322
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 4.547473508864641e-13,
+            "n_failed_starts": 0
+          },
+          "with_halo": {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              2311.328726751449,
+              2311.3287267514493,
+              2311.3287267514493,
+              2311.32872675145,
+              2311.328726751449
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 1.3642420526593924e-12,
+            "n_failed_starts": 0
+          }
+        }
+      },
+      "model2_shared_fit_detail": {
+        "best_params_13": [
+          2.038790165365429,
+          1.2400678373903942,
+          0.07874122815763406,
+          0.0,
+          0.22864258761695883,
+          -0.3786483451495095,
+          1.0995252942175362,
+          0.0,
+          0.0,
+          0.0,
+          0.07763729289008284,
+          -0.3593132301495198,
+          0.06795646568644129
+        ],
+        "lnL_shared": -5218.240993085694,
+        "f_halo_shared_pointest": 0.06795646568644129,
+        "halo0_candidates": [
+          0.003170019086,
+          0.104213338696,
+          0.5
+        ],
+        "convexity_check_per_halo0": [
+          {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              5218.240993085696,
+              5218.240993085705,
+              5218.240993085714,
+              5218.240993085697,
+              5218.240993085694
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 2.000888343900442e-11,
+            "n_failed_starts": 0
+          },
+          {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              5218.240993085694,
+              5218.240993085714,
+              5218.240993085701,
+              5218.240993085695,
+              5218.2409930856975
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 2.000888343900442e-11,
+            "n_failed_starts": 0
+          },
+          {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              5218.240993085715,
+              5218.240993085694,
+              5218.2409930856975,
+              5218.240993085701,
+              5218.240993085712
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 2.091837814077735e-11,
+            "n_failed_starts": 0
+          }
+        ],
+        "fun_spread_across_halo0_candidates": 0.0
+      },
+      "elapsed_sec": 3.586495876312256
+    },
+    {
+      "bin": 10,
+      "e_center_gev": 168.93,
+      "n_masked_point_sources": 1375,
+      "n_valid_pixels_A": 3487,
+      "n_valid_pixels_C": 4538,
+      "n_events_A": 927.0,
+      "n_events_C": 476.0,
+      "f_halo_A_pointest": 0.021618187243748966,
+      "f_halo_C_pointest": 0.02388767353944775,
+      "f_halo_shared_pointest": 0.022374994750562097,
+      "lnL_A_independent": -2071.9199932749807,
+      "lnL_C_independent": -1539.4341531361301,
+      "lnL_unconstrained": -3611.354146411111,
+      "lnL_shared": -3611.363168842547,
+      "delta_lnL_LRT": 0.009022431436278566,
+      "test_statistic": 0.018044862872557133,
+      "p_value": 0.893140707571076,
+      "equivalent_sigma": 0.1343311686562621,
+      "fun_spread_max": 2.4783730623312294e-10,
+      "convergence_flag_ok": true,
+      "delta_lnL_nonneg_ok": true,
+      "region_A_fit_detail": {
+        "best_params": [
+          0.9359528050511902,
+          2.0827703734258805,
+          0.08779812429333919,
+          0.0,
+          0.19654109378113604,
+          -0.24798101820607346,
+          0.021618187243748966
+        ],
+        "lnL_no_halo": -2074.3118755664455,
+        "convexity_check": {
+          "no_halo": {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              2074.3118755664455,
+              2074.311875566446,
+              2074.3118755664455,
+              2074.3118755664455,
+              2074.3118755664455
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 4.547473508864641e-13,
+            "n_failed_starts": 0
+          },
+          "with_halo": {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              2071.9199932749807,
+              2071.9199932749807,
+              2071.9199932749807,
+              2071.9199932749807,
+              2071.9199932749807
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 0.0,
+            "n_failed_starts": 0
+          }
+        }
+      },
+      "region_C_fit_detail": {
+        "best_params": [
+          0.2974029537927053,
+          0.0,
+          0.0,
+          0.0,
+          0.03173955913007258,
+          -0.23129577342874494,
+          0.02388767353944775
+        ],
+        "lnL_no_halo": -1540.469878317389,
+        "convexity_check": {
+          "no_halo": {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              1540.469878317389,
+              1540.469878317389,
+              1540.469878317389,
+              1540.469878317389,
+              1540.469878317389
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 0.0,
+            "n_failed_starts": 0
+          },
+          "with_halo": {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              1539.4341531361304,
+              1539.4341531361301,
+              1539.4341531361304,
+              1539.4341531361304,
+              1539.4341531361306
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 4.547473508864641e-13,
+            "n_failed_starts": 0
+          }
+        }
+      },
+      "model2_shared_fit_detail": {
+        "best_params_13": [
+          0.9277955357967657,
+          1.9655937317584522,
+          0.08662569869283851,
+          0.0,
+          0.1964497132723742,
+          -0.2447259678825086,
+          0.37222341461095804,
+          0.0,
+          0.0,
+          0.0,
+          0.03242758573207342,
+          -0.2287842208828022,
+          0.022374994750562097
+        ],
+        "lnL_shared": -3611.363168842547,
+        "f_halo_shared_pointest": 0.022374994750562097,
+        "halo0_candidates": [
+          0.021618187244,
+          0.023887673539,
+          0.5
+        ],
+        "convexity_check_per_halo0": [
+          {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              3611.363168842547,
+              3611.363168842584,
+              3611.363168842547,
+              3611.3631688425585,
+              3611.3631688425567
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 3.6834535421803594e-11,
+            "n_failed_starts": 0
+          },
+          {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              3611.3631688425507,
+              3611.363168842551,
+              3611.363168842622,
+              3611.3631688425903,
+              3611.363168842548
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 7.412381819449365e-11,
+            "n_failed_starts": 0
+          },
+          {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              3611.36316884255,
+              3611.363168842795,
+              3611.363168842547,
+              3611.3631688425776,
+              3611.3631688425826
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 2.4783730623312294e-10,
+            "n_failed_starts": 0
+          }
+        ],
+        "fun_spread_across_halo0_candidates": 9.094947017729282e-13
+      },
+      "elapsed_sec": 3.9688782691955566
+    },
+    {
+      "bin": 11,
+      "e_center_gev": 285.33,
+      "n_masked_point_sources": 1375,
+      "n_valid_pixels_A": 3487,
+      "n_valid_pixels_C": 4538,
+      "n_events_A": 380.0,
+      "n_events_C": 226.0,
+      "f_halo_A_pointest": 0.0,
+      "f_halo_C_pointest": 0.006419404657527788,
+      "f_halo_shared_pointest": 0.0,
+      "lnL_A_independent": -1176.6653189244778,
+      "lnL_C_independent": -896.0523654036726,
+      "lnL_unconstrained": -2072.7176843281504,
+      "lnL_shared": -2072.8679783897596,
+      "delta_lnL_LRT": 0.1502940616092019,
+      "test_statistic": 0.3005881232184038,
+      "p_value": 0.5835139550789168,
+      "equivalent_sigma": 0.5482591752250062,
+      "fun_spread_max": 6.907098395458888e-07,
+      "convergence_flag_ok": true,
+      "delta_lnL_nonneg_ok": true,
+      "region_A_fit_detail": {
+        "best_params": [
+          2.3305503145865627,
+          5.74463404581653,
+          0.0,
+          0.0,
+          0.08125156934284598,
+          -0.2029420830615421,
+          0.0
+        ],
+        "lnL_no_halo": -1176.6653189244778,
+        "convexity_check": {
+          "no_halo": {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              1176.665318924478,
+              1176.6653189244778,
+              1176.665318924478,
+              1176.6653189244778,
+              1176.665318924478
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 2.2737367544323206e-13,
+            "n_failed_starts": 0
+          },
+          "with_halo": {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              1176.665318924478,
+              1176.665318924478,
+              1176.665318924478,
+              1176.6653189244785,
+              1176.6653189244812
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 3.183231456205249e-12,
+            "n_failed_starts": 0
+          }
+        }
+      },
+      "region_C_fit_detail": {
+        "best_params": [
+          1.2284749560650117,
+          0.0,
+          0.0,
+          0.0,
+          0.0687103214249515,
+          -0.17988411591943973,
+          0.006419404657527788
+        ],
+        "lnL_no_halo": -896.2026594648802,
+        "convexity_check": {
+          "no_halo": {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              896.2026594648803,
+              896.2026594648803,
+              896.2026594648803,
+              896.2026594648803,
+              896.2026594648802
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 1.1368683772161603e-13,
+            "n_failed_starts": 0
+          },
+          "with_halo": {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              896.0523654036728,
+              896.0523654036726,
+              896.0523654036729,
+              896.0523654036728,
+              896.0523654036728
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 2.2737367544323206e-13,
+            "n_failed_starts": 0
+          }
+        }
+      },
+      "model2_shared_fit_detail": {
+        "best_params_13": [
+          2.330562941413189,
+          5.7446420761160155,
+          0.0,
+          0.0,
+          0.08125117445810338,
+          -0.20294380786333732,
+          1.0656944207909045,
+          3.2161089363767315,
+          0.0,
+          0.0,
+          0.06945240536184275,
+          -0.17547733167519183,
+          0.0
+        ],
+        "lnL_shared": -2072.8679783897596,
+        "f_halo_shared_pointest": 0.0,
+        "halo0_candidates": [
+          0.0,
+          0.006419404658,
+          0.5
+        ],
+        "convexity_check_per_halo0": [
+          {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              2072.867978392098,
+              2072.8679783929483,
+              2072.8679784801275,
+              2072.867978404579,
+              2072.8679784415585
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 8.802953743725084e-08,
+            "n_failed_starts": 0
+          },
+          {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              2072.8679784107635,
+              2072.8679785946574,
+              2072.867978390559,
+              2072.867978428628,
+              2072.867978395432
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 2.0409834178281017e-07,
+            "n_failed_starts": 0
+          },
+          {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              2072.8679783897596,
+              2072.8679783927146,
+              2072.8679790804695,
+              2072.867978394279,
+              2072.8679784283377
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 6.907098395458888e-07,
+            "n_failed_starts": 0
+          }
+        ],
+        "fun_spread_across_halo0_candidates": 2.3383108782581985e-09
+      },
+      "elapsed_sec": 9.081997871398926
+    },
+    {
+      "bin": 12,
+      "e_center_gev": 481.93,
+      "n_masked_point_sources": 1375,
+      "n_valid_pixels_A": 3487,
+      "n_valid_pixels_C": 4538,
+      "n_events_A": 188.0,
+      "n_events_C": 124.0,
+      "f_halo_A_pointest": 0.0,
+      "f_halo_C_pointest": 5.0427961636497994e-05,
+      "f_halo_shared_pointest": 0.0,
+      "lnL_A_independent": -709.0471198029684,
+      "lnL_C_independent": -566.8239168966079,
+      "lnL_unconstrained": -1275.8710366995763,
+      "lnL_shared": -1275.8710760908773,
+      "delta_lnL_LRT": 3.939130101571209e-05,
+      "test_statistic": 7.878260203142418e-05,
+      "p_value": 0.9929181044138113,
+      "equivalent_sigma": 0.008875956400942037,
+      "fun_spread_max": 2288.3815988698075,
+      "convergence_flag_ok": false,
+      "delta_lnL_nonneg_ok": true,
+      "region_A_fit_detail": {
+        "best_params": [
+          5.150116246290471,
+          4.428935625503991,
+          0.0,
+          0.0,
+          0.1028576751837225,
+          -0.27777155380055635,
+          0.0
+        ],
+        "lnL_no_halo": -709.0471198029684,
+        "convexity_check": {
+          "no_halo": {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              709.0471198029685,
+              709.0471198029685,
+              709.0471198029684,
+              709.0471198029685,
+              709.0471198029684
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              false
+            ],
+            "fun_spread_successful_only": 1.1368683772161603e-13,
+            "n_failed_starts": 1
+          },
+          "with_halo": {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              709.0471198029685,
+              709.0471198029784,
+              709.0471198029685,
+              709.0471198299392,
+              709.0471198122052
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 2.6970724320563022e-08,
+            "n_failed_starts": 0
+          }
+        }
+      },
+      "region_C_fit_detail": {
+        "best_params": [
+          2.8961518607545735,
+          4.784730843474799,
+          0.0,
+          0.0,
+          0.02242473387365069,
+          -0.11686774979828385,
+          5.0427961636497994e-05
+        ],
+        "lnL_no_halo": -566.8239562879078,
+        "convexity_check": {
+          "no_halo": {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              566.8239562879078,
+              566.8239562879078,
+              566.8239562879078,
+              566.823956287908,
+              566.8239562879078
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 2.2737367544323206e-13,
+            "n_failed_starts": 0
+          },
+          "with_halo": {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              566.8239168966079,
+              566.8239168966079,
+              566.8239168966079,
+              2855.2055157664154,
+              2855.2055157664154
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 2288.3815988698075,
+            "n_failed_starts": 0
+          }
+        }
+      },
+      "model2_shared_fit_detail": {
+        "best_params_13": [
+          5.15011610730279,
+          4.42893554000077,
+          0.0,
+          0.0,
+          0.10285767024516743,
+          -0.27777144322727704,
+          2.8831956390968814,
+          4.932179228501608,
+          0.0,
+          0.0,
+          0.022542368711156703,
+          -0.11683271675660167,
+          0.0
+        ],
+        "lnL_shared": -1275.8710760908773,
+        "f_halo_shared_pointest": 0.0,
+        "halo0_candidates": [
+          0.0,
+          5.0427962e-05,
+          0.5
+        ],
+        "convexity_check_per_halo0": [
+          {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              1275.8710762425949,
+              1275.8710764588377,
+              1275.8710761060017,
+              1275.8710760908773,
+              1275.8710777667548
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 1.6758774563641055e-06,
+            "n_failed_starts": 0
+          },
+          {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              1275.8710781698887,
+              1275.8710764409884,
+              1275.8710763164152,
+              1275.8710761087711,
+              1275.871076187116
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 2.0611175841622753e-06,
+            "n_failed_starts": 0
+          },
+          {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              1275.8710761048742,
+              1275.8710763588522,
+              1275.8710814552537,
+              1275.8710762220903,
+              1275.8710761193033
+            ],
+            "success": [
+              true,
+              true,
+              false,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 2.539779870858183e-07,
+            "n_failed_starts": 1
+          }
+        ],
+        "fun_spread_across_halo0_candidates": 1.7893853510031477e-08
+      },
+      "elapsed_sec": 14.334678888320923
+    },
+    {
+      "bin": 13,
+      "e_center_gev": 814.0,
+      "n_masked_point_sources": 1375,
+      "n_valid_pixels_A": 3487,
+      "n_valid_pixels_C": 4538,
+      "n_events_A": 87.0,
+      "n_events_C": 51.0,
+      "f_halo_A_pointest": 0.0,
+      "f_halo_C_pointest": 0.0,
+      "f_halo_shared_pointest": 0.0,
+      "lnL_A_independent": -405.69316198975946,
+      "lnL_C_independent": -278.8513641584048,
+      "lnL_unconstrained": -684.5445261481643,
+      "lnL_shared": -684.5445261481643,
+      "delta_lnL_LRT": 0.0,
+      "test_statistic": 0.0,
+      "p_value": 1.0,
+      "equivalent_sigma": 0.0,
+      "fun_spread_max": 895.467033722358,
+      "convergence_flag_ok": false,
+      "delta_lnL_nonneg_ok": true,
+      "region_A_fit_detail": {
+        "best_params": [
+          2.2872683691760685,
+          7.876174154136453,
+          0.10768502783205247,
+          0.0,
+          0.0,
+          -0.04023817739219862,
+          0.0
+        ],
+        "lnL_no_halo": -405.69316198975946,
+        "convexity_check": {
+          "no_halo": {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              405.69316198975946,
+              405.69316198975946,
+              405.69316198975946,
+              405.69316198975946,
+              405.69316198975946
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 0.0,
+            "n_failed_starts": 0
+          },
+          "with_halo": {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              405.6931619902883,
+              405.69316198975946,
+              405.6931619897595,
+              405.69316200683477,
+              405.69316198976196
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 1.707530827843584e-08,
+            "n_failed_starts": 0
+          }
+        }
+      },
+      "region_C_fit_detail": {
+        "best_params": [
+          3.5569662835636313,
+          0.0,
+          0.0,
+          0.008602297007090752,
+          0.0,
+          -0.07053417517610643,
+          0.0
+        ],
+        "lnL_no_halo": -278.8513641584048,
+        "convexity_check": {
+          "no_halo": {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              278.8513641584048,
+              278.8513641584048,
+              278.8513641584048,
+              278.8513641584048,
+              278.85136415840486
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 5.684341886080802e-14,
+            "n_failed_starts": 0
+          },
+          "with_halo": {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              278.85136415840486,
+              1174.3183978807629,
+              1174.3183978807629,
+              278.8513642230039,
+              1174.3183978807629
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 895.467033722358,
+            "n_failed_starts": 0
+          }
+        }
+      },
+      "model2_shared_fit_detail": {
+        "best_params_13": [
+          2.287268369129037,
+          7.87617415412371,
+          0.10768502548714873,
+          0.0,
+          0.0,
+          -0.040238177302518434,
+          3.556966283563611,
+          0.0,
+          0.0,
+          0.008602297006062217,
+          0.0,
+          -0.07053417517728658,
+          0.0
+        ],
+        "lnL_shared": -684.5445261481643,
+        "f_halo_shared_pointest": 0.0,
+        "halo0_candidates": [
+          0.0,
+          0.5
+        ],
+        "convexity_check_per_halo0": [
+          {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              684.5445262179786,
+              684.5445466113626,
+              684.544526245588,
+              684.5445261481643,
+              684.5445304450552
+            ],
+            "success": [
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 2.0463198325160192e-05,
+            "n_failed_starts": 0
+          },
+          {
+            "scales": [
+              0.1,
+              0.3,
+              0.6,
+              1.0,
+              1.5
+            ],
+            "fun_values": [
+              684.5448301995746,
+              684.5447113749611,
+              684.5445702331381,
+              684.5445261492649,
+              684.5445269406894
+            ],
+            "success": [
+              false,
+              false,
+              true,
+              true,
+              true
+            ],
+            "fun_spread_successful_only": 4.4083873149247665e-05,
+            "n_failed_starts": 2
+          }
+        ],
+        "fun_spread_across_halo0_candidates": 1.1006022759829648e-09
+      },
+      "elapsed_sec": 12.38585114479065
+    }
+  ]
+}

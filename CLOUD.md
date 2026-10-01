@@ -25,6 +25,13 @@
 3. **写してきたファイル (`code/` `.dev/` `results/` など) は直接編集しない。** 次の同期で上書きされて消える。
    修正は patch で提案する。編集してよいのは `cloud_reports/` と `slides/` だけ
 
+## 本体の決まりのうち、ここでは適用しないもの
+
+`CLAUDE.md` 経由で本体の `AGENTS.md` と `.dev/TEAM_PROTOCOL.md` を読み込んでいるが、この写しでは:
+
+- **TODO.md / CHANGELOG.md / HANDOFF.md を更新しない** (本体側でローカルの Claude が行う。レポートに「本体の TODO に足すべき項目」として書く)
+- **TEAM_PROTOCOL のチーム (Implementer + レビュア複数) は、本人が明示的に頼んだときだけ起動する**。既定は自分ひとりで考える
+
 ## クレジットの節約
 
 本人は有限のクレジットで使っている。

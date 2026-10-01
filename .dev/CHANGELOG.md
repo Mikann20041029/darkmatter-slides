@@ -1,5 +1,41 @@
 # CHANGELOG
 
+## 3c02e71 — 主結果を記録付きで再計算 (v20r: Bin6 19.00σ)、非等方 ICS を容疑から外す
+
+### 追加
+
+- `results/mcmc_allbins_gasICS_v20r_rerun/`: v20 と同じ設定を現コード (c86e3c0) で全13ビン+MCMC。
+  Bin6 19.00σ、Bin5 19.70σ。各ビンの JSON に git コミットと MCMC_* 環境変数を記録
+
+### 変更
+
+- README・HANDOFF の主結果を v20 (19.1σ) から v20r (19.0σ) に差し替え
+- verdict に追記: 非等方 ICS は犯人ではない (Moskalenko & Strong 2000、クラウド)、
+  クラウドとの差は Python ではなく CPU (aarch64 vs x86_64) が最有力
+
+### 判断・後回し事項
+
+- `git_working_tree_dirty: True` は `interim/interim_report.pptx` が手元で削除されたままのため (手編集ファイルなので触らない)。コードは未変更
+- MCMC は多くのビンで 50τ に届かない (v20 と同じ)。誤差棒は近似として扱う
+
+## 8679660 — 現コードの決定性を確認し、結果に再現性の記録を残すようにした
+
+### 追加
+
+- `code/check_determinism_v20.py`: Bin6 を MCMC なしで計算し、テンプレート全配列と最尤結果を保存。
+  別プロセスで 2 回走らせて最後の桁まで一致を確認した (19.00σ)
+
+### 変更
+
+- `code/mcmc_fit_all_bins.py`: 各ビンの結果 JSON に `environment` (git コミット・ライブラリ版) と `env_flags`
+  (MCMC_* 環境変数) を保存。`env_stamp()` の dirty 判定は管理下ファイルの変更だけを見るようにした
+- regionac-dwarf-verification の verdict / HANDOFF: クラウドのレポートを受けて f_ics の所見を撤回、
+  Totani の象限分割についての誤りを訂正、ICS の形のずれの条件 (約 2.3 倍) と v20 が再現できない件を追記
+
+### 判断・後回し事項
+
+- v20 (7/23, 19.11σ) は現コードで再現できない (19.00σ)。記録が無く原因不明のため、主結果を記録付きで再計算する
+
 ## 2537c93 — バブル除外の有意度低下をフィッシャー情報の幾何で再評価
 
 ### 追加

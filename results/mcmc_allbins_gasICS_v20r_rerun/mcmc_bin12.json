@@ -1,0 +1,144 @@
+{
+  "bin": 12,
+  "e_center_gev": 481.93,
+  "iso_level_fixed": 5.859375e-05,
+  "params": {
+    "f_iso": {
+      "median": 1.3109991948298711e-05,
+      "lo16": 2.8156308022545185e-06,
+      "hi84": 3.40986891230356e-05
+    },
+    "f_gas": {
+      "median": 1.9052503581285711,
+      "lo16": 1.1536544200843724,
+      "hi84": 2.6590386482507573
+    },
+    "f_ics": {
+      "median": 0.048521552651936715,
+      "lo16": 0.00023300719915012925,
+      "hi84": 0.9472308263547295
+    },
+    "f_ps": {
+      "median": 0.13517801335683197,
+      "lo16": 0.05969894969223871,
+      "hi84": 0.23145446467682756
+    },
+    "f_loopI_a": {
+      "median": 1.7168057009934312e-05,
+      "lo16": 4.753185606605336e-06,
+      "hi84": 3.696549152051449e-05
+    },
+    "f_loopI_b": {
+      "median": 4.697727514645053e-06,
+      "lo16": 1.1458841529681127e-06,
+      "hi84": 1.2006438656211459e-05
+    },
+    "f_fb": {
+      "median": 0.04129586893982523,
+      "lo16": 0.014588528434339377,
+      "hi84": 0.07667907527204931
+    },
+    "f_fb_neg": {
+      "median": 0.022265961582119638,
+      "lo16": -0.03169043061845425,
+      "hi84": 0.078587648284628
+    },
+    "f_halo": {
+      "median": 0.0002587722801536166,
+      "lo16": 6.884397273334235e-05,
+      "hi84": 0.00045136262260690355
+    }
+  },
+  "params_no_halo_pointest": {
+    "f_iso": 0.0,
+    "f_gas": 2.7219011573523844,
+    "f_ics": 1.1889135599516492,
+    "f_ps": 0.16455619987580902,
+    "f_loopI_a": 1.4702860552794108e-05,
+    "f_loopI_b": 0.0,
+    "f_fb": 0.05398100843147472,
+    "f_fb_neg": -0.01803778837122269
+  },
+  "lnL_no_halo": -58.023945830197704,
+  "lnL_with_halo": -56.84020845896594,
+  "gas_flux_mean_valid_phcm2sMeV": 1.0468861032638761e-16,
+  "ics_flux_mean_valid_phcm2sMeV": 5.361359865816562e-17,
+  "delta_lnL": 1.1837373712317643,
+  "significance_sigma": 1.5386600477244896,
+  "n_events": 188,
+  "convexity_check": {
+    "no_halo": {
+      "scales": [
+        0.1,
+        0.3,
+        0.6,
+        1.0,
+        1.5
+      ],
+      "fun_values": [
+        58.023945830197725,
+        58.02394583019836,
+        58.02394583019771,
+        58.023945831074826,
+        58.023945830197704
+      ],
+      "success": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "fun_spread_successful_only": 8.771223747316981e-10,
+      "n_failed_starts": 0
+    },
+    "with_halo": {
+      "scales": [
+        0.1,
+        0.3,
+        0.6,
+        1.0,
+        1.5
+      ],
+      "fun_values": [
+        56.84020845896594,
+        56.84020845896619,
+        56.840208458965975,
+        56.84020845896634,
+        56.84020845896595
+      ],
+      "success": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "fun_spread_successful_only": 3.979039320256561e-13,
+      "n_failed_starts": 0
+    }
+  },
+  "autocorr_check": {
+    "tau_max": 671.0450650730646,
+    "n_steps_final": 6000,
+    "n_burn": 400,
+    "chain_len_post_burn": 5600,
+    "meets_50tau_recommendation": false
+  },
+  "environment": {
+    "git_commit": "c86e3c05b279c94813c02e5bfe13832703064472",
+    "git_working_tree_dirty": "True",
+    "python": "3.12.3",
+    "numpy": "2.5.1",
+    "scipy": "1.18.0",
+    "emcee": "3.1.6"
+  },
+  "env_flags": {
+    "MCMC_ALLBINS_OUTDIR": "results/mcmc_allbins_gasICS_v20r_rerun",
+    "MCMC_CELL_LIKELIHOOD": "1",
+    "MCMC_DISK_BUBBLE": "1",
+    "MCMC_PIXEL_DEG": "0.125",
+    "MCMC_SIGNFREE_HALO": "1",
+    "MCMC_ULTRACLEAN": "1"
+  }
+}

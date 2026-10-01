@@ -1,0 +1,1922 @@
+{
+  "method": "MCMC (emcee, Poisson log-likelihood, 7 free params: f_gas/f_ics/f_loopI_a/f_loopI_b/f_fb/f_fb_neg/f_halo; iso fixed per-bin at |b|>=50 mean). [2026-07-15 iter-2] point-estimate optimization via L-BFGS-B with bounds (nonneg for f_gas/f_ics/f_loopI_a/f_loopI_b/f_fb/f_halo, sign-free for f_fb_neg only); reproducibility: np.random.seed(42) fixed at main() top.",
+  "galprop_source": "ref/galprop_webrun_10050003 (galdef_54_10050003, SLZ6R30T150C2; gas=pion_decay+bremss, ics=isotropic; HEALPix NSIDE=128 RING, 2026-07-15教授提供データ照合済み)。旧galprop_webrun_10000001(Ts=125K不一致で却下)からの置き換え",
+  "exposure_map_source": "code/compute_exposure_map_allbins.py ([ASSUMPTION] energy-scaled on-axis Aeff)",
+  "nfw_calibration": {
+    "flux": 6.802721088435374e-14,
+    "exp_ref": 548467888608.551,
+    "j_ref": 13.963849829065477,
+    "b_ref": 90.0,
+    "j_at_roi_edge": 29.365077273936034,
+    "b_at_roi_edge": -59.9375
+  },
+  "reproducibility_seed": 42,
+  "environment": {
+    "git_commit": "c86e3c05b279c94813c02e5bfe13832703064472",
+    "git_working_tree_dirty": "True",
+    "python": "3.12.3",
+    "numpy": "2.5.1",
+    "scipy": "1.18.0",
+    "emcee": "3.1.6"
+  },
+  "likelihood_cell_mode": true,
+  "f_halo_sign_free": true,
+  "nonneg_idx": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "signfree_idx": [
+    7,
+    8
+  ],
+  "ablation_note": "[2026-07-17 totani-method-fidelity-fix] likelihood_cell_mode=True (True=Totani §2.2 の 10°×10° セル束ね Poisson 尤度、有効120セル; False=1°ピクセル直接尤度), f_halo_sign_free=True (True=Totani §2.3 'fl<0 allowed for halo' 準拠 の符号自由、False=非負制約)。環境変数 MCMC_CELL_LIKELIHOOD/MCMC_SIGNFREE_HALO で切替。",
+  "pixel_solid_angle_note": "[2026-07-17] ピクセル立体角を cos(b) 込みの緯度依存配列 PIX_SOLID_ANGLE_SR=(pi/180)^2*cos(b) [sr] に修正(旧スカラー (pi/180)^2 は b=0 でのみ正しく |b|=60°で最大2倍過大評価していた)。gas/ICS/halo 全テンプレートに適用。",
+  "convexity_check_summary": {
+    "description": "各ビンのno-halo/with-halo最適化をx0の0.1x,0.3x,0.6x,1.0x,1.5xの5スケール初期値から独立実行し(_multistart_minimizeのscales既定値。10x等より極端なスケールはf_loopI_a/f_loopI_bの初期値ヒューリスティックが既に大きいためL-BFGS-B直線探索がABNORMAL終了し不採用、詳細は_multistart_minimize()docstring参照)、収束後の目的関数値(neg log-likelihood)のうちsuccess=Trueのものだけの最大-最小(fun_spread_successful_only)を記録。0に近いほど凸性(大域最適解の一意性)の経験的裏付けが強い。",
+    "max_fun_spread_across_all_bins": 2.3541845922357254
+  },
+  "autocorr_check_summary": {
+    "description": "post-burnチェイン長がemcee推奨(>=50τ, τ=autocorrelation time)を満たすビン数/全ビン数。",
+    "n_bins_meeting_50tau": 2,
+    "n_bins_total": 13
+  },
+  "bins": [
+    {
+      "bin": 1,
+      "e_center_gev": 1.51,
+      "iso_level_fixed": 0.9904752604166667,
+      "params": {
+        "f_iso": {
+          "median": 0.0008885890318904081,
+          "lo16": 7.816930066689428e-05,
+          "hi84": 0.0028218374007076084
+        },
+        "f_gas": {
+          "median": 1.1864308911073385,
+          "lo16": 1.1823515388746149,
+          "hi84": 1.190580302295028
+        },
+        "f_ics": {
+          "median": 1.9656398059197935,
+          "lo16": 1.9475843278212943,
+          "hi84": 1.9829769860971682
+        },
+        "f_ps": {
+          "median": 1.3743186204093418,
+          "lo16": 1.3615175012651646,
+          "hi84": 1.3866100941937576
+        },
+        "f_loopI_a": {
+          "median": 0.24761692329819895,
+          "lo16": 0.24476494546090824,
+          "hi84": 0.25031439149498746
+        },
+        "f_loopI_b": {
+          "median": 0.10866086191617269,
+          "lo16": 0.10647905669470935,
+          "hi84": 0.1108488054774189
+        },
+        "f_fb": {
+          "median": 1.204482845448549,
+          "lo16": 1.1924093177964608,
+          "hi84": 1.216590503926784
+        },
+        "f_fb_neg": {
+          "median": -1.716918709133571,
+          "lo16": -1.735459203030868,
+          "hi84": -1.698012049296063
+        },
+        "f_halo": {
+          "median": -179.29502984046297,
+          "lo16": -187.85399600690897,
+          "hi84": -170.7023980618012
+        }
+      },
+      "params_no_halo_pointest": {
+        "f_iso": 0.0,
+        "f_gas": 1.1733002064352411,
+        "f_ics": 1.726971421607498,
+        "f_ps": 1.3465801207485186,
+        "f_loopI_a": 0.2544966722838239,
+        "f_loopI_b": 0.11027401968120658,
+        "f_fb": 1.169753477086293,
+        "f_fb_neg": -1.585854796810012
+      },
+      "lnL_no_halo": 17921009.81145642,
+      "lnL_with_halo": 17921229.047134377,
+      "gas_flux_mean_valid_phcm2sMeV": 7.604348768213263e-10,
+      "ics_flux_mean_valid_phcm2sMeV": 2.2148608879376688e-10,
+      "delta_lnL": 219.2356779575348,
+      "significance_sigma": 20.939707636809775,
+      "n_events": 2042272,
+      "convexity_check": {
+        "no_halo": {
+          "scales": [
+            0.1,
+            0.3,
+            0.6,
+            1.0,
+            1.5
+          ],
+          "fun_values": [
+            -17921009.81145642,
+            -17921009.811456412,
+            -17921009.81145642,
+            -17921009.81145642,
+            -17921009.811456412
+          ],
+          "success": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "fun_spread_successful_only": 7.450580596923828e-09,
+          "n_failed_starts": 0
+        },
+        "with_halo": {
+          "scales": [
+            0.1,
+            0.3,
+            0.6,
+            1.0,
+            1.5
+          ],
+          "fun_values": [
+            -17921229.047134362,
+            -17921229.04713437,
+            -17921229.047134377,
+            -17921229.047134377,
+            -17921229.04713434
+          ],
+          "success": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "fun_spread_successful_only": 3.725290298461914e-08,
+          "n_failed_starts": 0
+        }
+      },
+      "autocorr_check": {
+        "tau_max": 328.52524455625775,
+        "n_steps_final": 6000,
+        "n_burn": 400,
+        "chain_len_post_burn": 5600,
+        "meets_50tau_recommendation": false
+      },
+      "environment": {
+        "git_commit": "c86e3c05b279c94813c02e5bfe13832703064472",
+        "git_working_tree_dirty": "True",
+        "python": "3.12.3",
+        "numpy": "2.5.1",
+        "scipy": "1.18.0",
+        "emcee": "3.1.6"
+      },
+      "env_flags": {
+        "MCMC_ALLBINS_OUTDIR": "results/mcmc_allbins_gasICS_v20r_rerun",
+        "MCMC_CELL_LIKELIHOOD": "1",
+        "MCMC_DISK_BUBBLE": "1",
+        "MCMC_PIXEL_DEG": "0.125",
+        "MCMC_SIGNFREE_HALO": "1",
+        "MCMC_ULTRACLEAN": "1"
+      }
+    },
+    {
+      "bin": 2,
+      "e_center_gev": 2.55,
+      "iso_level_fixed": 0.5187109375,
+      "params": {
+        "f_iso": {
+          "median": 0.0005040359907681376,
+          "lo16": 4.806231724092123e-05,
+          "hi84": 0.0015267020020943833
+        },
+        "f_gas": {
+          "median": 1.3122078670427841,
+          "lo16": 1.3058496578783516,
+          "hi84": 1.3188111621880734
+        },
+        "f_ics": {
+          "median": 1.7417193214302031,
+          "lo16": 1.7189481935470108,
+          "hi84": 1.7646438283774875
+        },
+        "f_ps": {
+          "median": 1.3377928782620294,
+          "lo16": 1.322639469463996,
+          "hi84": 1.353221727954554
+        },
+        "f_loopI_a": {
+          "median": 0.122662034181168,
+          "lo16": 0.1207233293709854,
+          "hi84": 0.12456903201765303
+        },
+        "f_loopI_b": {
+          "median": 0.050805037703867566,
+          "lo16": 0.049259052284971634,
+          "hi84": 0.05236559910496212
+        },
+        "f_fb": {
+          "median": 1.089769682986466,
+          "lo16": 1.0762034244207632,
+          "hi84": 1.1039000741109872
+        },
+        "f_fb_neg": {
+          "median": -1.3428671279732303,
+          "lo16": -1.3642812868441374,
+          "hi84": -1.3222087687702655
+        },
+        "f_halo": {
+          "median": -5.531035683590428,
+          "lo16": -8.797898469210246,
+          "hi84": -2.161908489597352
+        }
+      },
+      "params_no_halo_pointest": {
+        "f_iso": 0.0,
+        "f_gas": 1.3106668899273053,
+        "f_ics": 1.7180037791665337,
+        "f_ps": 1.3354266987149217,
+        "f_loopI_a": 0.12345862568718545,
+        "f_loopI_b": 0.05092263407812665,
+        "f_fb": 1.0872644209592157,
+        "f_fb_neg": -1.3318987123523216
+      },
+      "lnL_no_halo": 8641202.170965172,
+      "lnL_with_halo": 8641203.57210383,
+      "gas_flux_mean_valid_phcm2sMeV": 1.8446788908871228e-10,
+      "ics_flux_mean_valid_phcm2sMeV": 6.572367151365388e-11,
+      "delta_lnL": 1.4011386577039957,
+      "significance_sigma": 1.6740003928936191,
+      "n_events": 1062865,
+      "convexity_check": {
+        "no_halo": {
+          "scales": [
+            0.1,
+            0.3,
+            0.6,
+            1.0,
+            1.5
+          ],
+          "fun_values": [
+            -8641202.170965172,
+            -8641202.17096517,
+            -8641202.17096517,
+            -8641202.170965165,
+            -8641202.170965172
+          ],
+          "success": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "fun_spread_successful_only": 7.450580596923828e-09,
+          "n_failed_starts": 0
+        },
+        "with_halo": {
+          "scales": [
+            0.1,
+            0.3,
+            0.6,
+            1.0,
+            1.5
+          ],
+          "fun_values": [
+            -8641203.57210381,
+            -8641203.57210383,
+            -8641203.57210379,
+            -8641203.57210382,
+            -8641203.57210383
+          ],
+          "success": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "fun_spread_successful_only": 4.0978193283081055e-08,
+          "n_failed_starts": 0
+        }
+      },
+      "autocorr_check": {
+        "tau_max": 256.23808618802235,
+        "n_steps_final": 6000,
+        "n_burn": 400,
+        "chain_len_post_burn": 5600,
+        "meets_50tau_recommendation": false
+      },
+      "environment": {
+        "git_commit": "c86e3c05b279c94813c02e5bfe13832703064472",
+        "git_working_tree_dirty": "True",
+        "python": "3.12.3",
+        "numpy": "2.5.1",
+        "scipy": "1.18.0",
+        "emcee": "3.1.6"
+      },
+      "env_flags": {
+        "MCMC_ALLBINS_OUTDIR": "results/mcmc_allbins_gasICS_v20r_rerun",
+        "MCMC_CELL_LIKELIHOOD": "1",
+        "MCMC_DISK_BUBBLE": "1",
+        "MCMC_PIXEL_DEG": "0.125",
+        "MCMC_SIGNFREE_HALO": "1",
+        "MCMC_ULTRACLEAN": "1"
+      }
+    },
+    {
+      "bin": 3,
+      "e_center_gev": 4.31,
+      "iso_level_fixed": 0.25634114583333334,
+      "params": {
+        "f_iso": {
+          "median": 0.0017932980803175079,
+          "lo16": 5.1006574659724075e-05,
+          "hi84": 0.005071375541535056
+        },
+        "f_gas": {
+          "median": 1.4114477480928898,
+          "lo16": 1.4002476033177211,
+          "hi84": 1.422588557379368
+        },
+        "f_ics": {
+          "median": 1.556805159661058,
+          "lo16": 1.5248719411714526,
+          "hi84": 1.5875254628293392
+        },
+        "f_ps": {
+          "median": 1.2625965027809025,
+          "lo16": 1.2430419339312748,
+          "hi84": 1.2820098332543381
+        },
+        "f_loopI_a": {
+          "median": 0.06216375893481294,
+          "lo16": 0.059848524853881625,
+          "hi84": 0.0639047340636309
+        },
+        "f_loopI_b": {
+          "median": 0.020639496645475527,
+          "lo16": 0.019581819899724528,
+          "hi84": 0.021704364275928537
+        },
+        "f_fb": {
+          "median": 1.0162855252836593,
+          "lo16": 1.0003007952096639,
+          "hi84": 1.0325572502318174
+        },
+        "f_fb_neg": {
+          "median": -0.9705005583572565,
+          "lo16": -0.9944261610891465,
+          "hi84": -0.9464873695145726
+        },
+        "f_halo": {
+          "median": 10.720859698030534,
+          "lo16": 9.454620325225784,
+          "hi84": 11.976869923926952
+        }
+      },
+      "params_no_halo_pointest": {
+        "f_iso": 0.0,
+        "f_gas": 1.4296585226830878,
+        "f_ics": 1.7171971836241835,
+        "f_ps": 1.2781678783228494,
+        "f_loopI_a": 0.06251310132774279,
+        "f_loopI_b": 0.020383705354757,
+        "f_fb": 1.0383746453692908,
+        "f_fb_neg": -1.0365567269898879
+      },
+      "lnL_no_halo": 3756932.0387718687,
+      "lnL_with_halo": 3756966.5135107515,
+      "gas_flux_mean_valid_phcm2sMeV": 4.308559442123818e-11,
+      "ics_flux_mean_valid_phcm2sMeV": 1.929736703479919e-11,
+      "delta_lnL": 34.47473888285458,
+      "significance_sigma": 8.303582224902042,
+      "n_events": 508158,
+      "convexity_check": {
+        "no_halo": {
+          "scales": [
+            0.1,
+            0.3,
+            0.6,
+            1.0,
+            1.5
+          ],
+          "fun_values": [
+            -3756932.0387718678,
+            -3756932.0387718687,
+            -3756932.038771868,
+            -3756932.0387718678,
+            -3756932.038771868
+          ],
+          "success": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "fun_spread_successful_only": 9.313225746154785e-10,
+          "n_failed_starts": 0
+        },
+        "with_halo": {
+          "scales": [
+            0.1,
+            0.3,
+            0.6,
+            1.0,
+            1.5
+          ],
+          "fun_values": [
+            -3756966.5135107487,
+            -3756966.5135107273,
+            -3756966.5135107515,
+            -3756966.513510731,
+            -3756966.513510737
+          ],
+          "success": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "fun_spread_successful_only": 2.421438694000244e-08,
+          "n_failed_starts": 0
+        }
+      },
+      "autocorr_check": {
+        "tau_max": 450.285388230912,
+        "n_steps_final": 6000,
+        "n_burn": 400,
+        "chain_len_post_burn": 5600,
+        "meets_50tau_recommendation": false
+      },
+      "environment": {
+        "git_commit": "c86e3c05b279c94813c02e5bfe13832703064472",
+        "git_working_tree_dirty": "True",
+        "python": "3.12.3",
+        "numpy": "2.5.1",
+        "scipy": "1.18.0",
+        "emcee": "3.1.6"
+      },
+      "env_flags": {
+        "MCMC_ALLBINS_OUTDIR": "results/mcmc_allbins_gasICS_v20r_rerun",
+        "MCMC_CELL_LIKELIHOOD": "1",
+        "MCMC_DISK_BUBBLE": "1",
+        "MCMC_PIXEL_DEG": "0.125",
+        "MCMC_SIGNFREE_HALO": "1",
+        "MCMC_ULTRACLEAN": "1"
+      }
+    },
+    {
+      "bin": 4,
+      "e_center_gev": 7.28,
+      "iso_level_fixed": 0.11998046875,
+      "params": {
+        "f_iso": {
+          "median": 0.011001588678091475,
+          "lo16": 0.007880002003223118,
+          "hi84": 0.014177325439560698
+        },
+        "f_gas": {
+          "median": 1.4579563378095974,
+          "lo16": 1.4395974355301298,
+          "hi84": 1.4763975043828925
+        },
+        "f_ics": {
+          "median": 1.1943990200712573,
+          "lo16": 1.1511377447965288,
+          "hi84": 1.2380005463255235
+        },
+        "f_ps": {
+          "median": 1.190821539238962,
+          "lo16": 1.1668458675240236,
+          "hi84": 1.215887842860304
+        },
+        "f_loopI_a": {
+          "median": 0.024804212361296003,
+          "lo16": 0.02260619459233242,
+          "hi84": 0.027034350684682677
+        },
+        "f_loopI_b": {
+          "median": 0.0068031291012247835,
+          "lo16": 0.006103731204623148,
+          "hi84": 0.0075008512202002055
+        },
+        "f_fb": {
+          "median": 0.8974902023098175,
+          "lo16": 0.8791515840479902,
+          "hi84": 0.9168227374828161
+        },
+        "f_fb_neg": {
+          "median": -0.6550290571301535,
+          "lo16": -0.6810826074308395,
+          "hi84": -0.6293391973628752
+        },
+        "f_halo": {
+          "median": 8.370787429258764,
+          "lo16": 7.854597023867943,
+          "hi84": 8.886118001403496
+        }
+      },
+      "params_no_halo_pointest": {
+        "f_iso": 0.008816862985263905,
+        "f_gas": 1.526074183422845,
+        "f_ics": 1.6103656468785068,
+        "f_ps": 1.2229042621818795,
+        "f_loopI_a": 0.025041437859531668,
+        "f_loopI_b": 0.006436200402367367,
+        "f_fb": 0.9525489610897433,
+        "f_fb_neg": -0.8029609880551069
+      },
+      "lnL_no_halo": 1517371.9993749512,
+      "lnL_with_halo": 1517508.0055623555,
+      "gas_flux_mean_valid_phcm2sMeV": 9.991615145436484e-12,
+      "ics_flux_mean_valid_phcm2sMeV": 5.5574993021810625e-12,
+      "delta_lnL": 136.00618740427308,
+      "significance_sigma": 16.49279766469431,
+      "n_events": 229889,
+      "convexity_check": {
+        "no_halo": {
+          "scales": [
+            0.1,
+            0.3,
+            0.6,
+            1.0,
+            1.5
+          ],
+          "fun_values": [
+            -1517371.9993749512,
+            -1517371.9993749494,
+            -1517371.9993749512,
+            -1517371.9993749503,
+            -1517371.9993749422
+          ],
+          "success": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "fun_spread_successful_only": 9.080395102500916e-09,
+          "n_failed_starts": 0
+        },
+        "with_halo": {
+          "scales": [
+            0.1,
+            0.3,
+            0.6,
+            1.0,
+            1.5
+          ],
+          "fun_values": [
+            -1517508.0055623394,
+            -1517508.0055623555,
+            -1517508.0055623064,
+            -1517508.0055623194,
+            -1517508.0055622899
+          ],
+          "success": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "fun_spread_successful_only": 6.565824151039124e-08,
+          "n_failed_starts": 0
+        }
+      },
+      "autocorr_check": {
+        "tau_max": 111.00098298257072,
+        "n_steps_final": 5973,
+        "n_burn": 400,
+        "chain_len_post_burn": 5573,
+        "meets_50tau_recommendation": true
+      },
+      "environment": {
+        "git_commit": "c86e3c05b279c94813c02e5bfe13832703064472",
+        "git_working_tree_dirty": "True",
+        "python": "3.12.3",
+        "numpy": "2.5.1",
+        "scipy": "1.18.0",
+        "emcee": "3.1.6"
+      },
+      "env_flags": {
+        "MCMC_ALLBINS_OUTDIR": "results/mcmc_allbins_gasICS_v20r_rerun",
+        "MCMC_CELL_LIKELIHOOD": "1",
+        "MCMC_DISK_BUBBLE": "1",
+        "MCMC_PIXEL_DEG": "0.125",
+        "MCMC_SIGNFREE_HALO": "1",
+        "MCMC_ULTRACLEAN": "1"
+      }
+    },
+    {
+      "bin": 5,
+      "e_center_gev": 12.29,
+      "iso_level_fixed": 0.05684895833333333,
+      "params": {
+        "f_iso": {
+          "median": 0.006966506208771114,
+          "lo16": 0.004789888473408798,
+          "hi84": 0.009030476682093587
+        },
+        "f_gas": {
+          "median": 1.487174355384495,
+          "lo16": 1.4566423747168802,
+          "hi84": 1.518934864100532
+        },
+        "f_ics": {
+          "median": 0.9011666055250475,
+          "lo16": 0.8418766825162164,
+          "hi84": 0.9602109718877416
+        },
+        "f_ps": {
+          "median": 1.1801369322791777,
+          "lo16": 1.1483657054413219,
+          "hi84": 1.2121554673283836
+        },
+        "f_loopI_a": {
+          "median": 0.01216949435723489,
+          "lo16": 0.010684612012072386,
+          "hi84": 0.013671256619281631
+        },
+        "f_loopI_b": {
+          "median": 0.0019050382720713604,
+          "lo16": 0.0014238244924762245,
+          "hi84": 0.0023712920657213634
+        },
+        "f_fb": {
+          "median": 0.7087621168924035,
+          "lo16": 0.6870429967351239,
+          "hi84": 0.7312868641745348
+        },
+        "f_fb_neg": {
+          "median": -0.4600482488621808,
+          "lo16": -0.4892703492335052,
+          "hi84": -0.4312491691916711
+        },
+        "f_halo": {
+          "median": 3.9148061187188357,
+          "lo16": 3.716683425028791,
+          "hi84": 4.115016615911574
+        }
+      },
+      "params_no_halo_pointest": {
+        "f_iso": 0.005463060293567543,
+        "f_gas": 1.63371835232754,
+        "f_ics": 1.5736923358020838,
+        "f_ps": 1.2172954964536207,
+        "f_loopI_a": 0.012215633482121752,
+        "f_loopI_b": 0.0016754556954081776,
+        "f_fb": 0.7902787811751941,
+        "f_fb_neg": -0.6571032969473078
+      },
+      "lnL_no_halo": 609638.0910223468,
+      "lnL_with_halo": 609832.19938129,
+      "gas_flux_mean_valid_phcm2sMeV": 2.347858580969773e-12,
+      "ics_flux_mean_valid_phcm2sMeV": 1.5514525047536344e-12,
+      "delta_lnL": 194.10835894325282,
+      "significance_sigma": 19.703215927520706,
+      "n_events": 104788,
+      "convexity_check": {
+        "no_halo": {
+          "scales": [
+            0.1,
+            0.3,
+            0.6,
+            1.0,
+            1.5
+          ],
+          "fun_values": [
+            -609638.0910223466,
+            -609638.0910223455,
+            -609638.0910223464,
+            -609638.0910223468,
+            -609638.0910223466
+          ],
+          "success": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "fun_spread_successful_only": 1.280568540096283e-09,
+          "n_failed_starts": 0
+        },
+        "with_halo": {
+          "scales": [
+            0.1,
+            0.3,
+            0.6,
+            1.0,
+            1.5
+          ],
+          "fun_values": [
+            -609832.1993812784,
+            -609832.1993812425,
+            -609832.1993812842,
+            -609832.19938129,
+            -609832.1993812508
+          ],
+          "success": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "fun_spread_successful_only": 4.7497451305389404e-08,
+          "n_failed_starts": 0
+        }
+      },
+      "autocorr_check": {
+        "tau_max": 101.650719567792,
+        "n_steps_final": 6000,
+        "n_burn": 400,
+        "chain_len_post_burn": 5600,
+        "meets_50tau_recommendation": true
+      },
+      "environment": {
+        "git_commit": "c86e3c05b279c94813c02e5bfe13832703064472",
+        "git_working_tree_dirty": "True",
+        "python": "3.12.3",
+        "numpy": "2.5.1",
+        "scipy": "1.18.0",
+        "emcee": "3.1.6"
+      },
+      "env_flags": {
+        "MCMC_ALLBINS_OUTDIR": "results/mcmc_allbins_gasICS_v20r_rerun",
+        "MCMC_CELL_LIKELIHOOD": "1",
+        "MCMC_DISK_BUBBLE": "1",
+        "MCMC_PIXEL_DEG": "0.125",
+        "MCMC_SIGNFREE_HALO": "1",
+        "MCMC_ULTRACLEAN": "1"
+      }
+    },
+    {
+      "bin": 6,
+      "e_center_gev": 20.76,
+      "iso_level_fixed": 0.026477864583333333,
+      "params": {
+        "f_iso": {
+          "median": 0.00395331224498599,
+          "lo16": 0.002544169180400113,
+          "hi84": 0.005340104216869854
+        },
+        "f_gas": {
+          "median": 1.5263074186127885,
+          "lo16": 1.4765284369749205,
+          "hi84": 1.5768500918416994
+        },
+        "f_ics": {
+          "median": 0.6092636416904118,
+          "lo16": 0.5267303943968518,
+          "hi84": 0.6929361271986164
+        },
+        "f_ps": {
+          "median": 1.212266466486255,
+          "lo16": 1.1737977865039293,
+          "hi84": 1.2523853651582437
+        },
+        "f_loopI_a": {
+          "median": 0.004985490795944485,
+          "lo16": 0.004015497948475512,
+          "hi84": 0.00596109856587371
+        },
+        "f_loopI_b": {
+          "median": 0.0003670690946971812,
+          "lo16": 0.0001342290570437513,
+          "hi84": 0.0006577631455752002
+        },
+        "f_fb": {
+          "median": 0.5579838268036303,
+          "lo16": 0.5333755747136055,
+          "hi84": 0.5838111484441777
+        },
+        "f_fb_neg": {
+          "median": -0.32840331797665623,
+          "lo16": -0.3604499310709876,
+          "hi84": -0.2963070210434514
+        },
+        "f_halo": {
+          "median": 1.4775039775764536,
+          "lo16": 1.4013263395186324,
+          "hi84": 1.552934283836902
+        }
+      },
+      "params_no_halo_pointest": {
+        "f_iso": 0.0033948019538100264,
+        "f_gas": 1.7779559453345375,
+        "f_ics": 1.5090004125632768,
+        "f_ps": 1.2473705162777946,
+        "f_loopI_a": 0.004911626450950546,
+        "f_loopI_b": 0.00012053021845827095,
+        "f_fb": 0.6524536994225413,
+        "f_fb_neg": -0.5440374457604461
+      },
+      "lnL_no_halo": 239107.90411631885,
+      "lnL_with_halo": 239288.37934285498,
+      "gas_flux_mean_valid_phcm2sMeV": 5.608820510653925e-13,
+      "ics_flux_mean_valid_phcm2sMeV": 4.1999357212448937e-13,
+      "delta_lnL": 180.47522653613123,
+      "significance_sigma": 18.998696088738892,
+      "n_events": 47498,
+      "convexity_check": {
+        "no_halo": {
+          "scales": [
+            0.1,
+            0.3,
+            0.6,
+            1.0,
+            1.5
+          ],
+          "fun_values": [
+            -239107.90411631885,
+            -239107.90411631885,
+            -239107.90411631868,
+            -239107.90411631868,
+            -239107.9041163184
+          ],
+          "success": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "fun_spread_successful_only": 4.656612873077393e-10,
+          "n_failed_starts": 0
+        },
+        "with_halo": {
+          "scales": [
+            0.1,
+            0.3,
+            0.6,
+            1.0,
+            1.5
+          ],
+          "fun_values": [
+            -239288.37934263312,
+            -239288.37934285274,
+            -239288.37934285498,
+            -239288.37934282236,
+            -239288.37934256447
+          ],
+          "success": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "fun_spread_successful_only": 2.9051443561911583e-07,
+          "n_failed_starts": 0
+        }
+      },
+      "autocorr_check": {
+        "tau_max": 126.98616105131515,
+        "n_steps_final": 6000,
+        "n_burn": 400,
+        "chain_len_post_burn": 5600,
+        "meets_50tau_recommendation": false
+      },
+      "environment": {
+        "git_commit": "c86e3c05b279c94813c02e5bfe13832703064472",
+        "git_working_tree_dirty": "True",
+        "python": "3.12.3",
+        "numpy": "2.5.1",
+        "scipy": "1.18.0",
+        "emcee": "3.1.6"
+      },
+      "env_flags": {
+        "MCMC_ALLBINS_OUTDIR": "results/mcmc_allbins_gasICS_v20r_rerun",
+        "MCMC_CELL_LIKELIHOOD": "1",
+        "MCMC_DISK_BUBBLE": "1",
+        "MCMC_PIXEL_DEG": "0.125",
+        "MCMC_SIGNFREE_HALO": "1",
+        "MCMC_ULTRACLEAN": "1"
+      }
+    },
+    {
+      "bin": 7,
+      "e_center_gev": 35.06,
+      "iso_level_fixed": 0.012584635416666667,
+      "params": {
+        "f_iso": {
+          "median": 0.0014202550420315888,
+          "lo16": 0.000585935738336804,
+          "hi84": 0.0023612634671578894
+        },
+        "f_gas": {
+          "median": 1.790322814837729,
+          "lo16": 1.7047803653559201,
+          "hi84": 1.876192717555197
+        },
+        "f_ics": {
+          "median": 0.6076669793570945,
+          "lo16": 0.4816734018109399,
+          "hi84": 0.7312799505721911
+        },
+        "f_ps": {
+          "median": 1.2162694075769092,
+          "lo16": 1.1657729645035346,
+          "hi84": 1.2671591766729262
+        },
+        "f_loopI_a": {
+          "median": 0.0022412639826401935,
+          "lo16": 0.001578199003356347,
+          "hi84": 0.0028198978885951537
+        },
+        "f_loopI_b": {
+          "median": 6.257538052807752e-05,
+          "lo16": 1.1969993657952608e-05,
+          "hi84": 0.0001622468452215091
+        },
+        "f_fb": {
+          "median": 0.4515675693608001,
+          "lo16": 0.4213820616887811,
+          "hi84": 0.4824966686262808
+        },
+        "f_fb_neg": {
+          "median": -0.27176385189334784,
+          "lo16": -0.3089761639357163,
+          "hi84": -0.23610635186177448
+        },
+        "f_halo": {
+          "median": 0.4698004618257615,
+          "lo16": 0.4397408467963239,
+          "hi84": 0.5016672250433123
+        }
+      },
+      "params_no_halo_pointest": {
+        "f_iso": 0.0011945667472117358,
+        "f_gas": 2.1246907885475674,
+        "f_ics": 1.689158049168455,
+        "f_ps": 1.2431265812859884,
+        "f_loopI_a": 0.0021438333641163303,
+        "f_loopI_b": 0.0,
+        "f_fb": 0.5479798106204339,
+        "f_fb_neg": -0.46380517126080656
+      },
+      "lnL_no_halo": 97167.80703208207,
+      "lnL_with_halo": 97279.36793314481,
+      "gas_flux_mean_valid_phcm2sMeV": 1.34675005936002e-13,
+      "ics_flux_mean_valid_phcm2sMeV": 1.088788010811552e-13,
+      "delta_lnL": 111.56090106273768,
+      "significance_sigma": 14.937262203144034,
+      "n_events": 22583,
+      "convexity_check": {
+        "no_halo": {
+          "scales": [
+            0.1,
+            0.3,
+            0.6,
+            1.0,
+            1.5
+          ],
+          "fun_values": [
+            -97167.80703208204,
+            -97167.80703208206,
+            -97167.80703208207,
+            -97167.80703208188,
+            -97167.80703208204
+          ],
+          "success": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "fun_spread_successful_only": 1.8917489796876907e-10,
+          "n_failed_starts": 0
+        },
+        "with_halo": {
+          "scales": [
+            0.1,
+            0.3,
+            0.6,
+            1.0,
+            1.5
+          ],
+          "fun_values": [
+            -97279.36793314481,
+            -97279.36793314481,
+            -97279.36793311976,
+            -97279.36793314121,
+            -97279.36793314462
+          ],
+          "success": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "fun_spread_successful_only": 2.5043846108019352e-08,
+          "n_failed_starts": 0
+        }
+      },
+      "autocorr_check": {
+        "tau_max": 222.50574476516658,
+        "n_steps_final": 6000,
+        "n_burn": 400,
+        "chain_len_post_burn": 5600,
+        "meets_50tau_recommendation": false
+      },
+      "environment": {
+        "git_commit": "c86e3c05b279c94813c02e5bfe13832703064472",
+        "git_working_tree_dirty": "True",
+        "python": "3.12.3",
+        "numpy": "2.5.1",
+        "scipy": "1.18.0",
+        "emcee": "3.1.6"
+      },
+      "env_flags": {
+        "MCMC_ALLBINS_OUTDIR": "results/mcmc_allbins_gasICS_v20r_rerun",
+        "MCMC_CELL_LIKELIHOOD": "1",
+        "MCMC_DISK_BUBBLE": "1",
+        "MCMC_PIXEL_DEG": "0.125",
+        "MCMC_SIGNFREE_HALO": "1",
+        "MCMC_ULTRACLEAN": "1"
+      }
+    },
+    {
+      "bin": 8,
+      "e_center_gev": 59.22,
+      "iso_level_fixed": 0.00533203125,
+      "params": {
+        "f_iso": {
+          "median": 0.0011909009264838232,
+          "lo16": 0.0006480346594673457,
+          "hi84": 0.001625690037413093
+        },
+        "f_gas": {
+          "median": 2.0530735244452396,
+          "lo16": 1.9190663020295444,
+          "hi84": 2.1832435541551796
+        },
+        "f_ics": {
+          "median": 0.17867105083576107,
+          "lo16": 0.05938143902717647,
+          "hi84": 0.3432429014519549
+        },
+        "f_ps": {
+          "median": 1.1508193853947657,
+          "lo16": 1.0879438061797424,
+          "hi84": 1.2136104504801415
+        },
+        "f_loopI_a": {
+          "median": 0.0004512417675713149,
+          "lo16": 0.00015859384824167395,
+          "hi84": 0.0008328894785779356
+        },
+        "f_loopI_b": {
+          "median": 2.823531149105548e-05,
+          "lo16": 3.63895760618765e-06,
+          "hi84": 8.202181568936775e-05
+        },
+        "f_fb": {
+          "median": 0.41030259316159906,
+          "lo16": 0.37561451795178347,
+          "hi84": 0.44556427146601385
+        },
+        "f_fb_neg": {
+          "median": -0.24294392802015508,
+          "lo16": -0.2818319046884709,
+          "hi84": -0.20232604977785312
+        },
+        "f_halo": {
+          "median": 0.1289769606802994,
+          "lo16": 0.11718430271947478,
+          "hi84": 0.1404397459417555
+        }
+      },
+      "params_no_halo_pointest": {
+        "f_iso": 0.0014505874691556108,
+        "f_gas": 2.4773740812446703,
+        "f_ics": 1.2588787667309473,
+        "f_ps": 1.1641909653630669,
+        "f_loopI_a": 0.00021812410837101354,
+        "f_loopI_b": 0.0,
+        "f_fb": 0.49322010883499345,
+        "f_fb_neg": -0.3902277670739736
+      },
+      "lnL_no_halo": 33984.37174506379,
+      "lnL_with_halo": 34042.65170257981,
+      "gas_flux_mean_valid_phcm2sMeV": 3.215644265731235e-14,
+      "ics_flux_mean_valid_phcm2sMeV": 2.6807729042357744e-14,
+      "delta_lnL": 58.27995751601702,
+      "significance_sigma": 10.796291725960078,
+      "n_events": 9768,
+      "convexity_check": {
+        "no_halo": {
+          "scales": [
+            0.1,
+            0.3,
+            0.6,
+            1.0,
+            1.5
+          ],
+          "fun_values": [
+            -33984.37174506379,
+            -33984.37174506379,
+            -33984.37174506369,
+            -33984.37174506379,
+            -33984.37174506379
+          ],
+          "success": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "fun_spread_successful_only": 1.0186340659856796e-10,
+          "n_failed_starts": 0
+        },
+        "with_halo": {
+          "scales": [
+            0.1,
+            0.3,
+            0.6,
+            1.0,
+            1.5
+          ],
+          "fun_values": [
+            -34042.65170257572,
+            -34042.65170257981,
+            -34042.651702456846,
+            -34042.6517025766,
+            -34042.65170257728
+          ],
+          "success": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "fun_spread_successful_only": 1.229636836796999e-07,
+          "n_failed_starts": 0
+        }
+      },
+      "autocorr_check": {
+        "tau_max": 336.07033095542556,
+        "n_steps_final": 6000,
+        "n_burn": 400,
+        "chain_len_post_burn": 5600,
+        "meets_50tau_recommendation": false
+      },
+      "environment": {
+        "git_commit": "c86e3c05b279c94813c02e5bfe13832703064472",
+        "git_working_tree_dirty": "True",
+        "python": "3.12.3",
+        "numpy": "2.5.1",
+        "scipy": "1.18.0",
+        "emcee": "3.1.6"
+      },
+      "env_flags": {
+        "MCMC_ALLBINS_OUTDIR": "results/mcmc_allbins_gasICS_v20r_rerun",
+        "MCMC_CELL_LIKELIHOOD": "1",
+        "MCMC_DISK_BUBBLE": "1",
+        "MCMC_PIXEL_DEG": "0.125",
+        "MCMC_SIGNFREE_HALO": "1",
+        "MCMC_ULTRACLEAN": "1"
+      }
+    },
+    {
+      "bin": 9,
+      "e_center_gev": 100.02,
+      "iso_level_fixed": 0.0022200520833333334,
+      "params": {
+        "f_iso": {
+          "median": 0.00013932527823390267,
+          "lo16": 1.838868002407974e-05,
+          "hi84": 0.0003308507399252139
+        },
+        "f_gas": {
+          "median": 1.863627312829173,
+          "lo16": 1.6518338315179184,
+          "hi84": 2.0821753197158808
+        },
+        "f_ics": {
+          "median": 0.2829849759713374,
+          "lo16": 0.0918753717288937,
+          "hi84": 0.5465514578345029
+        },
+        "f_ps": {
+          "median": 0.9448226116328562,
+          "lo16": 0.873009937613881,
+          "hi84": 1.0182474856272297
+        },
+        "f_loopI_a": {
+          "median": 0.00025200959756737815,
+          "lo16": 0.00011233565785770736,
+          "hi84": 0.00039793961130999567
+        },
+        "f_loopI_b": {
+          "median": 2.508341970563445e-05,
+          "lo16": 4.7951410719440145e-06,
+          "hi84": 6.764297236100337e-05
+        },
+        "f_fb": {
+          "median": 0.3274070566889401,
+          "lo16": 0.29039325150648804,
+          "hi84": 0.3649783291078653
+        },
+        "f_fb_neg": {
+          "median": -0.08234974969679264,
+          "lo16": -0.12611307011723083,
+          "hi84": -0.04006118677112945
+        },
+        "f_halo": {
+          "median": 0.03390791424777067,
+          "lo16": 0.029693008554673113,
+          "hi84": 0.038250605486022535
+        }
+      },
+      "params_no_halo_pointest": {
+        "f_iso": 0.0,
+        "f_gas": 2.3749028006284267,
+        "f_ics": 1.5606043726146053,
+        "f_ps": 0.9686666536373437,
+        "f_loopI_a": 0.00032838584824673825,
+        "f_loopI_b": 0.0,
+        "f_fb": 0.402446700042126,
+        "f_fb_neg": -0.1942774586223542
+      },
+      "lnL_no_halo": 10494.317374538427,
+      "lnL_with_halo": 10524.17840011918,
+      "gas_flux_mean_valid_phcm2sMeV": 7.616138893977644e-15,
+      "ics_flux_mean_valid_phcm2sMeV": 6.303242263993194e-15,
+      "delta_lnL": 29.861025580754358,
+      "significance_sigma": 7.7280043453344875,
+      "n_events": 4014,
+      "convexity_check": {
+        "no_halo": {
+          "scales": [
+            0.1,
+            0.3,
+            0.6,
+            1.0,
+            1.5
+          ],
+          "fun_values": [
+            -10494.317374538274,
+            -10494.317374538425,
+            -10494.317374538405,
+            -10494.317374538427,
+            -10494.31737453811
+          ],
+          "success": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "fun_spread_successful_only": 3.1650415621697903e-10,
+          "n_failed_starts": 0
+        },
+        "with_halo": {
+          "scales": [
+            0.1,
+            0.3,
+            0.6,
+            1.0,
+            1.5
+          ],
+          "fun_values": [
+            -10524.178399923272,
+            -10524.178400119014,
+            -10524.178400116056,
+            -10524.17840011918,
+            -10524.178400113922
+          ],
+          "success": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "fun_spread_successful_only": 1.9590879674069583e-07,
+          "n_failed_starts": 0
+        }
+      },
+      "autocorr_check": {
+        "tau_max": 356.51557889911794,
+        "n_steps_final": 6000,
+        "n_burn": 400,
+        "chain_len_post_burn": 5600,
+        "meets_50tau_recommendation": false
+      },
+      "environment": {
+        "git_commit": "c86e3c05b279c94813c02e5bfe13832703064472",
+        "git_working_tree_dirty": "True",
+        "python": "3.12.3",
+        "numpy": "2.5.1",
+        "scipy": "1.18.0",
+        "emcee": "3.1.6"
+      },
+      "env_flags": {
+        "MCMC_ALLBINS_OUTDIR": "results/mcmc_allbins_gasICS_v20r_rerun",
+        "MCMC_CELL_LIKELIHOOD": "1",
+        "MCMC_DISK_BUBBLE": "1",
+        "MCMC_PIXEL_DEG": "0.125",
+        "MCMC_SIGNFREE_HALO": "1",
+        "MCMC_ULTRACLEAN": "1"
+      }
+    },
+    {
+      "bin": 10,
+      "e_center_gev": 168.93,
+      "iso_level_fixed": 0.0009765625,
+      "params": {
+        "f_iso": {
+          "median": 6.309518600819445e-05,
+          "lo16": 1.289743175481301e-05,
+          "hi84": 0.0001629289797891002
+        },
+        "f_gas": {
+          "median": 1.2793988095559476,
+          "lo16": 0.9445078705814424,
+          "hi84": 1.5980925015972487
+        },
+        "f_ics": {
+          "median": 0.5310890345169151,
+          "lo16": 0.18500599048691854,
+          "hi84": 0.9886398634410715
+        },
+        "f_ps": {
+          "median": 0.7630082487717535,
+          "lo16": 0.6746520722594931,
+          "hi84": 0.8593842774734961
+        },
+        "f_loopI_a": {
+          "median": 0.00018502402732148394,
+          "lo16": 0.0001021520360333641,
+          "hi84": 0.00026462485077389576
+        },
+        "f_loopI_b": {
+          "median": 1.0402348785850033e-05,
+          "lo16": 2.503957672608421e-06,
+          "hi84": 2.8246007261990417e-05
+        },
+        "f_fb": {
+          "median": 0.1574236123604016,
+          "lo16": 0.11878074066741322,
+          "hi84": 0.1969826192523795
+        },
+        "f_fb_neg": {
+          "median": -0.053829529155360135,
+          "lo16": -0.09968029257824251,
+          "hi84": -0.00607480268886415
+        },
+        "f_halo": {
+          "median": 0.009958268938241036,
+          "lo16": 0.008222090114563391,
+          "hi84": 0.01170502287033412
+        }
+      },
+      "params_no_halo_pointest": {
+        "f_iso": 0.0,
+        "f_gas": 1.991308781867274,
+        "f_ics": 2.0969840240806827,
+        "f_ps": 0.791019479925336,
+        "f_loopI_a": 0.00023086381797947125,
+        "f_loopI_b": 0.0,
+        "f_fb": 0.21899177742195464,
+        "f_fb_neg": -0.1548158687037936
+      },
+      "lnL_no_halo": 2697.1933614966465,
+      "lnL_with_halo": 2715.9427409045356,
+      "gas_flux_mean_valid_phcm2sMeV": 1.805166851954533e-15,
+      "ics_flux_mean_valid_phcm2sMeV": 1.381580459499813e-15,
+      "delta_lnL": 18.749379407889137,
+      "significance_sigma": 6.1236230138520344,
+      "n_events": 1591,
+      "convexity_check": {
+        "no_halo": {
+          "scales": [
+            0.1,
+            0.3,
+            0.6,
+            1.0,
+            1.5
+          ],
+          "fun_values": [
+            -2697.1933614966465,
+            -2697.1933614700592,
+            -2697.1933614966442,
+            -2697.193361496647,
+            -2697.1933612323837
+          ],
+          "success": [
+            true,
+            true,
+            true,
+            false,
+            true
+          ],
+          "fun_spread_successful_only": 2.6426278054714203e-07,
+          "n_failed_starts": 1
+        },
+        "with_halo": {
+          "scales": [
+            0.1,
+            0.3,
+            0.6,
+            1.0,
+            1.5
+          ],
+          "fun_values": [
+            -2715.942740904273,
+            -2715.9427409045247,
+            -2715.942740904484,
+            -2715.9427409045356,
+            -2715.9427409045247
+          ],
+          "success": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "fun_spread_successful_only": 2.6284396881237626e-10,
+          "n_failed_starts": 0
+        }
+      },
+      "autocorr_check": {
+        "tau_max": 247.1015295747349,
+        "n_steps_final": 6000,
+        "n_burn": 400,
+        "chain_len_post_burn": 5600,
+        "meets_50tau_recommendation": false
+      },
+      "environment": {
+        "git_commit": "c86e3c05b279c94813c02e5bfe13832703064472",
+        "git_working_tree_dirty": "True",
+        "python": "3.12.3",
+        "numpy": "2.5.1",
+        "scipy": "1.18.0",
+        "emcee": "3.1.6"
+      },
+      "env_flags": {
+        "MCMC_ALLBINS_OUTDIR": "results/mcmc_allbins_gasICS_v20r_rerun",
+        "MCMC_CELL_LIKELIHOOD": "1",
+        "MCMC_DISK_BUBBLE": "1",
+        "MCMC_PIXEL_DEG": "0.125",
+        "MCMC_SIGNFREE_HALO": "1",
+        "MCMC_ULTRACLEAN": "1"
+      }
+    },
+    {
+      "bin": 11,
+      "e_center_gev": 285.33,
+      "iso_level_fixed": 0.0003125,
+      "params": {
+        "f_iso": {
+          "median": 2.7121892132803514e-05,
+          "lo16": 5.989346604710903e-06,
+          "hi84": 6.496297277210274e-05
+        },
+        "f_gas": {
+          "median": 2.1744915634000996,
+          "lo16": 1.6152446846056072,
+          "hi84": 2.7360407176450643
+        },
+        "f_ics": {
+          "median": 0.7332335077631476,
+          "lo16": 0.22006276849628256,
+          "hi84": 1.4846351143996674
+        },
+        "f_ps": {
+          "median": 0.5861932621171662,
+          "lo16": 0.47929392793315817,
+          "hi84": 0.6931621514334868
+        },
+        "f_loopI_a": {
+          "median": 2.9568085484200636e-05,
+          "lo16": 8.473273935898272e-06,
+          "hi84": 6.288207429329965e-05
+        },
+        "f_loopI_b": {
+          "median": 1.0254455915114715e-05,
+          "lo16": 2.1515543013498936e-06,
+          "hi84": 2.7002636464201085e-05
+        },
+        "f_fb": {
+          "median": 0.07313499263157047,
+          "lo16": 0.039095274227367194,
+          "hi84": 0.11004154162890392
+        },
+        "f_fb_neg": {
+          "median": -0.09179730138844987,
+          "lo16": -0.14125289985338013,
+          "hi84": -0.03778208029077729
+        },
+        "f_halo": {
+          "median": 0.0015301243350644461,
+          "lo16": 0.000906093024788775,
+          "hi84": 0.0021780496036357287
+        }
+      },
+      "params_no_halo_pointest": {
+        "f_iso": 0.0,
+        "f_gas": 2.8749671473013287,
+        "f_ics": 1.861773871173031,
+        "f_ps": 0.6248090437269839,
+        "f_loopI_a": 3.3018241257118505e-05,
+        "f_loopI_b": 0.0,
+        "f_fb": 0.099754604141959,
+        "f_fb_neg": -0.13749076671130978
+      },
+      "lnL_no_halo": 484.5580243783852,
+      "lnL_with_halo": 488.2032635106534,
+      "gas_flux_mean_valid_phcm2sMeV": 4.317869829859815e-16,
+      "ics_flux_mean_valid_phcm2sMeV": 2.834257027001789e-16,
+      "delta_lnL": 3.645239132268216,
+      "significance_sigma": 2.700088566054164,
+      "n_events": 607,
+      "convexity_check": {
+        "no_halo": {
+          "scales": [
+            0.1,
+            0.3,
+            0.6,
+            1.0,
+            1.5
+          ],
+          "fun_values": [
+            -484.5580240736456,
+            -484.55802437835973,
+            -484.5580243783852,
+            -484.5580179206604,
+            -484.5580243783849
+          ],
+          "success": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "fun_spread_successful_only": 6.4577247940178495e-06,
+          "n_failed_starts": 0
+        },
+        "with_halo": {
+          "scales": [
+            0.1,
+            0.3,
+            0.6,
+            1.0,
+            1.5
+          ],
+          "fun_values": [
+            -488.20326351065194,
+            -488.2032635106459,
+            -488.20326351062033,
+            -488.2032635106482,
+            -488.2032635106534
+          ],
+          "success": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "fun_spread_successful_only": 3.3082869776990265e-11,
+          "n_failed_starts": 0
+        }
+      },
+      "autocorr_check": {
+        "tau_max": 280.84641265413404,
+        "n_steps_final": 6000,
+        "n_burn": 400,
+        "chain_len_post_burn": 5600,
+        "meets_50tau_recommendation": false
+      },
+      "environment": {
+        "git_commit": "c86e3c05b279c94813c02e5bfe13832703064472",
+        "git_working_tree_dirty": "True",
+        "python": "3.12.3",
+        "numpy": "2.5.1",
+        "scipy": "1.18.0",
+        "emcee": "3.1.6"
+      },
+      "env_flags": {
+        "MCMC_ALLBINS_OUTDIR": "results/mcmc_allbins_gasICS_v20r_rerun",
+        "MCMC_CELL_LIKELIHOOD": "1",
+        "MCMC_DISK_BUBBLE": "1",
+        "MCMC_PIXEL_DEG": "0.125",
+        "MCMC_SIGNFREE_HALO": "1",
+        "MCMC_ULTRACLEAN": "1"
+      }
+    },
+    {
+      "bin": 12,
+      "e_center_gev": 481.93,
+      "iso_level_fixed": 5.859375e-05,
+      "params": {
+        "f_iso": {
+          "median": 1.3109991948298711e-05,
+          "lo16": 2.8156308022545185e-06,
+          "hi84": 3.40986891230356e-05
+        },
+        "f_gas": {
+          "median": 1.9052503581285711,
+          "lo16": 1.1536544200843724,
+          "hi84": 2.6590386482507573
+        },
+        "f_ics": {
+          "median": 0.048521552651936715,
+          "lo16": 0.00023300719915012925,
+          "hi84": 0.9472308263547295
+        },
+        "f_ps": {
+          "median": 0.13517801335683197,
+          "lo16": 0.05969894969223871,
+          "hi84": 0.23145446467682756
+        },
+        "f_loopI_a": {
+          "median": 1.7168057009934312e-05,
+          "lo16": 4.753185606605336e-06,
+          "hi84": 3.696549152051449e-05
+        },
+        "f_loopI_b": {
+          "median": 4.697727514645053e-06,
+          "lo16": 1.1458841529681127e-06,
+          "hi84": 1.2006438656211459e-05
+        },
+        "f_fb": {
+          "median": 0.04129586893982523,
+          "lo16": 0.014588528434339377,
+          "hi84": 0.07667907527204931
+        },
+        "f_fb_neg": {
+          "median": 0.022265961582119638,
+          "lo16": -0.03169043061845425,
+          "hi84": 0.078587648284628
+        },
+        "f_halo": {
+          "median": 0.0002587722801536166,
+          "lo16": 6.884397273334235e-05,
+          "hi84": 0.00045136262260690355
+        }
+      },
+      "params_no_halo_pointest": {
+        "f_iso": 0.0,
+        "f_gas": 2.7219011573523844,
+        "f_ics": 1.1889135599516492,
+        "f_ps": 0.16455619987580902,
+        "f_loopI_a": 1.4702860552794108e-05,
+        "f_loopI_b": 0.0,
+        "f_fb": 0.05398100843147472,
+        "f_fb_neg": -0.01803778837122269
+      },
+      "lnL_no_halo": -58.023945830197704,
+      "lnL_with_halo": -56.84020845896594,
+      "gas_flux_mean_valid_phcm2sMeV": 1.0468861032638761e-16,
+      "ics_flux_mean_valid_phcm2sMeV": 5.361359865816562e-17,
+      "delta_lnL": 1.1837373712317643,
+      "significance_sigma": 1.5386600477244896,
+      "n_events": 188,
+      "convexity_check": {
+        "no_halo": {
+          "scales": [
+            0.1,
+            0.3,
+            0.6,
+            1.0,
+            1.5
+          ],
+          "fun_values": [
+            58.023945830197725,
+            58.02394583019836,
+            58.02394583019771,
+            58.023945831074826,
+            58.023945830197704
+          ],
+          "success": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "fun_spread_successful_only": 8.771223747316981e-10,
+          "n_failed_starts": 0
+        },
+        "with_halo": {
+          "scales": [
+            0.1,
+            0.3,
+            0.6,
+            1.0,
+            1.5
+          ],
+          "fun_values": [
+            56.84020845896594,
+            56.84020845896619,
+            56.840208458965975,
+            56.84020845896634,
+            56.84020845896595
+          ],
+          "success": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "fun_spread_successful_only": 3.979039320256561e-13,
+          "n_failed_starts": 0
+        }
+      },
+      "autocorr_check": {
+        "tau_max": 671.0450650730646,
+        "n_steps_final": 6000,
+        "n_burn": 400,
+        "chain_len_post_burn": 5600,
+        "meets_50tau_recommendation": false
+      },
+      "environment": {
+        "git_commit": "c86e3c05b279c94813c02e5bfe13832703064472",
+        "git_working_tree_dirty": "True",
+        "python": "3.12.3",
+        "numpy": "2.5.1",
+        "scipy": "1.18.0",
+        "emcee": "3.1.6"
+      },
+      "env_flags": {
+        "MCMC_ALLBINS_OUTDIR": "results/mcmc_allbins_gasICS_v20r_rerun",
+        "MCMC_CELL_LIKELIHOOD": "1",
+        "MCMC_DISK_BUBBLE": "1",
+        "MCMC_PIXEL_DEG": "0.125",
+        "MCMC_SIGNFREE_HALO": "1",
+        "MCMC_ULTRACLEAN": "1"
+      }
+    },
+    {
+      "bin": 13,
+      "e_center_gev": 814.0,
+      "iso_level_fixed": 5.859375e-05,
+      "params": {
+        "f_iso": {
+          "median": 1.2048495664621283e-05,
+          "lo16": 3.2987628542301852e-06,
+          "hi84": 2.7712558037422974e-05
+        },
+        "f_gas": {
+          "median": 0.026190355835931656,
+          "lo16": 7.178296364437739e-05,
+          "hi84": 0.691820001343139
+        },
+        "f_ics": {
+          "median": 6.041146952774433,
+          "lo16": 2.836705368599794,
+          "hi84": 9.847989008649286
+        },
+        "f_ps": {
+          "median": 0.15182323580689397,
+          "lo16": 0.0641367849937703,
+          "hi84": 0.2675515404172628
+        },
+        "f_loopI_a": {
+          "median": 6.775999455992203e-06,
+          "lo16": 1.6369057291286002e-06,
+          "hi84": 1.668751657659744e-05
+        },
+        "f_loopI_b": {
+          "median": 9.599067737028745e-06,
+          "lo16": 2.881362715247188e-06,
+          "hi84": 2.0345684796371592e-05
+        },
+        "f_fb": {
+          "median": 0.029055658198097765,
+          "lo16": 0.00851245465494791,
+          "hi84": 0.06407721700882225
+        },
+        "f_fb_neg": {
+          "median": -0.0600125684364118,
+          "lo16": -0.11414983233440487,
+          "hi84": 0.005098263333386847
+        },
+        "f_halo": {
+          "median": 5.7338322187244364e-05,
+          "lo16": -2.3501132040032646e-05,
+          "hi84": 0.0001342884339075658
+        }
+      },
+      "params_no_halo_pointest": {
+        "f_iso": 6.015587250667205e-06,
+        "f_gas": 0.0,
+        "f_ics": 11.16620184291628,
+        "f_ps": 0.16771417536610253,
+        "f_loopI_a": 0.0,
+        "f_loopI_b": 8.316511905180559e-06,
+        "f_fb": 0.025890596532710388,
+        "f_fb_neg": -0.07562682804760297
+      },
+      "lnL_no_halo": -97.17297228225605,
+      "lnL_with_halo": -96.49609466524777,
+      "gas_flux_mean_valid_phcm2sMeV": 2.574623482985185e-17,
+      "ics_flux_mean_valid_phcm2sMeV": 8.578208424244947e-18,
+      "delta_lnL": 0.6768776170082873,
+      "significance_sigma": 1.163509877060171,
+      "n_events": 82,
+      "convexity_check": {
+        "no_halo": {
+          "scales": [
+            0.1,
+            0.3,
+            0.6,
+            1.0,
+            1.5
+          ],
+          "fun_values": [
+            97.6078869248606,
+            97.17297228225605,
+            97.17297228225605,
+            97.17297228225605,
+            97.17297228225607
+          ],
+          "success": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "fun_spread_successful_only": 0.4349146426045394,
+          "n_failed_starts": 0
+        },
+        "with_halo": {
+          "scales": [
+            0.1,
+            0.3,
+            0.6,
+            1.0,
+            1.5
+          ],
+          "fun_values": [
+            96.49609466524778,
+            96.49609466524777,
+            96.49609466524794,
+            96.49609466524778,
+            98.85027925748349
+          ],
+          "success": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "fun_spread_successful_only": 2.3541845922357254,
+          "n_failed_starts": 0
+        }
+      },
+      "autocorr_check": {
+        "tau_max": 665.9700375776852,
+        "n_steps_final": 6000,
+        "n_burn": 400,
+        "chain_len_post_burn": 5600,
+        "meets_50tau_recommendation": false
+      },
+      "environment": {
+        "git_commit": "c86e3c05b279c94813c02e5bfe13832703064472",
+        "git_working_tree_dirty": "True",
+        "python": "3.12.3",
+        "numpy": "2.5.1",
+        "scipy": "1.18.0",
+        "emcee": "3.1.6"
+      },
+      "env_flags": {
+        "MCMC_ALLBINS_OUTDIR": "results/mcmc_allbins_gasICS_v20r_rerun",
+        "MCMC_CELL_LIKELIHOOD": "1",
+        "MCMC_DISK_BUBBLE": "1",
+        "MCMC_PIXEL_DEG": "0.125",
+        "MCMC_SIGNFREE_HALO": "1",
+        "MCMC_ULTRACLEAN": "1"
+      }
+    }
+  ]
+}

@@ -324,8 +324,10 @@ def env_stamp() -> dict[str, str]:
     except Exception:
         commit = "unknown"
     try:
+        # 管理下のファイルの変更だけを見る (データや就活メモなど無関係な未追跡ファイルで常に True になるのを防ぐ)
         dirty = bool(subprocess.check_output(
-            ["git", "status", "--porcelain"], cwd=str(BASE), stderr=subprocess.DEVNULL
+            ["git", "status", "--porcelain", "--untracked-files=no"], cwd=str(BASE),
+            stderr=subprocess.DEVNULL
         ).decode().strip())
     except Exception:
         dirty = False
@@ -1087,6 +1089,10 @@ def main():
                   f"凸性fun_spread(max)={spread:.2e}  "
                   f"τ_max={ac['tau_max']}  50τ充足={ac['meets_50tau_recommendation']}")
 
+        # どのコードの状態・どの設定で計算したかを各ビンの結果に残す。v20 (2026-07-23) は
+        # これが無かったため、後から同じ数値 (19.11σ) を再現できなかった
+        r["environment"] = env_stamp()
+        r["env_flags"] = {k: v for k, v in sorted(_os.environ.items()) if k.startswith("MCMC_")}
         with open(OUT_DIR / f"mcmc_bin{ib+1:02d}.json", "w") as f:
             json.dump(r, f, indent=2, ensure_ascii=False)
 

@@ -21,7 +21,8 @@ from pathlib import Path
 import numpy as np
 
 BASE = Path(__file__).resolve().parent.parent
-D = BASE / "results/mcmc_allbins_gasICS_v20_constructsplit/other_celestial_body"
+import os
+D = pathlib_D = Path(os.environ.get("TARGET_DIR", str(BASE / "results/mcmc_allbins_gasICS_v20_constructsplit/other_celestial_body")))
 fs = sorted(glob.glob(str(D / "control_*_spectrum.json")))
 J = [json.load(open(f)) for f in fs]
 E = np.array(J[0]["e_center_gev"])
@@ -57,7 +58,7 @@ def ci_cluster_quick(X, rng_, nb=400):
     return np.percentile(bs, 2.5), np.percentile(bs, 97.5)
 
 
-out = dict(input=str(D.relative_to(BASE)), n_fields=len(fs), energies_gev=E.tolist())
+out = dict(input=str(D), n_fields=len(fs), energies_gev=E.tolist())
 
 # 1. エネルギーごとの s (光子が少ないビンは漸近理論の前提が崩れる)
 print("ビン  E[GeV]  平均光子数  s(23 フィールド)")
@@ -130,6 +131,6 @@ print(f"\n19.0σ の較正: ビン2–10 の s → {cal(sB[0]):.1f}σ (95%: {cal
 print(f"               Bin6 だけの s → {cal(s6[0]):.1f}σ (95%: {cal(s6[2]):.1f}–{cal(s6[1]):.1f}σ)")
 print(f"               記録の 1.362 → {cal(1.362):.1f}σ")
 out.update(res)
-dst = BASE / "cloud_reports/2026-10-02_null_variance_ci_result.json"
+dst = Path(os.environ.get("OUT_JSON", str(BASE / "cloud_reports/2026-10-02_null_variance_ci_result.json")))
 json.dump(out, open(dst, "w"), ensure_ascii=False, indent=2)
-print("saved", dst.relative_to(BASE))
+print("saved", dst)

@@ -11,7 +11,7 @@ import numpy as np
 plt.rcParams["font.family"] = ["Noto Sans CJK JP", "DejaVu Sans"]
 
 # 対照フィールドの有意度を読む: S[フィールド, エネルギービン]
-D = "results/mcmc_allbins_gasICS_v20_constructsplit/other_celestial_body"
+D = "cloud_reports/2026-10-02_v20r_targets/targets"  # 10/2 に今のコードで計算し直した結果
 J = [json.load(open(f)) for f in sorted(glob.glob(D + "/control_*_spectrum.json"))]
 E = np.array(J[0]["e_center_gev"])
 S = np.array([j["significance_sigma"] for j in J], dtype=float)

@@ -10,7 +10,7 @@ import numpy as np
 
 plt.rcParams["font.family"] = ["Noto Sans CJK JP", "DejaVu Sans"]
 
-D = "results/mcmc_allbins_gasICS_v20_constructsplit/other_celestial_body"
+D = "cloud_reports/2026-10-02_v20r_targets/targets"  # 10/2 に今のコードで計算し直した結果
 tgt, ctl = [], []
 for f in sorted(glob.glob(D + "/*_spectrum.json")):
     j = json.load(open(f))

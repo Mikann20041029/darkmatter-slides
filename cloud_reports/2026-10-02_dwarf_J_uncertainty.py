@@ -23,7 +23,9 @@ from pathlib import Path
 import numpy as np
 
 BASE = Path(__file__).resolve().parent.parent
-d = json.load(open(BASE / "results/dwarf_consistency/dwarf_consistency.json"))
+import os
+DWARF_JSON = Path(os.environ.get("DWARF_JSON", str(BASE / "results/dwarf_consistency/dwarf_consistency.json")))
+d = json.load(open(DWARF_JSON))
 ib = d["bin_index_20gev"]
 keys = [t["key"] for t in d["targets"]]
 pred = np.array([t["predicted_detection_sigma"][ib] for t in d["targets"]], dtype=float)
@@ -61,7 +63,8 @@ def analyse(mask, rho_local, sigma_J, s_null, n_mc=200_000, seed=0):
 
 # 他天体の解析で「使用不可」(標的の中心が拡張源マスクで消え、ハローの形が数%しか残らない) と判定された天体を除く。
 # dwarf_consistency_check.py はこの判定を見ておらず、SMC・LMC が混ざっていた
-D = BASE / "results/mcmc_allbins_gasICS_v20_constructsplit/other_celestial_body"
+D = Path(os.environ.get("TARGET_DIR", str(BASE / "results/mcmc_allbins_gasICS_v20_constructsplit/other_celestial_body")))
+S_NULL = float(os.environ.get("S_NULL", "1.362"))
 usable = np.array([json.load(open(D / f"{k}_spectrum.json"))["meta"].get("usable", True) for k in keys])
 print("使用不可で除く天体:", [k for k, u in zip(keys, usable) if not u])
 cases = []
@@ -69,14 +72,14 @@ print(f"\n{'天体':<10}{'ρ☉':>5}{'J誤差':>6}{'σ較正':>6} | {'実測T':>
 for label, mask in (("使える43", ok & usable), ("45(誤り)", ok)):
     for rho in (0.3, 0.42, 0.6):
         for sJ in (0.0, 0.5):
-            for s in (1.0, 1.362):
+            for s in (1.0, S_NULL):
                 r = analyse(mask, rho, sJ, s)
                 cases.append(dict(targets=label, rho_local=rho, sigma_logJ=sJ, null_std=s, **r))
                 print(f"{label:<10}{rho:>5.2f}{sJ:>6.1f}{s:>6.3f} | {r['T_obs']:>6.2f} "
                       f"{r['ET_median']:>8.2f} ({r['ET_16']:.2f}–{r['ET_84']:.2f}) | {r['p_value']:>8.4f} {r['tension_sigma']:>6.2f}")
 
-dst = BASE / "cloud_reports/2026-10-02_dwarf_J_uncertainty_result.json"
-json.dump(dict(input="results/dwarf_consistency/dwarf_consistency.json", bin_gev=d["energies_gev"][ib],
+dst = Path(os.environ.get("OUT_JSON", str(BASE / "cloud_reports/2026-10-02_dwarf_J_uncertainty_result.json")))
+json.dump(dict(input=str(DWARF_JSON), null_std=S_NULL, bin_gev=d["energies_gev"][ib],
                n_targets_all=int(ok.sum()), n_targets_usable=int((ok & usable).sum()),
                excluded_unusable=[k for k, u in zip(keys, usable) if not u], cases=cases), open(dst, "w"), ensure_ascii=False, indent=2)
-print(f"\nsaved {dst.relative_to(BASE)}")
+print(f"\nsaved {dst}")

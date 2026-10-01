@@ -11,9 +11,9 @@ import numpy as np
 plt.rcParams["font.family"] = ["Noto Sans CJK JP", "DejaVu Sans"]
 
 # 各天体の「予測」と「実測」を読む (20 GeV のビン)
-d = json.load(open("results/dwarf_consistency/dwarf_consistency.json"))
+d = json.load(open("cloud_reports/2026-10-02_v20r_targets/dwarf_consistency.json"))  # 天の川は v20r
 ib = d["bin_index_20gev"]
-D = Path("results/mcmc_allbins_gasICS_v20_constructsplit/other_celestial_body")
+D = Path("cloud_reports/2026-10-02_v20r_targets/targets")
 pred, meas = [], []
 for t in d["targets"]:
     usable = json.load(open(D / f"{t['key']}_spectrum.json"))["meta"].get("usable", True)

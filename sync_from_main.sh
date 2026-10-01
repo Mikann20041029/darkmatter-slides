@@ -2,9 +2,9 @@
 # 本体 (astro-sim-lab/nakamura-darkmatter) の git 管理下のファイルを、このリポジトリに同じ構成で写す。
 # ローカル PC で実行する。クラウドセッションからは実行できない (本体が無い)。
 #
+# aogaku/ は文章 (md/txt/tsv) だけ写す。git 管理外の文章は bundle_data.sh aogaku_text で入れる
 # 写さないもの:
-#   aogaku/                       就活・院試 (研究と無関係)
-#   PPT/                          古い発表スライド (計 31 MB)。作業中のスライドは slides/ に別置き
+#   PPT/                         古い発表スライド (計 31 MB)。作業中のスライドは slides/ に別置き
 #   tools/galprop/galprop         GALPROP の実行ファイル (27.5 MB、クラウドでは使えない)
 #   data/CSV, GALPROP の地図データ  そもそも git 管理外 (計 5 GB 超)
 #
@@ -20,8 +20,12 @@ LIST=$(mktemp)
 # core.quotePath=false: 日本語ファイル名を記号化させない (させると除外の判定がすり抜ける)
 # 作業ツリーで削除済みのファイル (git 上はまだ管理下) は飛ばす
 git -c core.quotePath=false ls-files -z \
-  | grep -z -v -E '^(aogaku/|PPT/|tools/galprop/galprop$)' \
-  | while IFS= read -r -d '' f; do [ -e "$f" ] && printf '%s\0' "$f"; done \
+  | grep -z -v -E '^(PPT/|tools/galprop/galprop$)' \
+  | while IFS= read -r -d '' f; do
+      # aogaku/ は文章 (md/txt/tsv) だけ。PDF・画像・スライド・履歴書のデータは渡さない (2026-10-02 本人の指示)
+      if [[ "$f" == aogaku/* ]] && [[ ! "$f" =~ \.(md|txt|tsv)$ ]]; then continue; fi
+      [ -e "$f" ] && printf '%s\0' "$f"
+    done \
   > "$LIST"
 for f in ref/galprop_webrun_10050003/galdef*; do
   [ -e "$f" ] && printf '%s\0' "$f" >> "$LIST"

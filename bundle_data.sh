@@ -26,6 +26,8 @@ case "$group" in
                                          data/fermi_exposure/*) ;;
   events_allsky) files="data/CSV/allsky_events_ultraclean.csv" ;;
   maps)          files=$(cd "$MAIN" && ls data/CSV/allsky_events.csv ref/hi4pi/* ref/gll_iem_v07.fits) ;;
+  # 院試・就活は文章 (md/txt/tsv) だけ。PDF・画像・スライド・履歴書のデータは渡さない (2026-10-02 本人の指示)
+  aogaku_text)   files=$(cd "$MAIN" && find aogaku -type f \( -name '*.md' -o -name '*.txt' -o -name '*.tsv' \)) ;;
   misc)          files="" ;;
   *) echo "unknown group $group"; exit 1 ;;
 esac
@@ -60,6 +62,7 @@ process() {
   echo "$method  $(numfmt --to=iec "$size")  $rel"
 }
 
-for f in $files; do process "$f"; done
+# 1 行 1 ファイルで読む (日本語・空白を含むファイル名でも分割されないように)
+while IFS= read -r f; do [ -n "$f" ] && process "$f"; done <<< "$files"
 sort -o "$MANIFEST" "$MANIFEST"
 echo "--- data_bundle now: $(du -sh "$HERE/data_bundle" | cut -f1)"

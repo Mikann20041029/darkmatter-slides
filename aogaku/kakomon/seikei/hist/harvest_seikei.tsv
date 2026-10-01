@@ -1,0 +1,9 @@
+FAIL		live	https://www.seikei.ac.jp/university/s-net/news/assets/gs_toeicscore_st.pdf	大学院理工学研究科の一般入学試験 （博士前期課程）の試験科目「英語」について
+OK	live	live	https://www.seikei.ac.jp/university/s-net/pdf/daigakuiin_rikou_nyushi_Sample.pdf	2025年度 理工学研究科サンプル問題
+FAIL		20190121160831	https://www.seikei.ac.jp/university/s-net/pdf/2019rikou-graduate.pdf	理工学研究科博士前期課程入試 (一般・飛び級)における TOEICの成績利用について
+FAIL		20240413193457	https://web.archive.org/university/s-net/news/assets/gs_toeicscore_st.pdf	大学院理工学研究科の一般入学試験 （博士前期課程）の試験科目「英語」について
+OK	live	live	https://www.seikei.ac.jp/university/s-net/pdf/2025_st1_ml.pdf	
+OK	live	live	https://www.seikei.ac.jp/university/s-net/pdf/2025_st1_ci.pdf	
+OK	live	live	https://www.seikei.ac.jp/university/s-net/pdf/2025_st1_sd.pdf	
+OK	live	live	https://www.seikei.ac.jp/university/s-net/pdf/2025_st2_ml.pdf	
+OK	live	live	https://www.seikei.ac.jp/university/s-net/pdf/2025_st2_ci.pdf	

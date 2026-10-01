@@ -1,7 +1,7 @@
 # ICS とハローの縮退を、手元の結果ファイルだけで調べるスクリプト
-# 入力: results/v20_halo_spectrum.json, results/v20_component_spectra.json (どちらも v20 の出力)
-# 出力: 表 (画面) と analysis/fig_ics_norm_vs_energy.png
-# 本体の解析コードやイベントデータは使わない (この作業場では計算できないため)
+# 入力: results/mcmc_allbins_gasICS_v20_constructsplit/halo_spectrum.json, component_spectra.json (v20 の出力)
+# 出力: 表 (画面) と cloud_reports/2026-10-01_fig_ics_norm_vs_energy.png
+# 本体の解析コードやイベントデータは使わない (結果 JSON を読むだけ)
 
 import json
 from pathlib import Path
@@ -10,8 +10,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 ROOT = Path(__file__).resolve().parent.parent
-halo = json.load(open(ROOT / "results/v20_halo_spectrum.json"))
-comp = json.load(open(ROOT / "results/v20_component_spectra.json"))
+halo = json.load(open(ROOT / "results/mcmc_allbins_gasICS_v20_constructsplit/halo_spectrum.json"))
+comp = json.load(open(ROOT / "results/mcmc_allbins_gasICS_v20_constructsplit/component_spectra.json"))
 
 E = np.array(comp["energies_gev"])          # 13 ビンの中心エネルギー [GeV]
 e2 = comp["e2dnde"]                          # ROI 平均の E^2 dN/dE (ハロー入りフィット)
@@ -59,7 +59,7 @@ drop_halo_l0 = (j_nfw(np.array([0.0]), np.array([25.0])) / j_nfw(np.array([0.0])
 print()
 print("|b| = 25° → 55° で何倍暗くなるか")
 print(f"  ハロー (経度平均): {drop_halo:.2f} 倍 / ハロー (l=0 のみ): {drop_halo_l0:.2f} 倍")
-print("  ICS (figures/fig_ics_latitude_profile_vs_totani.png より): 星の光 2.75 / 赤外 2.62 / CMB 2.07 倍")
+print("  ICS (results/figures_interim2026/fig_ics_latitude_profile_vs_totani.png より): 星の光 2.75 / 赤外 2.62 / CMB 2.07 倍")
 print("  等方成分: 1.00 倍")
 
 # --- 4. 図: ICS の倍率をエネルギーごとに並べる (白黒) ---
@@ -75,6 +75,6 @@ ax.legend(frameon=False, fontsize=11)
 ax.spines["top"].set_visible(False)
 ax.spines["right"].set_visible(False)
 fig.tight_layout()
-out = ROOT / "analysis/fig_ics_norm_vs_energy.png"
+out = ROOT / "cloud_reports/2026-10-01_fig_ics_norm_vs_energy.png"
 fig.savefig(out, dpi=200)
 print(f"\nsaved {out.relative_to(ROOT)}")

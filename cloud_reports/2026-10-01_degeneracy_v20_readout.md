@@ -1,7 +1,7 @@
 # ICS とハローの縮退 — 原因の調査 (2026-10-01)
 
-この作業場には解析コードもイベントデータも無いので、**既存の結果ファイル (v20) と研究記録だけ**で調べた。
-新しいフィットは一切していない。新しく出した数字は `analysis/degeneracy_check.py` で誰でも再現できる。
+**既存の結果ファイル (v20) と研究記録だけ**で調べた (クラウドではイベントデータを使う計算はできない)。
+新しいフィットは一切していない。新しく出した数字は `cloud_reports/2026-10-01_degeneracy_check.py` で誰でも再現できる。
 
 ## 結論 (先に)
 
@@ -24,7 +24,7 @@
 | |b|=25°→55° で何倍暗くなるか | 値 | 出典 |
 |---|---|---|
 | ハロー NFW ρ² (経度 \|l\|≤60 平均) | **2.74** | `degeneracy_check.py` (本体 `nfw_j_map` と同じ設定) |
-| ICS 星の光 / 赤外 / CMB | **2.75** / 2.62 / 2.07 | `figures/fig_ics_latitude_profile_vs_totani.png` |
+| ICS 星の光 / 赤外 / CMB | **2.75** / 2.62 / 2.07 | `results/figures_interim2026/fig_ics_latitude_profile_vs_totani.png` |
 | 等方成分 | 1.00 | — |
 
 ハローと ICS (星の光) は、緯度方向だけ見ると見分けがつかない。
@@ -37,14 +37,14 @@ HANDOFF (2026-07-23) の「ICS と halo は緯度形状がほぼ同形」を数�
 
 - ハローを l=0 だけで見ると 25°→55° で 4.26 倍暗くなるが、経度平均では 2.74 倍。ハローは銀河中心の経度に集中している
 - バブル矩形 (\|l\|<22°, 10°<\|b\|<55°) には、ハローを決める情報 (J² の重み) の **82.8%** が入っている
-  (物理レビュー `docs/verification/iter-001/review-physical-001.md`)
+  (物理レビュー `.dev/teams/regionac-dwarf-verification/iter-001/review-physical-001.md`)
 - だからバブル領域を外すと、ハローと ICS を見分ける手がかりが失われる → Bin6 19.0σ → 4.96σ、f_ics → 1.025
-  (`docs/verification/w1-control-sweep.md`)
+  (`.dev/teams/regionac-dwarf-verification/w1-control-sweep.md`)
 - 同じ場所にフェルミバブルのテンプレートと、GALPROP-ICS の誤差 (verdict.md「最も確かな成果」) も集まっている
 
 ### 3. ハロー無しだと ICS は全エネルギーで約 2 倍 (新規の読み出し)
 
-`results/v20_halo_spectrum.json` の `params_no_halo_pointest` (ハロー無しフィット):
+`results/mcmc_allbins_gasICS_v20_constructsplit/halo_spectrum.json` の `params_no_halo_pointest` (ハロー無しフィット):
 
 | E [GeV] | 1.5 | 2.6 | 4.3 | 7.3 | 12 | **21** | 35 | 59 | 100 | 169 | 285 |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -52,7 +52,7 @@ HANDOFF (2026-07-23) の「ICS と halo は緯度形状がほぼ同形」を数�
 | f_ics (ハロー有) | 2.35 | 2.11 | 1.91 | 1.51 | 1.19 | **0.88** | 0.92 | 0.45 | 0.54 | 0.74 | 1.06 |
 | ハローの σ | (負) | 2.1 | 7.8 | 16.2 | 19.7 | **19.1** | 14.9 | 10.9 | 7.8 | 6.1 | 2.8 |
 
-図: `analysis/fig_ics_norm_vs_energy.png`。
+図: `cloud_reports/2026-10-01_fig_ics_norm_vs_energy.png`。
 
 - ハロー無しの f_ics は**エネルギーによらずほぼ一定 (約 2)**。GALPROP の ICS の明るさが足りていない
 - ハロー有りでは、**ハローが有意なビンでだけ** f_ics がへこむ (V 字)。ICS の明るさがエネルギーでこう上下するのは物理的に不自然
@@ -72,7 +72,7 @@ HANDOFF (2026-07-23) の「ICS と halo は緯度形状がほぼ同形」を数�
 
 ### 5. Totani 自身の見解 (論文 §3.3 末尾・§4.1)
 
-`papers/Totani2025_arXiv2507.07209.pdf` より:
+`ref/20Gev_gamma_ray.paper.2025-Nov-23.pdf` より:
 
 - 「ICS (星の光・赤外) は使ったテンプレートの中でハローに最も形が近いが、銀河面に沿ってかなり平たい」
   → 本調査の「違いは経度方向の集中だけ」と同じ

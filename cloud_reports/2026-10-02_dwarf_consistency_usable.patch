@@ -1,0 +1,16 @@
+diff --git a/code/dwarf_consistency_check.py b/code/dwarf_consistency_check.py
+index 569b2b5..78feadf 100644
+--- a/code/dwarf_consistency_check.py
++++ b/code/dwarf_consistency_check.py
+@@ -121,6 +121,11 @@ def main() -> None:
+         meta = spec["meta"]
+         if meta.get("category") != "dwarf":
+             continue
++        # [2026-10-02 cloud] 他天体の解析で「使用不可」と判定された天体 (標的の中心が拡張源マスクで
++        # 消え、ハローの形が数%しか残らない。SMC 0.010・LMC 0.021) を除く。旧版は SMC・LMC を含めており、
++        # SMC 1 天体が合算予測 2.69σ のうち 2.06σ 分を占めていた (使用可能 43 天体では 1.73σ)
++        if not meta.get("usable", True):
++            continue
+         key = meta["key"]
+         if key not in lvdb.index:
+             continue

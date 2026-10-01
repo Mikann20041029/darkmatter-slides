@@ -1,0 +1,24 @@
+### no_exclusion
+  f_gas=1.53  f_ics(計)=0.6053  f_halo=1.479  ΔlnL=180.48  有意度=19.00σ  凸性fun_spread(max)=2.91e-07  τ_max=None  50τ充足=None
+### l0=0
+  除外矩形(l0=0): 252926ピクセル追加除外
+  f_gas=1.301  f_ics(計)=1.025  f_halo=1.136  ΔlnL=12.32  有意度=4.96σ  凸性fun_spread(max)=1.07e-07  τ_max=None  50τ充足=None
+### l0=20
+  除外矩形(l0=20): 252995ピクセル追加除外
+  f_gas=1.49  f_ics(計)=0.6309  f_halo=1.455  ΔlnL=105.13  有意度=14.50σ  凸性fun_spread(max)=5.38e-08  τ_max=None  50τ充足=None
+### l0=-20
+  除外矩形(l0=-20): 253371ピクセル追加除外
+  f_gas=1.458  f_ics(計)=0.6591  f_halo=1.764  ΔlnL=120.75  有意度=15.54σ  凸性fun_spread(max)=1.81e-07  τ_max=None  50τ充足=None
+### l0=30
+  除外矩形(l0=30): 252995ピクセル追加除外
+  f_gas=1.581  f_ics(計)=0.7875  f_halo=1.308  ΔlnL=102.79  有意度=14.34σ  凸性fun_spread(max)=3.67e-08  τ_max=None  50τ充足=None
+### l0=-30
+  除外矩形(l0=-30): 250032ピクセル追加除外
+  f_gas=1.585  f_ics(計)=0.5838  f_halo=1.479  ΔlnL=128.92  有意度=16.06σ  凸性fun_spread(max)=2.13e-08  τ_max=None  50τ充足=None
+### l0=38
+  除外矩形(l0=38): 252995ピクセル追加除外
+  f_gas=1.611  f_ics(計)=0.7286  f_halo=1.338  ΔlnL=89.05  有意度=13.35σ  凸性fun_spread(max)=2.06e-07  τ_max=None  50τ充足=None
+### l0=-38
+  除外矩形(l0=-38): 246022ピクセル追加除外
+  f_gas=1.608  f_ics(計)=0.461  f_halo=1.561  ΔlnL=131.95  有意度=16.25σ  凸性fun_spread(max)=3.22e-07  τ_max=None  50τ充足=None
+### done

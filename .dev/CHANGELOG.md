@@ -1,5 +1,18 @@
 # CHANGELOG
 
+## 2537c93 — バブル除外の有意度低下をフィッシャー情報の幾何で再評価
+
+### 追加
+
+- `code/diagnose_fisher_geometry_v20.py` (クラウドセッションの提案): v20 の実テンプレートで、
+  ハロー固有の情報 (他の全成分を差し引いたシューア補行列) から矩形除外後の σ を予測
+- `results/fisher_geometry_v20/fisher_geometry_check_result.json`
+
+### 変更
+
+- regionac-dwarf-verification の verdict と HANDOFF: C2 の「バブル固有 約37%」を撤回。
+  低下は主に幾何 (固有情報の 53.9% がバブル矩形内) で、残り ×0.77 は f_halo の変化 (C1 と同じ現象)
+
 ## 654b187 — v20 ハロー検出の空間検証 (領域 A/C LRT・バブル除外・矮小銀河整合)
 
 ### 追加

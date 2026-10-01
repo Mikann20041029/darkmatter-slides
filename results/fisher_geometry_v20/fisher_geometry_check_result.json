@@ -1,0 +1,156 @@
+{
+  "bin": 6,
+  "measured_sigma": {
+    "None": 19.0,
+    "0": 4.96,
+    "20": 14.5,
+    "-20": 15.54,
+    "30": 14.34,
+    "-30": 16.06,
+    "38": 13.35,
+    "-38": 16.25
+  },
+  "variants": {
+    "全成分が自由 (v20 と同じ)": {
+      "dropped": [],
+      "rows": {
+        "0": {
+          "pred_sigma": 6.404857816035386,
+          "measured_sigma": 4.96
+        },
+        "20": {
+          "pred_sigma": 14.59038667661177,
+          "measured_sigma": 14.5
+        },
+        "-20": {
+          "pred_sigma": 12.969917428922612,
+          "measured_sigma": 15.54
+        },
+        "30": {
+          "pred_sigma": 15.915132797754154,
+          "measured_sigma": 14.34
+        },
+        "-30": {
+          "pred_sigma": 16.165674560097873,
+          "measured_sigma": 16.06
+        },
+        "38": {
+          "pred_sigma": 13.8544664270998,
+          "measured_sigma": 13.35
+        },
+        "-38": {
+          "pred_sigma": 15.534946501526006,
+          "measured_sigma": 16.25
+        }
+      }
+    },
+    "バブル正負を固定": {
+      "dropped": [
+        "f_fb",
+        "f_fb_neg"
+      ],
+      "rows": {
+        "0": {
+          "pred_sigma": 5.982840544510605,
+          "measured_sigma": 4.96
+        },
+        "20": {
+          "pred_sigma": 14.271981969924086,
+          "measured_sigma": 14.5
+        },
+        "-20": {
+          "pred_sigma": 13.114290038109894,
+          "measured_sigma": 15.54
+        },
+        "30": {
+          "pred_sigma": 17.22818169969675,
+          "measured_sigma": 14.34
+        },
+        "-30": {
+          "pred_sigma": 15.978715986115274,
+          "measured_sigma": 16.06
+        },
+        "38": {
+          "pred_sigma": 16.759014413635693,
+          "measured_sigma": 13.35
+        },
+        "-38": {
+          "pred_sigma": 15.002499961174378,
+          "measured_sigma": 16.25
+        }
+      }
+    },
+    "ICS を固定": {
+      "dropped": [
+        "f_ics"
+      ],
+      "rows": {
+        "0": {
+          "pred_sigma": 6.9756051101279555,
+          "measured_sigma": 4.96
+        },
+        "20": {
+          "pred_sigma": 14.793931036478407,
+          "measured_sigma": 14.5
+        },
+        "-20": {
+          "pred_sigma": 11.861333128804938,
+          "measured_sigma": 15.54
+        },
+        "30": {
+          "pred_sigma": 17.20239307918679,
+          "measured_sigma": 14.34
+        },
+        "-30": {
+          "pred_sigma": 15.810412311689381,
+          "measured_sigma": 16.06
+        },
+        "38": {
+          "pred_sigma": 16.42878841308263,
+          "measured_sigma": 13.35
+        },
+        "-38": {
+          "pred_sigma": 16.950394654349004,
+          "measured_sigma": 16.25
+        }
+      }
+    },
+    "Loop I を固定": {
+      "dropped": [
+        "f_loopI_a",
+        "f_loopI_b"
+      ],
+      "rows": {
+        "0": {
+          "pred_sigma": 6.474513194556995,
+          "measured_sigma": 4.96
+        },
+        "20": {
+          "pred_sigma": 14.588766042377861,
+          "measured_sigma": 14.5
+        },
+        "-20": {
+          "pred_sigma": 13.031214034752956,
+          "measured_sigma": 15.54
+        },
+        "30": {
+          "pred_sigma": 16.536587336862045,
+          "measured_sigma": 14.34
+        },
+        "-30": {
+          "pred_sigma": 16.373225899160616,
+          "measured_sigma": 16.06
+        },
+        "38": {
+          "pred_sigma": 15.227379294160984,
+          "measured_sigma": 13.35
+        },
+        "-38": {
+          "pred_sigma": 16.494661831442354,
+          "measured_sigma": 16.25
+        }
+      }
+    }
+  },
+  "unique_info_fraction_in_bubble_rect": 0.538816346945494
+}

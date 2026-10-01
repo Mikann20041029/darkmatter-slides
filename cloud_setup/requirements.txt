@@ -1,0 +1,9 @@
+# 本人の PC (Python 3.12.3) と同じバージョン
+numpy==2.5.1
+scipy==1.18.0
+pandas==3.0.3
+astropy==8.0.1
+emcee==3.1.6
+healpy==1.19.0
+matplotlib==3.11.1
+pymupdf==1.28.0

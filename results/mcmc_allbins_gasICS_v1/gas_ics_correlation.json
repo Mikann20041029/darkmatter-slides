@@ -1,0 +1,145 @@
+{
+  "1": {
+    "e": 1.51,
+    "pearson_gas_ics": 0.7073983898936992,
+    "gas_mean": 7.620468257782319e-10,
+    "ics_mean": 2.2161956728667464e-10,
+    "gas_over_ics_ratio": 3.4385358436896993,
+    "gas_nan": 0,
+    "ics_nan": 0,
+    "gas_neg": 0,
+    "ics_neg": 0
+  },
+  "2": {
+    "e": 2.55,
+    "pearson_gas_ics": 0.7080851346349561,
+    "gas_mean": 1.8485726836262414e-10,
+    "ics_mean": 6.576639086880649e-11,
+    "gas_over_ics_ratio": 2.810816678862385,
+    "gas_nan": 0,
+    "ics_nan": 0,
+    "gas_neg": 0,
+    "ics_neg": 0
+  },
+  "3": {
+    "e": 4.31,
+    "pearson_gas_ics": 0.708554645404414,
+    "gas_mean": 4.3176086754206334e-11,
+    "ics_mean": 1.9310984221415514e-11,
+    "gas_over_ics_ratio": 2.235830461003892,
+    "gas_nan": 0,
+    "ics_nan": 0,
+    "gas_neg": 0,
+    "ics_neg": 0
+  },
+  "4": {
+    "e": 7.28,
+    "pearson_gas_ics": 0.7080402622808756,
+    "gas_mean": 1.0012535324305488e-11,
+    "ics_mean": 5.561752482358474e-12,
+    "gas_over_ics_ratio": 1.8002482771508828,
+    "gas_nan": 0,
+    "ics_nan": 0,
+    "gas_neg": 0,
+    "ics_neg": 0
+  },
+  "5": {
+    "e": 12.29,
+    "pearson_gas_ics": 0.7068298030026688,
+    "gas_mean": 2.3527663709134505e-12,
+    "ics_mean": 1.5527342396930677e-12,
+    "gas_over_ics_ratio": 1.515240863999062,
+    "gas_nan": 0,
+    "ics_nan": 0,
+    "gas_neg": 0,
+    "ics_neg": 0
+  },
+  "6": {
+    "e": 20.76,
+    "pearson_gas_ics": 0.705193202846766,
+    "gas_mean": 5.620533586089191e-13,
+    "ics_mean": 4.2036741326735883e-13,
+    "gas_over_ics_ratio": 1.3370526374541936,
+    "gas_nan": 0,
+    "ics_nan": 0,
+    "gas_neg": 0,
+    "ics_neg": 0
+  },
+  "7": {
+    "e": 35.06,
+    "pearson_gas_ics": 0.7032482958271706,
+    "gas_mean": 1.3495605736882285e-13,
+    "ics_mean": 1.0898260912898903e-13,
+    "gas_over_ics_ratio": 1.238326540788653,
+    "gas_nan": 0,
+    "ics_nan": 0,
+    "gas_neg": 0,
+    "ics_neg": 0
+  },
+  "8": {
+    "e": 59.22,
+    "pearson_gas_ics": 0.7008944715428896,
+    "gas_mean": 3.222351527625173e-14,
+    "ics_mean": 2.6835143251839344e-14,
+    "gas_over_ics_ratio": 1.2007953515971284,
+    "gas_nan": 0,
+    "ics_nan": 0,
+    "gas_neg": 0,
+    "ics_neg": 0
+  },
+  "9": {
+    "e": 100.02,
+    "pearson_gas_ics": 0.6981790165602598,
+    "gas_mean": 7.632018419926845e-15,
+    "ics_mean": 6.3101583299373095e-15,
+    "gas_over_ics_ratio": 1.2094812872948417,
+    "gas_nan": 0,
+    "ics_nan": 0,
+    "gas_neg": 0,
+    "ics_neg": 0
+  },
+  "10": {
+    "e": 168.93,
+    "pearson_gas_ics": 0.6950407617800016,
+    "gas_mean": 1.8089292898485972e-15,
+    "ics_mean": 1.3832171689031926e-15,
+    "gas_over_ics_ratio": 1.3077695466164352,
+    "gas_nan": 0,
+    "ics_nan": 0,
+    "gas_neg": 0,
+    "ics_neg": 0
+  },
+  "11": {
+    "e": 285.33,
+    "pearson_gas_ics": 0.691977074160882,
+    "gas_mean": 4.326866427276411e-16,
+    "ics_mean": 2.837850803707952e-16,
+    "gas_over_ics_ratio": 1.5246983462354338,
+    "gas_nan": 0,
+    "ics_nan": 0,
+    "gas_neg": 0,
+    "ics_neg": 0
+  },
+  "12": {
+    "e": 481.93,
+    "pearson_gas_ics": 0.6891368729930141,
+    "gas_mean": 1.049066664183069e-16,
+    "ics_mean": 5.368594594294381e-17,
+    "gas_over_ics_ratio": 1.9540806178547974,
+    "gas_nan": 0,
+    "ics_nan": 0,
+    "gas_neg": 0,
+    "ics_neg": 0
+  },
+  "13": {
+    "e": 814.0,
+    "pearson_gas_ics": 0.6863206823184764,
+    "gas_mean": 2.5799844735736972e-17,
+    "ics_mean": 8.590571176548722e-18,
+    "gas_over_ics_ratio": 3.0032746607312446,
+    "gas_nan": 0,
+    "ics_nan": 0,
+    "gas_neg": 0,
+    "ics_neg": 0
+  }
+}

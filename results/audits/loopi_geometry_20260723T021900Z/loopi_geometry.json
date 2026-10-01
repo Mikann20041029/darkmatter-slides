@@ -1,0 +1,81 @@
+{
+ "purpose": "Loop I シェルが全天ほぼ一様になり等方背景と縮退していないかの検査",
+ "commit": "ab38021f2dd976a24ee00d2ca5188b07150ae739",
+ "timestamp_utc": "20260723T021900Z",
+ "seed": null,
+ "pixel_deg": "0.125",
+ "latitude_bands_deg": [
+  [
+   10,
+   20
+  ],
+  [
+   20,
+   30
+  ],
+  [
+   30,
+   40
+  ],
+  [
+   40,
+   50
+  ],
+  [
+   50,
+   60
+  ]
+ ],
+ "iso_template_latitude_profile": [
+  1.230232671600319,
+  1.1498213085753815,
+  1.0324457174828758,
+  0.8821391162527588,
+  0.7053611860886649
+ ],
+ "iso_template_flatness": 1.7441173343009504,
+ "shells": [
+  {
+   "name": "shell1",
+   "l": 341.0,
+   "b": 3.0,
+   "d_pc": 78.0,
+   "r_in_pc": 62.0,
+   "r_out_pc": 81.0,
+   "sun_inside_shell_wall": true,
+   "nonzero_fraction_in_roi": 1.0,
+   "latitude_profile_normalized": [
+    0.8215448175791056,
+    0.8714907830587323,
+    0.9664929535761017,
+    1.1332185677021778,
+    1.2072528780838827
+   ],
+   "flatness_max_over_min": 1.469491197864732,
+   "pixel_min_over_max": 0.26262626262626265
+  },
+  {
+   "name": "shell2",
+   "l": 332.0,
+   "b": 37.0,
+   "d_pc": 95.0,
+   "r_in_pc": 58.0,
+   "r_out_pc": 82.0,
+   "sun_inside_shell_wall": false,
+   "nonzero_fraction_in_roi": 0.5031315104166667,
+   "latitude_profile_normalized": [
+    1.28252876097019,
+    0.8676690232822172,
+    0.872639743885422,
+    0.9345812003230248,
+    1.042581271539146
+   ],
+   "flatness_max_over_min": 1.4781313226080632,
+   "pixel_min_over_max": 0.0
+  }
+ ],
+ "flatter_than_isotropic": [
+  "shell1",
+  "shell2"
+ ]
+}

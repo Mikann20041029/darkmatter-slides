@@ -1,0 +1,33 @@
+# 6成分モデル: Totani (2025) と本解析の数値・手法比較
+# kind: numeric=数値直接比較可 / method=テンプレート構築手法が異なるため%化は不適切
+# 出典は Totani 原稿 PDF のセクション・ページ番号、本解析はファイル:行番号で明記
+
+## ① 点源 (Point sources)  [catalog, status=resolved]
+  Totani (2025): 4FGL-DR4 (gll_psc_v35.fit, 14年分) + LAT PSF 畳み込み (§2.3, p.4)
+  本解析       : 4FGL-DR4 (gll_psc_v35_dr4.fit, 14年分) — 2026-07-10にDR2から更新済み
+  ズレ/相違    : 同一カタログ世代 (DR4) を使用。source-by-source のフラックス差分は未計算だが、カタログ世代差による系統的なズレは解消済み
+
+## ② GALPROP拡散放射 (Galactic diffuse)  [numeric, status=quantified]
+  Totani (2025): GALPROP S_LZ_6R_30T_150C_2 model, gll_iem_v07.fits (LAT team 推奨モデル) (§2.3, p.4)
+  本解析       : 同じ gll_iem_v07.fits を使用 (SPEC.md) するが、フィットには指数関数近似を採用。GALPROP実測マップとの偏差 = +3.2% (E=1.51 GeV) 〜 +21.9% (E=814.00 GeV)
+  ズレ/相違    : +3.2% (E=1.51 GeV) 〜 +21.9% (E=814.00 GeV)
+
+## ③ 等方背景放射 (Isotropic)  [method, status=method-diff]
+  Totani (2025): 物理的初期値 E²dN/dE=1e-4 MeV cm⁻²s⁻¹sr⁻¹ (典型的な未分解 EGB フラックス, [56]) を与えテンプレートとして MCMC でフィット (§2.3, p.4)
+  本解析       : |b|≥50° の平均カウント密度 = 2.443 counts/pixel (Bin6) を一定値として全ピクセルから差し引く（テンプレートフィットではない）
+  ズレ/相違    : 手法が物理テンプレート(MCMC fit)と経験的フロア値(定数差し引き)で根本的に異なる。counts/pixel → MeV cm⁻²s⁻¹sr⁻¹ への単位換算には exposure map が必要で未実施のため、% 比較は不可能（無理に数値化しない）
+
+## ④ Loop I  [method, status=method-diff]
+  Totani (2025): 物理幾何モデル（半径50-100pcの2シェルで一様発光率を仮定, Wolleben 系)の正規化2パラメータを MCMC でフィット (§2.3, p.4)
+  本解析       : 画像残差に対する経験的2成分(内側/外側)独立フィット。Bin6実測値: inner=-0.428, outer=-1.037 counts/pixel（負値 = 過剰差引きを補正する形でフィットされている）
+  ズレ/相違    : 物理シェルモデル(Totani)とデータ駆動経験的フィット(本解析)でテンプレートの形状自体が異なるため% 比較は不適切。本解析が物理的シェル形状を仮定していない点が主要な相違
+
+## ⑤ フェルミバブル (Fermi bubbles)  [method, status=method-diff]
+  Totani (2025): Bin3(4.3 GeV)残差から「正領域=バブル(fl≥0)」「負領域=GALPROP不一致補正(符号自由)」の2テンプレートを作成し、Gaussian smoothing(σ=1°)を適用、境界は反復改善 (§3.1, p.5-6)
+  本解析       : 同じ Bin3(4.31 GeV) 残差を使用するが、固定矩形領域(|l|<22°,10°<|b|<55°)内の正値のみを単一テンプレート化、Poisson MLE で振幅 A=0.333 に1パラメータフィット（負残差テンプレート・Gaussian smoothing は未実装）
+  ズレ/相違    : 使用エネルギービン(4.3 GeV)の選定根拠は Totani と一致 (§3.1 で明記)。ただしテンプレート構築法は簡略化されており（負残差テンプレート省略、境界が固定矩形、smoothing なし）、% ズレでなく構成要素の有無で比較すべき
+
+## ⑥ NFWハロー (DM halo)  [numeric+method-diff, status=resolved-method-diff]
+  Totani (2025): ρ(r)=ρs·x⁻¹(1+x)⁻², x=r/rs, rs=21kpc, ρs=8.1×10⁶ M☉kpc⁻³, rvir=402kpc, ρ☉=0.42 GeV/cm³ (Via Lactea II) (§2.3, p.4)。有意性は単一ビンのS/Nでなくモデル比較で評価: 『NFW-ρ2 が他の密度プロファイルより統計的に2σ以上優位』(§3.2, p.10)。Fig 8 は NFW-ρ2.5/ρ2/ρ1 の3プロファイルでハロー成分のベストフィットflux E²dN/dEスペクトル(銀極, b=±90°)を3パネル比較
+  本解析       : パラメータ rs=21.0kpc, rho_s=8.1e6 M☉/kpc³, r_vir=402.0kpc は完全一致 (plot_roi_physics.py:22-25, plot_nfw_halo_fit.py:64)。Bin6(20.76GeV) 振幅 S/N=+0.24 (all_bins_nfw_fit.py、2026-06-12にFig8相当3プロファイル(ρ2.5/ρ2/ρ1)拡張版として再実行し3回目の再現確認済み、slide29/plot_allbins_before_after.pyの+0.24σと一致)。全13ビンで|S/N|<2.4
+  ズレ/相違    : 入力パラメータの数値ズレ = 0%（完全一致）。[2026-06-08 f91845c で解消済み] かつて存在したBin6 S/N内部不整合(-5.27 vs +26.5) は、旧コードのGALPROP指数フィットがresidual>0の画素のみを使う選択バイアスを持っていたことが原因と判明・修正済み（修正後 -5.27 は再現しない）。data/figure-allbins-nfw/all_bins_nfw_results.json (a8195cd, +26.5) は生成スクリプト未コミットで再現不能のため数値として不採用のまま。残る相違は方法論: Totaniの有意性主張(NFW-ρ2が2σ以上優位, §3.2 p.10)はΔlnL モデル比較によるもので、本解析の単一テンプレートOLS振幅のS/Nとは統計量が異なり数値の直接比較は不可（構造比較のみ可: fig8_3profile_*.png）

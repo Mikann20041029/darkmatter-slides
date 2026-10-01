@@ -1,0 +1,13 @@
+# Repository size guard — `.dev/repo_guard/check_repo_size.sh` から読み込む。
+# プロジェクトの性質に合わせて値を変更してよい。
+#
+# 例:
+#   - 純コード中心のリポジトリ : 100 MiB 程度
+#   - データ・ログを含むリポジトリ : 数 GiB
+#   - シミュレーション系で出力を一時保持するリポジトリ : 10 GiB 以上
+
+limit_bytes=$((2 * 1024 * 1024 * 1024))
+limit_label="2 GiB"
+
+# 1: warn only (commit は通る), 0: 上限超過時にフックを失敗させる
+warn_only=1

@@ -1,0 +1,69 @@
+{
+ "purpose": "低E の等方成分崩壊が GALPROP の緯度形状ずれで説明できるかの検定",
+ "model": "gas と ICS に T'(b) = T(b)·(1 + a·(|b|-35°)/25°) を掛ける (1 パラメータ)",
+ "note": "診断専用。Totani の模型に緯度傾きは無いので本フィットには入れない",
+ "commit": "cec1ded3f8ab0f0769043dc4457967f68fa8fb4f",
+ "timestamp_utc": "20260723T034804Z",
+ "seed": null,
+ "totani_iso_machine_read": [
+  0.000264,
+  0.000159,
+  0.000191,
+  0.000182,
+  0.00016,
+  0.000124,
+  7.56e-05,
+  9.83e-05,
+  1.91e-05
+ ],
+ "bins": [
+  {
+   "bin": 1,
+   "e_center_gev": 1.51,
+   "a_best": -0.025000000000000022,
+   "delta_lnL_tilt_vs_none": 16.63758309558034,
+   "iso_ratio_no_tilt": 0.0,
+   "iso_ratio_with_tilt": 0.0,
+   "f_halo_no_tilt": -178.9045894632305,
+   "f_halo_with_tilt": -168.73474622139483,
+   "f_gas_with_tilt": 1.1774911092467641,
+   "f_ics_with_tilt": 1.8331684315775751
+  },
+  {
+   "bin": 2,
+   "e_center_gev": 2.55,
+   "a_best": -0.05000000000000002,
+   "delta_lnL_tilt_vs_none": 26.121293637901545,
+   "iso_ratio_no_tilt": 0.0,
+   "iso_ratio_with_tilt": 0.0,
+   "f_halo_no_tilt": -6.004138171909458,
+   "f_halo_with_tilt": 0.006365167497926796,
+   "f_gas_with_tilt": 1.2858077011671272,
+   "f_ics_with_tilt": 1.5451946742884237
+  },
+  {
+   "bin": 3,
+   "e_center_gev": 4.31,
+   "a_best": 0.0,
+   "delta_lnL_tilt_vs_none": 0.0,
+   "iso_ratio_no_tilt": 0.0,
+   "iso_ratio_with_tilt": 0.0,
+   "f_halo_no_tilt": 10.479502212455646,
+   "f_halo_with_tilt": 10.479502212455646,
+   "f_gas_with_tilt": 1.4228449658147944,
+   "f_ics_with_tilt": 1.5421777788744693
+  },
+  {
+   "bin": 6,
+   "e_center_gev": 20.76,
+   "a_best": 0.04999999999999999,
+   "delta_lnL_tilt_vs_none": 0.2455070166324731,
+   "iso_ratio_no_tilt": 0.5292695142695346,
+   "iso_ratio_with_tilt": 0.3672160459271689,
+   "f_halo_no_tilt": 1.4798086107876214,
+   "f_halo_with_tilt": 1.458557930783482,
+   "f_gas_with_tilt": 1.5663375474180252,
+   "f_ics_with_tilt": 0.7213721328731871
+  }
+ ]
+}

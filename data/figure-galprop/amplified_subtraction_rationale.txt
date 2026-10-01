@@ -1,0 +1,23 @@
+amplified_subtraction_bin6.png — 生成ノート
+Bin6 (20.76 GeV)
+
+テスト1: GALPROP振幅のみ増幅 (等方背景/バブル/LoopIは固定)
+  alpha=0.5x: S/N=+35.343
+  alpha=0.8x: S/N=+24.347
+  alpha=1.0x: S/N=+16.667
+  alpha=1.2x: S/N=+9.282
+  alpha=1.5x: S/N=-0.546
+  alpha=2.0x: S/N=-12.916
+  alpha=3.0x: S/N=-32.545
+
+テスト2: 全背景成分を同比率で増幅
+  alpha=0.5x: S/N=+86.504
+  alpha=0.8x: S/N=+40.652
+  alpha=1.0x: S/N=+16.667
+  alpha=1.2x: S/N=-1.216
+  alpha=1.5x: S/N=-17.546
+  alpha=2.0x: S/N=-33.603
+  alpha=3.0x: S/N=-60.572
+
+解釈: S/N が alpha に対して線形に減少するなら NFW 信号は背景に埋もれている。
+alpha=1.0 での S/N はベースライン (+0.24sigma) と一致することを確認。

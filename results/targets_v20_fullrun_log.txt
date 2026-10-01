@@ -1,0 +1,31 @@
+[07-28 10:15] 取得プロセスの終了を待機 (5分ごとに確認)
+[07-28 18:25] 取得プロセス終了: 成功 779 週 / 失敗 3 週
+[07-28 18:25] 本番解析 (1) 既定: 点源に標的を含める
+読み込み: allsky_events_ultraclean.csv
+  events=35551436  露出は 779 週分
+Draco            Bin6(20.8GeV)  -1.01σ  最大  +0.96σ @ 12.3 GeV  (9s)
+Sculptor         Bin6(20.8GeV)  -1.85σ  最大  +1.85σ @ 2.6 GeV  (6s)
+Ursa Minor       Bin6(20.8GeV)  +0.98σ  最大  +0.98σ @ 20.8 GeV  (6s)
+Segue 1          Bin6(20.8GeV)  -1.43σ  最大  +0.72σ @ 1.5 GeV  (6s)
+Coma Berenices   Bin6(20.8GeV)  -0.59σ  最大  +1.29σ @ 1.5 GeV  (6s)
+M31              Bin6(20.8GeV)  -1.78σ  最大  +2.35σ @ 481.9 GeV  (7s)
+
+完了 0.9分 → results/targets_v20
+[07-28 18:26] 本番解析 (2) 系統チェック: M31 の標的天体を点源から外す
+読み込み: allsky_events_ultraclean.csv
+  events=35551436  露出は 779 週分
+M31              Bin6(20.8GeV)  -1.67σ  最大  +2.35σ @ 481.9 GeV  (11s)
+
+完了 0.4分 → results/targets_v20_m31_nosrc
+[07-28 18:26] 本番解析 (3) 系統チェック: 尤度を 1 度セルに束ねる
+読み込み: allsky_events_ultraclean.csv
+  events=35551436  露出は 779 週分
+Draco            Bin6(20.8GeV)  -1.85σ  最大  +0.89σ @ 35.1 GeV  (5s)
+Sculptor         Bin6(20.8GeV)  -0.23σ  最大  +1.06σ @ 168.9 GeV  (2s)
+Ursa Minor       Bin6(20.8GeV)  +0.92σ  最大  +0.92σ @ 20.8 GeV  (2s)
+Segue 1          Bin6(20.8GeV)  -0.35σ  最大  +1.34σ @ 168.9 GeV  (2s)
+Coma Berenices   Bin6(20.8GeV)  -1.16σ  最大  +1.72σ @ 4.3 GeV  (2s)
+M31              Bin6(20.8GeV)  -0.41σ  最大  +1.96σ @ 168.9 GeV  (4s)
+
+完了 0.5分 → results/targets_v20_cell1
+[07-28 18:27] 全て完了

@@ -1,0 +1,349 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns='https://www.w3.org/1999/xhtml'>
+<head>
+ <title>GALPROP WebRun: Configuration Import Log</title>
+ <style type='text/css'>
+  html{width:100%;height:100%;} body{width:100%;height:100%;font-family:tahoma;} div#bodydiv{width:960px;margin:auto} 
+  table{table-layout:fixed; width:100%; overflow:auto; border:1px solid grey;}
+  th{background-color:#9bb0d9;text-align:center;} 
+  td{border:1px solid grey; font-family:courier; font-size:14px; font-weight:bold;} 
+  .settodefault{color:#0000ff;} .settoimport{color:#009900;} .notdefined{color:#ff0000;} .wrongtype{background-color:yellow}
+ </style>
+ </head>
+<body>
+ <div id='bodydiv'>
+  <h1>GALPROP WebRun Import Log</h1>
+  <p>Galdef file <b>galdef_54_Model45_canonical_gasICS</b> was imported into the GALPROP ver. 54 
+     WebRun configuration by <b>shingo.hirano</b>.</p>
+  <h2>Import Results</h2>
+  <table>
+   <tr><th>Parameter Name</th><th>Default Value for ver. 54</th><th>Imported Value</th><th>Set To</th></tr>
+<tr><td>Title</td><td>Untitled WebRun calculation</td><td class='settoimport'>Lorimer distribution, z_h = 6, R_h = 30, T_S = 150, and E(B-V) cut = 2</td><td class='settoimport'>Lorimer distribution, z_h = 6, R_h = 30, T_S = 150, and E(B-V) cut = 2</td></tr>
+<tr><td>n_spatial_dimensions</td><td>2</td><td class='settoimport'>2</td><td class='settoimport'>2</td></tr>
+<tr><td>r_min</td><td>0.0</td><td class='settoimport'>00.0</td><td class='settoimport'>00.0</td></tr>
+<tr><td>r_max</td><td>25.0</td><td class='settoimport'>30</td><td class='settoimport'>30</td></tr>
+<tr><td>dr</td><td>1.0</td><td class='settoimport'>1.0</td><td class='settoimport'>1.0</td></tr>
+<tr><td>z_min</td><td>-04.0</td><td class='settoimport'>-6</td><td class='settoimport'>-6</td></tr>
+<tr><td>z_max</td><td>+04.0</td><td class='settoimport'>6</td><td class='settoimport'>6</td></tr>
+<tr><td>dz</td><td>0.2</td><td class='settoimport'>0.1</td><td class='settoimport'>0.1</td></tr>
+<tr><td>x_min</td><td>-20.0</td><td class='settoimport'>-10.0</td><td class='settoimport'>-10.0</td></tr>
+<tr><td>x_max</td><td>+20.0</td><td class='settoimport'>+10.0</td><td class='settoimport'>+10.0</td></tr>
+<tr><td>dx</td><td>1.0</td><td class='settoimport'>1.0</td><td class='settoimport'>1.0</td></tr>
+<tr><td>y_min</td><td>-20.0</td><td class='settoimport'>-10.0</td><td class='settoimport'>-10.0</td></tr>
+<tr><td>y_max</td><td>+20.0</td><td class='settoimport'>+10.0</td><td class='settoimport'>+10.0</td></tr>
+<tr><td>dy</td><td>1.0</td><td class='settoimport'>1.0</td><td class='settoimport'>1.0</td></tr>
+<tr><td>p_Ekin_grid</td><td class='settodefault'>Ekin</td><td>Ekin</td><td class='settodefault'>Ekin</td></tr>
+<tr><td>p_min</td><td class='settodefault'>1000</td><td>1000</td><td class='settodefault'>1000</td></tr>
+<tr><td>p_max</td><td class='settodefault'>4000</td><td>4000</td><td class='settodefault'>4000</td></tr>
+<tr><td>p_factor</td><td class='settodefault'>1.3</td><td>1.50</td><td class='settodefault'>1.3</td></tr>
+<tr><td>Ekin_min</td><td>1.0e1</td><td class='settoimport'>1.0e1</td><td class='settoimport'>1.0e1</td></tr>
+<tr><td>Ekin_max</td><td>1.0e8</td><td class='settoimport'>1.0e9</td><td class='settoimport'>1.0e9</td></tr>
+<tr><td>Ekin_factor</td><td>1.3</td><td class='settoimport'>1.2</td><td class='settoimport'>1.2</td></tr>
+<tr><td>gamma_rays</td><td>0</td><td class='settoimport'>2</td><td class='settoimport'>2</td></tr>
+<tr><td>pi0_decay</td><td>3</td><td class='settoimport'>3</td><td class='settoimport'>3</td></tr>
+<tr><td>IC_isotropic</td><td>1</td><td class='settoimport'>1</td><td class='settoimport'>1</td></tr>
+<tr><td>IC_anisotropic</td><td>0</td><td class='settoimport'>0</td><td class='settoimport'>0</td></tr>
+<tr><td>bremss</td><td>1</td><td class='settoimport'>1</td><td class='settoimport'>1</td></tr>
+<tr><td>integration_mode</td><td class='settodefault'>0</td><td>0</td><td class='settodefault'>0</td></tr>
+<tr><td>E_gamma_min</td><td>100</td><td class='settoimport'>50.</td><td class='settoimport'>50.</td></tr>
+<tr><td>E_gamma_max</td><td>1.0e6</td><td class='settoimport'>1.e6</td><td class='settoimport'>1.e6</td></tr>
+<tr><td>E_gamma_factor</td><td>1.5</td><td class='settoimport'>1.2996566</td><td class='settoimport'>1.2996566</td></tr>
+<tr><td>ISRF_factors</td><td>1.0,1.0,1.0</td><td class='settoimport'>1.0,1.0,1.0</td><td class='settoimport'>1.0,1.0,1.0</td></tr>
+<tr><td>synchrotron</td><td>0</td><td class='settoimport'>0</td><td class='settoimport'>0</td></tr>
+<tr><td>nu_synch_min</td><td>1.0e6</td><td class='settoimport'>1.0e6</td><td class='settoimport'>1.0e6</td></tr>
+<tr><td>nu_synch_max</td><td>1.0e10</td><td class='settoimport'>1.0e10</td><td class='settoimport'>1.0e10</td></tr>
+<tr><td>nu_synch_factor</td><td>2.0</td><td class='settoimport'>2.0</td><td class='settoimport'>2.0</td></tr>
+<tr><td>long_min</td><td>0</td><td class='settoimport'>0.25</td><td class='settoimport'>0.25</td></tr>
+<tr><td>long_max</td><td>360</td><td class='settoimport'>359.75</td><td class='settoimport'>359.75</td></tr>
+<tr><td>lat_min</td><td>-90</td><td class='settoimport'>-89.75</td><td class='settoimport'>-89.75</td></tr>
+<tr><td>lat_max</td><td>+90</td><td class='settoimport'>+89.75</td><td class='settoimport'>+89.75</td></tr>
+<tr><td>d_long</td><td>1.0</td><td class='settoimport'>0.5</td><td class='settoimport'>0.5</td></tr>
+<tr><td>d_lat</td><td>1.0</td><td class='settoimport'>0.5</td><td class='settoimport'>0.5</td></tr>
+<tr><td>healpix_order</td><td>6</td><td class='settoimport'>7</td><td class='settoimport'>7</td></tr>
+<tr><td>lat_substep_number</td><td class='settodefault'>1</td><td>1</td><td class='settodefault'>1</td></tr>
+<tr><td>LoS_step</td><td class='settodefault'>0.01</td><td>0.01</td><td class='settodefault'>0.01</td></tr>
+<tr><td>LoS_substep_number</td><td class='settodefault'>1</td><td>1</td><td class='settodefault'>1</td></tr>
+<tr><td>DM_positrons</td><td class='settodefault'>0</td><td>0</td><td class='settodefault'>0</td></tr>
+<tr><td>DM_electrons</td><td class='settodefault'>0</td><td>0</td><td class='settodefault'>0</td></tr>
+<tr><td>DM_antiprotons</td><td class='settodefault'>0</td><td>0</td><td class='settodefault'>0</td></tr>
+<tr><td>DM_gammas</td><td class='settodefault'>0</td><td>0</td><td class='settodefault'>0</td></tr>
+<tr><td>DM_double0</td><td class='settodefault'>0</td><td>2.8</td><td class='settodefault'>0</td></tr>
+<tr><td>DM_double1</td><td class='settodefault'>0</td><td>0.43</td><td class='settodefault'>0</td></tr>
+<tr><td>DM_double2</td><td class='settodefault'>0</td><td>80.</td><td class='settodefault'>0</td></tr>
+<tr><td>DM_double3</td><td class='settodefault'>0</td><td>40.</td><td class='settodefault'>0</td></tr>
+<tr><td>DM_double4</td><td class='settodefault'>0</td><td>40.</td><td class='settodefault'>0</td></tr>
+<tr><td>DM_double5</td><td class='settodefault'>0</td><td>40.</td><td class='settodefault'>0</td></tr>
+<tr><td>DM_double6</td><td class='settodefault'>0</td><td>30.</td><td class='settodefault'>0</td></tr>
+<tr><td>DM_double7</td><td class='settodefault'>0</td><td>50.</td><td class='settodefault'>0</td></tr>
+<tr><td>DM_double8</td><td class='settodefault'>0</td><td>40.</td><td class='settodefault'>0</td></tr>
+<tr><td>DM_double9</td><td class='settodefault'>0</td><td>3.e-25</td><td class='settodefault'>0</td></tr>
+<tr><td>DM_int0</td><td class='settodefault'>1</td><td>1</td><td class='settodefault'>1</td></tr>
+<tr><td>DM_int1</td><td class='settodefault'>1</td><td>1</td><td class='settodefault'>1</td></tr>
+<tr><td>DM_int2</td><td class='settodefault'>1</td><td>1</td><td class='settodefault'>1</td></tr>
+<tr><td>DM_int3</td><td class='settodefault'>1</td><td>1</td><td class='settodefault'>1</td></tr>
+<tr><td>DM_int4</td><td class='settodefault'>1</td><td>1</td><td class='settodefault'>1</td></tr>
+<tr><td>DM_int5</td><td class='settodefault'>1</td><td>1</td><td class='settodefault'>1</td></tr>
+<tr><td>DM_int6</td><td class='settodefault'>1</td><td>1</td><td class='settodefault'>1</td></tr>
+<tr><td>DM_int7</td><td class='settodefault'>1</td><td>1</td><td class='settodefault'>1</td></tr>
+<tr><td>DM_int8</td><td class='settodefault'>1</td><td>1</td><td class='settodefault'>1</td></tr>
+<tr><td>DM_int9</td><td class='settodefault'>1</td><td>1</td><td class='settodefault'>1</td></tr>
+<tr><td>D0_xx</td><td>6.10e28</td><td class='settoimport'>7.97593e+28</td><td class='settoimport'>7.97593e+28</td></tr>
+<tr><td>D_rigid_br</td><td>4.0e3</td><td class='settoimport'>4.0e3</td><td class='settoimport'>4.0e3</td></tr>
+<tr><td>D_g_1</td><td>0.33</td><td class='settoimport'>0.33</td><td class='settoimport'>0.33</td></tr>
+<tr><td>D_g_2</td><td>0.33</td><td class='settoimport'>0.33</td><td class='settoimport'>0.33</td></tr>
+<tr><td>diff_reacc</td><td>1</td><td class='settoimport'>1</td><td class='settoimport'>1</td></tr>
+<tr><td>v_Alfven</td><td>30.0</td><td class='settoimport'>35.3577</td><td class='settoimport'>35.3577</td></tr>
+<tr><td>damping_p0</td><td>1.0e6</td><td class='settoimport'>1.e6</td><td class='settoimport'>1.e6</td></tr>
+<tr><td>damping_const_G</td><td>0.02</td><td class='settoimport'>0.02</td><td class='settoimport'>0.02</td></tr>
+<tr><td>damping_max_path_L</td><td>3.0e21</td><td class='settoimport'>3.e21</td><td class='settoimport'>3.e21</td></tr>
+<tr><td>convection</td><td>0</td><td class='settoimport'>0</td><td class='settoimport'>0</td></tr>
+<tr><td>v0_conv</td><td>0.0</td><td class='settoimport'>0.</td><td class='settoimport'>0.</td></tr>
+<tr><td>dvdz_conv</td><td>7.0</td><td class='settoimport'>10.</td><td class='settoimport'>10.</td></tr>
+<tr><td>nuc_rigid_br</td><td>1.0e2</td><td class='settoimport'>11619.8</td><td class='settoimport'>11619.8</td></tr>
+<tr><td>nuc_g_1</td><td>2.43</td><td class='settoimport'>1.8888</td><td class='settoimport'>1.8888</td></tr>
+<tr><td>nuc_g_2</td><td>2.43</td><td class='settoimport'>2.38799</td><td class='settoimport'>2.38799</td></tr>
+<tr><td>inj_spectrum_type</td><td>rigidity</td><td class='settoimport'>rigidity</td><td class='settoimport'>rigidity</td></tr>
+<tr><td>electron_g_0</td><td>2.50</td><td class='settoimport'>1.6</td><td class='settoimport'>1.6</td></tr>
+<tr><td>electron_rigid_br0</td><td>1.0e3</td><td class='settoimport'>2178.52</td><td class='settoimport'>2178.52</td></tr>
+<tr><td>electron_g_1</td><td>2.50</td><td class='settoimport'>2.42196</td><td class='settoimport'>2.42196</td></tr>
+<tr><td>electron_rigid_br</td><td>1.0e3</td><td class='settoimport'>2.1527e+06</td><td class='settoimport'>2.1527e+06</td></tr>
+<tr><td>electron_g_2</td><td>2.50</td><td class='settoimport'>4</td><td class='settoimport'>4</td></tr>
+<tr><td>He_H_ratio</td><td>0.11</td><td class='settoimport'>0.11</td><td class='settoimport'>0.11</td></tr>
+<tr><td>n_X_CO</td><td>9</td><td class='settoimport'>3</td><td class='settoimport'>3</td></tr>
+<tr><td>n_X_CO_values</td><td>0</td><td class='settoimport'>17</td><td class='settoimport'>17</td></tr>
+<tr><td>X_CO_values</td><td>0</td><td class='settoimport'>3.33898e+19,8.58502e+19,8 .82075e+19,8.94819e+19,9. 20329e+19,8.69802e+19,9.0 739e+19,9.41038e+19,9.673 76e+19,9.92764e+19,1.1179 1e+20,1.27013e+20,7.47477 e+19,8.66353e+20,3.26617e +21,1.9718e+22,8.29548e+2 2</td><td class='settoimport'>3.33898e+19,8.58502e+19,8 .82075e+19,8.94819e+19,9. 20329e+19,8.69802e+19,9.0 739e+19,9.41038e+19,9.673 76e+19,9.92764e+19,1.1179 1e+20,1.27013e+20,7.47477 e+19,8.66353e+20,3.26617e +21,1.9718e+22,8.29548e+2 2</td></tr>
+<tr><td>X_CO_radius</td><td>0</td><td class='settoimport'>0.774359,1.8893,2.27301,2 .78807,3.26917,3.74008,4. 25504,4.7389,5.22515,5.98 483,6.74505,7.49699,8.689 34,10.987,13.6799,17.4421 ,19.8072</td><td class='settoimport'>0.774359,1.8893,2.27301,2 .78807,3.26917,3.74008,4. 25504,4.7389,5.22515,5.98 483,6.74505,7.49699,8.689 34,10.987,13.6799,17.4421 ,19.8072</td></tr>
+<tr><td>propagation_X_CO</td><td class='settodefault'>0</td><td>1</td><td class='settodefault'>0</td></tr>
+<tr><td>X_CO</td><td>1.9E20</td><td class='settoimport'>2.0E20</td><td class='settoimport'>2.0E20</td></tr>
+<tr><td>X_CO_parameters_0</td><td>1.0E20</td><td class='settoimport'>0.582730e20</td><td class='settoimport'>0.582730e20</td></tr>
+<tr><td>X_CO_parameters_1</td><td>1</td><td class='settoimport'>-0.036944</td><td class='settoimport'>-0.036944</td></tr>
+<tr><td>X_CO_parameters_2</td><td>0</td><td class='settoimport'>0.001850e20</td><td class='settoimport'>0.001850e20</td></tr>
+<tr><td>X_CO_parameters_3</td><td>0</td><td class='settoimport'>0.334789</td><td class='settoimport'>0.334789</td></tr>
+<tr><td>nHI_model</td><td class='settodefault'>1</td><td>1</td><td class='settodefault'>1</td></tr>
+<tr><td>nH2_model</td><td class='settodefault'>1</td><td>1</td><td class='settodefault'>1</td></tr>
+<tr><td>nHII_model</td><td>1</td><td class='settoimport'>3</td><td class='settoimport'>3</td></tr>
+<tr><td>COR_filename</td><td class='settodefault'>rbands_co10mm_v2_2001_qde g.fits</td><td>rbands_co10mm_v2_2001_qde g.fits.gz</td><td class='settodefault'>rbands_co10mm_v2_2001_qde g.fits</td></tr>
+<tr><td>HIR_filename</td><td>rbands_hi12_v2_qdeg_zmax1 _Ts125.fits</td><td class='settoimport'>rbands_hi12_v2_qdeg_zmax1 _Ts150_EBV_mag2_limit.fit s.gz</td><td class='settoimport'>rbands_hi12_v2_qdeg_zmax1 _Ts150_EBV_mag2_limit.fit s.gz</td></tr>
+<tr><td>GCR_data_filename</td><td class='settodefault'>GCR_data_1.dat</td><td>GCR_data_4.dat</td><td class='settodefault'>GCR_data_1.dat</td></tr>
+<tr><td>fragmentation</td><td>1</td><td class='settoimport'>1</td><td class='settoimport'>1</td></tr>
+<tr><td>momentum_losses</td><td>1</td><td class='settoimport'>1</td><td class='settoimport'>1</td></tr>
+<tr><td>radioactive_decay</td><td>1</td><td class='settoimport'>1</td><td class='settoimport'>1</td></tr>
+<tr><td>K_capture</td><td>0</td><td class='settoimport'>1</td><td class='settoimport'>1</td></tr>
+<tr><td>ionization_rate</td><td class='settodefault'>0</td><td>0</td><td class='settodefault'>0</td></tr>
+<tr><td>start_timestep</td><td>1.0e9</td><td class='settoimport'>1.0e9</td><td class='settoimport'>1.0e9</td></tr>
+<tr><td>end_timestep</td><td>100</td><td class='settoimport'>1.0e2</td><td class='settoimport'>1.0e2</td></tr>
+<tr><td>timestep_factor</td><td>0.50</td><td class='settoimport'>0.25</td><td class='settoimport'>0.25</td></tr>
+<tr><td>timestep_repeat</td><td>20</td><td class='settoimport'>20</td><td class='settoimport'>20</td></tr>
+<tr><td>timestep_repeat2</td><td>0</td><td class='settoimport'>0</td><td class='settoimport'>0</td></tr>
+<tr><td>timestep_print</td><td>10000</td><td class='settoimport'>10000</td><td class='settoimport'>10000</td></tr>
+<tr><td>timestep_diagnostics</td><td>10000</td><td class='settoimport'>10000</td><td class='settoimport'>10000</td></tr>
+<tr><td>control_diagnostics</td><td>0</td><td class='settoimport'>0</td><td class='settoimport'>0</td></tr>
+<tr><td>network_iterations</td><td>2</td><td class='settoimport'>2</td><td class='settoimport'>2</td></tr>
+<tr><td>network_iter_compl</td><td class='settodefault'>2</td><td>2</td><td class='settodefault'>2</td></tr>
+<tr><td>network_iter_sec</td><td class='settodefault'>1</td><td>1</td><td class='settodefault'>1</td></tr>
+<tr><td>prop_r</td><td class='settodefault'>1</td><td>1</td><td class='settodefault'>1</td></tr>
+<tr><td>prop_x</td><td class='settodefault'>1</td><td>1</td><td class='settodefault'>1</td></tr>
+<tr><td>prop_y</td><td class='settodefault'>1</td><td>1</td><td class='settodefault'>1</td></tr>
+<tr><td>prop_z</td><td class='settodefault'>1</td><td>1</td><td class='settodefault'>1</td></tr>
+<tr><td>prop_p</td><td class='settodefault'>1</td><td>1</td><td class='settodefault'>1</td></tr>
+<tr><td>use_symmetry</td><td>0</td><td class='settoimport'>0</td><td class='settoimport'>0</td></tr>
+<tr><td>vectorized</td><td class='settodefault'>0</td><td>0</td><td class='settodefault'>0</td></tr>
+<tr><td>source_specification</td><td class='settodefault'>0</td><td>0</td><td class='settodefault'>0</td></tr>
+<tr><td>source_model</td><td>1</td><td class='settoimport'>1</td><td class='settoimport'>1</td></tr>
+<tr><td>source_parameters_0</td><td class='settodefault'>0</td><td>0.2</td><td class='settodefault'>0</td></tr>
+<tr><td>source_parameters_1</td><td>0.5</td><td class='settoimport'>1.9</td><td class='settoimport'>1.9</td></tr>
+<tr><td>source_parameters_2</td><td>1.0</td><td class='settoimport'>5.0</td><td class='settoimport'>5.0</td></tr>
+<tr><td>source_parameters_3</td><td>20.0</td><td class='settoimport'>30.0</td><td class='settoimport'>30.0</td></tr>
+<tr><td>source_parameters_4</td><td>20.0</td><td class='settoimport'>100</td><td class='settoimport'>100</td></tr>
+<tr><td>source_parameters_5</td><td>0.0</td><td class='settoimport'>0</td><td class='settoimport'>0</td></tr>
+<tr><td>source_parameters_6</td><td class='settodefault'>0</td><td>0</td><td class='settodefault'>0</td></tr>
+<tr><td>source_parameters_7</td><td class='settodefault'>0</td><td>0</td><td class='settodefault'>0</td></tr>
+<tr><td>source_parameters_8</td><td class='settodefault'>0</td><td>0</td><td class='settodefault'>0</td></tr>
+<tr><td>source_parameters_9</td><td class='settodefault'>0</td><td>0</td><td class='settodefault'>0</td></tr>
+<tr><td>source_model_elec</td><td>1</td><td class='settoimport'>1</td><td class='settoimport'>1</td></tr>
+<tr><td>source_pars_elec_0</td><td class='settodefault'>0</td><td>0.2</td><td class='settodefault'>0</td></tr>
+<tr><td>source_pars_elec_1</td><td>0.5</td><td class='settoimport'>1.9</td><td class='settoimport'>1.9</td></tr>
+<tr><td>source_pars_elec_2</td><td>1.0</td><td class='settoimport'>5.0</td><td class='settoimport'>5.0</td></tr>
+<tr><td>source_pars_elec_3</td><td>20.0</td><td class='settoimport'>30.0</td><td class='settoimport'>30.0</td></tr>
+<tr><td>source_pars_elec_4</td><td>20.0</td><td class='settoimport'>100</td><td class='settoimport'>100</td></tr>
+<tr><td>source_pars_elec_5</td><td>0.0</td><td class='settoimport'>0</td><td class='settoimport'>0</td></tr>
+<tr><td>source_pars_elec_6</td><td class='settodefault'>0</td><td>0</td><td class='settodefault'>0</td></tr>
+<tr><td>source_pars_elec_7</td><td class='settodefault'>0</td><td>0</td><td class='settodefault'>0</td></tr>
+<tr><td>source_pars_elec_8</td><td class='settodefault'>0</td><td>0</td><td class='settodefault'>0</td></tr>
+<tr><td>source_pars_elec_9</td><td class='settodefault'>0</td><td>0</td><td class='settodefault'>0</td></tr>
+<tr><td>n_source_values</td><td>0</td><td class='settoimport'>0</td><td class='settoimport'>0</td></tr>
+<tr><td>source_values</td><td>0</td><td class='settoimport'>0</td><td class='settoimport'>0</td></tr>
+<tr><td>source_radius</td><td>0</td><td class='settoimport'>0</td><td class='settoimport'>0</td></tr>
+<tr><td>n_cr_sources</td><td>0</td><td class='settoimport'>0</td><td class='settoimport'>0</td></tr>
+<tr><td>cr_source_x_01</td><td>0.0</td><td class='settoimport'>10.0</td><td class='settoimport'>10.0</td></tr>
+<tr><td>cr_source_y_01</td><td>0.0</td><td class='settoimport'>10.0</td><td class='settoimport'>10.0</td></tr>
+<tr><td>cr_source_z_01</td><td>0.0</td><td class='settoimport'>0.1</td><td class='settoimport'>0.1</td></tr>
+<tr><td>cr_source_w_01</td><td>0.0</td><td class='settoimport'>0.1</td><td class='settoimport'>0.1</td></tr>
+<tr><td>cr_source_L_01</td><td>0.0</td><td class='settoimport'>1.0</td><td class='settoimport'>1.0</td></tr>
+<tr><td>cr_source_x_02</td><td>0.0</td><td class='settoimport'>3.0</td><td class='settoimport'>3.0</td></tr>
+<tr><td>cr_source_y_02</td><td>0.0</td><td class='settoimport'>4.0</td><td class='settoimport'>4.0</td></tr>
+<tr><td>cr_source_z_02</td><td>0.0</td><td class='settoimport'>0.2</td><td class='settoimport'>0.2</td></tr>
+<tr><td>cr_source_w_02</td><td>0.0</td><td class='settoimport'>2.4</td><td class='settoimport'>2.4</td></tr>
+<tr><td>cr_source_L_02</td><td>0.0</td><td class='settoimport'>2.0</td><td class='settoimport'>2.0</td></tr>
+<tr><td>cr_source_x_03</td><td class='notdefined'>0.0</td><td><i>not defined</i></td><td class='notdefined'>0.0</td></tr>
+<tr><td>cr_source_y_03</td><td class='notdefined'>0.0</td><td><i>not defined</i></td><td class='notdefined'>0.0</td></tr>
+<tr><td>cr_source_z_03</td><td class='notdefined'>0.0</td><td><i>not defined</i></td><td class='notdefined'>0.0</td></tr>
+<tr><td>cr_source_w_03</td><td class='notdefined'>0.0</td><td><i>not defined</i></td><td class='notdefined'>0.0</td></tr>
+<tr><td>cr_source_L_03</td><td class='notdefined'>0.0</td><td><i>not defined</i></td><td class='notdefined'>0.0</td></tr>
+<tr><td>cr_source_x_04</td><td class='notdefined'>0.0</td><td><i>not defined</i></td><td class='notdefined'>0.0</td></tr>
+<tr><td>cr_source_y_04</td><td class='notdefined'>0.0</td><td><i>not defined</i></td><td class='notdefined'>0.0</td></tr>
+<tr><td>cr_source_z_04</td><td class='notdefined'>0.0</td><td><i>not defined</i></td><td class='notdefined'>0.0</td></tr>
+<tr><td>cr_source_w_04</td><td class='notdefined'>0.0</td><td><i>not defined</i></td><td class='notdefined'>0.0</td></tr>
+<tr><td>cr_source_L_04</td><td class='notdefined'>0.0</td><td><i>not defined</i></td><td class='notdefined'>0.0</td></tr>
+<tr><td>cr_source_x_05</td><td class='notdefined'>0.0</td><td><i>not defined</i></td><td class='notdefined'>0.0</td></tr>
+<tr><td>cr_source_y_05</td><td class='notdefined'>0.0</td><td><i>not defined</i></td><td class='notdefined'>0.0</td></tr>
+<tr><td>cr_source_z_05</td><td class='notdefined'>0.0</td><td><i>not defined</i></td><td class='notdefined'>0.0</td></tr>
+<tr><td>cr_source_w_05</td><td class='notdefined'>0.0</td><td><i>not defined</i></td><td class='notdefined'>0.0</td></tr>
+<tr><td>cr_source_L_05</td><td class='notdefined'>0.0</td><td><i>not defined</i></td><td class='notdefined'>0.0</td></tr>
+<tr><td>SNR_events</td><td>0</td><td class='settoimport'>0</td><td class='settoimport'>0</td></tr>
+<tr><td>SNR_interval</td><td>1.0e4</td><td class='settoimport'>1.0e4</td><td class='settoimport'>1.0e4</td></tr>
+<tr><td>SNR_livetime</td><td>1.0e4</td><td class='settoimport'>1.0e4</td><td class='settoimport'>1.0e4</td></tr>
+<tr><td>SNR_electron_sdg</td><td class='settodefault'>0.0</td><td>0.00</td><td class='settodefault'>0.0</td></tr>
+<tr><td>SNR_nuc_sdg</td><td class='settodefault'>0.0</td><td>0.00</td><td class='settodefault'>0.0</td></tr>
+<tr><td>SNR_electron_dgpivot</td><td class='settodefault'>5.0e3</td><td>5.0e3</td><td class='settodefault'>5.0e3</td></tr>
+<tr><td>SNR_nuc_dgpivot</td><td class='settodefault'>5.0e3</td><td>5.0e3</td><td class='settodefault'>5.0e3</td></tr>
+<tr><td>ISRF_file</td><td class='settodefault'>ISRF/Standard/Standard.da t</td><td>ISRF/Standard/Standard.da t</td><td class='settodefault'>ISRF/Standard/Standard.da t</td></tr>
+<tr><td>ISRF_filetype</td><td class='settodefault'>3</td><td>3</td><td class='settodefault'>3</td></tr>
+<tr><td>ISRF_healpixOrder</td><td class='settodefault'>3</td><td>1</td><td class='settodefault'>3</td></tr>
+<tr><td>B_field_name</td><td class='settodefault'>galprop_original</td><td>galprop_original</td><td class='settodefault'>galprop_original</td></tr>
+<tr><td>n_B_field_parameters</td><td class='settodefault'>10</td><td>10</td><td class='settodefault'>10</td></tr>
+<tr><td>B_field_parameters</td><td class='settodefault'>0,0,0,0,0,0,0,0,0,0</td><td>-1,-2,-3,-4,-5,-6,-7,-8,- 9,-10</td><td class='settodefault'>0,0,0,0,0,0,0,0,0,0</td></tr>
+<tr><td>B_field_model</td><td>050100020</td><td class='settoimport'>050100020</td><td class='settoimport'>050100020</td></tr>
+<tr><td>proton_norm_Ekin</td><td>1.0e5</td><td class='settoimport'>1.08e+5</td><td class='settoimport'>1.08e+5</td></tr>
+<tr><td>electron_norm_Ekin</td><td>3.45e4</td><td class='settoimport'>2.48e4</td><td class='settoimport'>2.48e4</td></tr>
+<tr><td>proton_norm_flux</td><td>4.90e-9</td><td class='settoimport'>3.96913e-09</td><td class='settoimport'>3.96913e-09</td></tr>
+<tr><td>electron_norm_flux</td><td>4.0e-10</td><td class='settoimport'>1.08244e-09</td><td class='settoimport'>1.08244e-09</td></tr>
+<tr><td>source_norm</td><td>1.0</td><td class='settoimport'>1</td><td class='settoimport'>1</td></tr>
+<tr><td>electron_source_norm</td><td>1.0</td><td class='settoimport'>1</td><td class='settoimport'>1</td></tr>
+<tr><td>rigid_min</td><td>0.0</td><td class='settoimport'>0</td><td class='settoimport'>0</td></tr>
+<tr><td>rigid_max</td><td>1.0E38</td><td class='settoimport'>1e100</td><td class='settoimport'>1e100</td></tr>
+<tr><td>max_Z</td><td>28</td><td class='settoimport'>26</td><td class='settoimport'>26</td></tr>
+<tr><td>iso_abundance_01_001</td><td>1.06e6</td><td class='settoimport'>1.06e+06</td><td class='settoimport'>1.06e+06</td></tr>
+<tr><td>iso_abundance_01_002</td><td>34.8</td><td class='settoimport'>0.</td><td class='settoimport'>0.</td></tr>
+<tr><td>iso_abundance_02_003</td><td>9.033</td><td class='settoimport'>9.033</td><td class='settoimport'>9.033</td></tr>
+<tr><td>iso_abundance_02_004</td><td>7.199e4</td><td class='settoimport'>7.199e+04</td><td class='settoimport'>7.199e+04</td></tr>
+<tr><td>iso_abundance_03_006</td><td>0.0</td><td class='settoimport'>0</td><td class='settoimport'>0</td></tr>
+<tr><td>iso_abundance_03_007</td><td>0.0</td><td class='settoimport'>0</td><td class='settoimport'>0</td></tr>
+<tr><td>iso_abundance_04_007</td><td class='notdefined'>0.0</td><td><i>not defined</i></td><td class='notdefined'>0.0</td></tr>
+<tr><td>iso_abundance_04_009</td><td>0.0</td><td class='settoimport'>0</td><td class='settoimport'>0</td></tr>
+<tr><td>iso_abundance_04_010</td><td class='notdefined'>0.0</td><td><i>not defined</i></td><td class='notdefined'>0.0</td></tr>
+<tr><td>iso_abundance_05_010</td><td>0.0</td><td class='settoimport'>0</td><td class='settoimport'>0</td></tr>
+<tr><td>iso_abundance_05_011</td><td>0.0</td><td class='settoimport'>0</td><td class='settoimport'>0</td></tr>
+<tr><td>iso_abundance_06_012</td><td>2819</td><td class='settoimport'>2819</td><td class='settoimport'>2819</td></tr>
+<tr><td>iso_abundance_06_013</td><td>5.268e-07</td><td class='settoimport'>5.268e-07</td><td class='settoimport'>5.268e-07</td></tr>
+<tr><td>iso_abundance_07_014</td><td>182.8</td><td class='settoimport'>182.8</td><td class='settoimport'>182.8</td></tr>
+<tr><td>iso_abundance_07_015</td><td>5.961e-5</td><td class='settoimport'>5.961e-05</td><td class='settoimport'>5.961e-05</td></tr>
+<tr><td>iso_abundance_08_016</td><td>3822</td><td class='settoimport'>3822</td><td class='settoimport'>3822</td></tr>
+<tr><td>iso_abundance_08_017</td><td>6.713e-7</td><td class='settoimport'>6.713e-07</td><td class='settoimport'>6.713e-07</td></tr>
+<tr><td>iso_abundance_08_018</td><td>1.286</td><td class='settoimport'>1.286</td><td class='settoimport'>1.286</td></tr>
+<tr><td>iso_abundance_09_019</td><td>2.664e-8</td><td class='settoimport'>2.664e-08</td><td class='settoimport'>2.664e-08</td></tr>
+<tr><td>iso_abundance_10_020</td><td>312.5</td><td class='settoimport'>312.5</td><td class='settoimport'>312.5</td></tr>
+<tr><td>iso_abundance_10_021</td><td>0.003556</td><td class='settoimport'>0.003556</td><td class='settoimport'>0.003556</td></tr>
+<tr><td>iso_abundance_10_022</td><td>100.1</td><td class='settoimport'>100.1</td><td class='settoimport'>100.1</td></tr>
+<tr><td>iso_abundance_11_023</td><td>22.84</td><td class='settoimport'>22.84</td><td class='settoimport'>22.84</td></tr>
+<tr><td>iso_abundance_12_024</td><td>658.1</td><td class='settoimport'>658.1</td><td class='settoimport'>658.1</td></tr>
+<tr><td>iso_abundance_12_025</td><td>82.5</td><td class='settoimport'>82.5</td><td class='settoimport'>82.5</td></tr>
+<tr><td>iso_abundance_12_026</td><td>104.7</td><td class='settoimport'>104.7</td><td class='settoimport'>104.7</td></tr>
+<tr><td>iso_abundance_13_027</td><td>76.42</td><td class='settoimport'>76.42</td><td class='settoimport'>76.42</td></tr>
+<tr><td>iso_abundance_14_028</td><td>725.7</td><td class='settoimport'>725.7</td><td class='settoimport'>725.7</td></tr>
+<tr><td>iso_abundance_14_029</td><td>35.02</td><td class='settoimport'>35.02</td><td class='settoimport'>35.02</td></tr>
+<tr><td>iso_abundance_14_030</td><td>24.68</td><td class='settoimport'>24.68</td><td class='settoimport'>24.68</td></tr>
+<tr><td>iso_abundance_15_031</td><td>4.242</td><td class='settoimport'>4.242</td><td class='settoimport'>4.242</td></tr>
+<tr><td>iso_abundance_16_032</td><td>89.12</td><td class='settoimport'>89.12</td><td class='settoimport'>89.12</td></tr>
+<tr><td>iso_abundance_16_033</td><td>0.3056</td><td class='settoimport'>0.3056</td><td class='settoimport'>0.3056</td></tr>
+<tr><td>iso_abundance_16_034</td><td>3.417</td><td class='settoimport'>3.417</td><td class='settoimport'>3.417</td></tr>
+<tr><td>iso_abundance_16_036</td><td>0.0004281</td><td class='settoimport'>0.0004281</td><td class='settoimport'>0.0004281</td></tr>
+<tr><td>iso_abundance_17_035</td><td>0.7044</td><td class='settoimport'>0.7044</td><td class='settoimport'>0.7044</td></tr>
+<tr><td>iso_abundance_17_037</td><td>0.001167</td><td class='settoimport'>0.001167</td><td class='settoimport'>0.001167</td></tr>
+<tr><td>iso_abundance_18_036</td><td>9.829</td><td class='settoimport'>9.829</td><td class='settoimport'>9.829</td></tr>
+<tr><td>iso_abundance_18_038</td><td>0.6357</td><td class='settoimport'>0.6357</td><td class='settoimport'>0.6357</td></tr>
+<tr><td>iso_abundance_18_040</td><td>0.001744</td><td class='settoimport'>0.001744</td><td class='settoimport'>0.001744</td></tr>
+<tr><td>iso_abundance_19_039</td><td>1.389</td><td class='settoimport'>1.389</td><td class='settoimport'>1.389</td></tr>
+<tr><td>iso_abundance_19_040</td><td>3.022</td><td class='settoimport'>3.022</td><td class='settoimport'>3.022</td></tr>
+<tr><td>iso_abundance_19_041</td><td>0.0003339</td><td class='settoimport'>0.0003339</td><td class='settoimport'>0.0003339</td></tr>
+<tr><td>iso_abundance_20_040</td><td>51.13</td><td class='settoimport'>51.13</td><td class='settoimport'>51.13</td></tr>
+<tr><td>iso_abundance_20_041</td><td>1.974</td><td class='settoimport'>1.974</td><td class='settoimport'>1.974</td></tr>
+<tr><td>iso_abundance_20_042</td><td>1.134e-6</td><td class='settoimport'>1.134e-06</td><td class='settoimport'>1.134e-06</td></tr>
+<tr><td>iso_abundance_20_043</td><td>2.117e-6</td><td class='settoimport'>2.117e-06</td><td class='settoimport'>2.117e-06</td></tr>
+<tr><td>iso_abundance_20_044</td><td>9.928e-5</td><td class='settoimport'>9.928e-05</td><td class='settoimport'>9.928e-05</td></tr>
+<tr><td>iso_abundance_20_048</td><td>0.1099</td><td class='settoimport'>0.1099</td><td class='settoimport'>0.1099</td></tr>
+<tr><td>iso_abundance_21_045</td><td>1.635</td><td class='settoimport'>1.635</td><td class='settoimport'>1.635</td></tr>
+<tr><td>iso_abundance_22_046</td><td>5.558</td><td class='settoimport'>5.558</td><td class='settoimport'>5.558</td></tr>
+<tr><td>iso_abundance_22_047</td><td>8.947e-06</td><td class='settoimport'>8.947e-06</td><td class='settoimport'>8.947e-06</td></tr>
+<tr><td>iso_abundance_22_048</td><td>6.05e-07</td><td class='settoimport'>6.05e-07</td><td class='settoimport'>6.05e-07</td></tr>
+<tr><td>iso_abundance_22_049</td><td>5.854e-09</td><td class='settoimport'>5.854e-09</td><td class='settoimport'>5.854e-09</td></tr>
+<tr><td>iso_abundance_22_050</td><td>6.083e-07</td><td class='settoimport'>6.083e-07</td><td class='settoimport'>6.083e-07</td></tr>
+<tr><td>iso_abundance_23_050</td><td>1.818e-5</td><td class='settoimport'>1.818e-05</td><td class='settoimport'>1.818e-05</td></tr>
+<tr><td>iso_abundance_23_051</td><td>5.987e-09</td><td class='settoimport'>5.987e-09</td><td class='settoimport'>5.987e-09</td></tr>
+<tr><td>iso_abundance_24_050</td><td>2.873</td><td class='settoimport'>2.873</td><td class='settoimport'>2.873</td></tr>
+<tr><td>iso_abundance_24_051</td><td class='notdefined'>0</td><td><i>not defined</i></td><td class='notdefined'>0</td></tr>
+<tr><td>iso_abundance_24_052</td><td>8.065</td><td class='settoimport'>8.065</td><td class='settoimport'>8.065</td></tr>
+<tr><td>iso_abundance_24_053</td><td>0.003014</td><td class='settoimport'>0.003014</td><td class='settoimport'>0.003014</td></tr>
+<tr><td>iso_abundance_24_054</td><td>0.4173</td><td class='settoimport'>0.4173</td><td class='settoimport'>0.4173</td></tr>
+<tr><td>iso_abundance_25_053</td><td>6.499</td><td class='settoimport'>6.499</td><td class='settoimport'>6.499</td></tr>
+<tr><td>iso_abundance_25_055</td><td>1.273</td><td class='settoimport'>1.273</td><td class='settoimport'>1.273</td></tr>
+<tr><td>iso_abundance_26_054</td><td>49.08</td><td class='settoimport'>49.08</td><td class='settoimport'>49.08</td></tr>
+<tr><td>iso_abundance_26_055</td><td class='notdefined'>0</td><td><i>not defined</i></td><td class='notdefined'>0</td></tr>
+<tr><td>iso_abundance_26_056</td><td>697.7</td><td class='settoimport'>697.7</td><td class='settoimport'>697.7</td></tr>
+<tr><td>iso_abundance_26_057</td><td>21.67</td><td class='settoimport'>21.67</td><td class='settoimport'>21.67</td></tr>
+<tr><td>iso_abundance_26_058</td><td>3.335</td><td class='settoimport'>3.335</td><td class='settoimport'>3.335</td></tr>
+<tr><td>iso_abundance_26_060</td><td class='notdefined'>0.</td><td><i>not defined</i></td><td class='notdefined'>0.</td></tr>
+<tr><td>iso_abundance_27_059</td><td>2.214</td><td class='settoimport'>2.214</td><td class='settoimport'>2.214</td></tr>
+<tr><td>iso_abundance_28_058</td><td>28.88</td><td class='settoimport'>28.88</td><td class='settoimport'>28.88</td></tr>
+<tr><td>iso_abundance_28_059</td><td class='notdefined'>0</td><td><i>not defined</i></td><td class='notdefined'>0</td></tr>
+<tr><td>iso_abundance_28_060</td><td>11.9</td><td class='settoimport'>11.9</td><td class='settoimport'>11.9</td></tr>
+<tr><td>iso_abundance_28_061</td><td>0.5992</td><td class='settoimport'>0.5992</td><td class='settoimport'>0.5992</td></tr>
+<tr><td>iso_abundance_28_062</td><td>1.426</td><td class='settoimport'>1.426</td><td class='settoimport'>1.426</td></tr>
+<tr><td>iso_abundance_28_064</td><td>0.3039</td><td class='settoimport'>0.3039</td><td class='settoimport'>0.3039</td></tr>
+<tr><td>use_Z_1</td><td>1</td><td class='settoimport'>1</td><td class='settoimport'>1</td></tr>
+<tr><td>use_Z_2</td><td>1</td><td class='settoimport'>1</td><td class='settoimport'>1</td></tr>
+<tr><td>use_Z_3</td><td>1</td><td class='settoimport'>1</td><td class='settoimport'>1</td></tr>
+<tr><td>use_Z_4</td><td>1</td><td class='settoimport'>1</td><td class='settoimport'>1</td></tr>
+<tr><td>use_Z_5</td><td>1</td><td class='settoimport'>1</td><td class='settoimport'>1</td></tr>
+<tr><td>use_Z_6</td><td>1</td><td class='settoimport'>1</td><td class='settoimport'>1</td></tr>
+<tr><td>use_Z_7</td><td>1</td><td class='settoimport'>1</td><td class='settoimport'>1</td></tr>
+<tr><td>use_Z_8</td><td>1</td><td class='settoimport'>1</td><td class='settoimport'>1</td></tr>
+<tr><td>use_Z_9</td><td>1</td><td class='settoimport'>1</td><td class='settoimport'>1</td></tr>
+<tr><td>use_Z_10</td><td>1</td><td class='settoimport'>1</td><td class='settoimport'>1</td></tr>
+<tr><td>use_Z_11</td><td>1</td><td class='settoimport'>1</td><td class='settoimport'>1</td></tr>
+<tr><td>use_Z_12</td><td>1</td><td class='settoimport'>1</td><td class='settoimport'>1</td></tr>
+<tr><td>use_Z_13</td><td>1</td><td class='settoimport'>1</td><td class='settoimport'>1</td></tr>
+<tr><td>use_Z_14</td><td>1</td><td class='settoimport'>1</td><td class='settoimport'>1</td></tr>
+<tr><td>use_Z_15</td><td>1</td><td class='settoimport'>1</td><td class='settoimport'>1</td></tr>
+<tr><td>use_Z_16</td><td>1</td><td class='settoimport'>1</td><td class='settoimport'>1</td></tr>
+<tr><td>use_Z_17</td><td>1</td><td class='settoimport'>1</td><td class='settoimport'>1</td></tr>
+<tr><td>use_Z_18</td><td>1</td><td class='settoimport'>1</td><td class='settoimport'>1</td></tr>
+<tr><td>use_Z_19</td><td>1</td><td class='settoimport'>1</td><td class='settoimport'>1</td></tr>
+<tr><td>use_Z_20</td><td>1</td><td class='settoimport'>1</td><td class='settoimport'>1</td></tr>
+<tr><td>use_Z_21</td><td>1</td><td class='settoimport'>1</td><td class='settoimport'>1</td></tr>
+<tr><td>use_Z_22</td><td>1</td><td class='settoimport'>1</td><td class='settoimport'>1</td></tr>
+<tr><td>use_Z_23</td><td>1</td><td class='settoimport'>1</td><td class='settoimport'>1</td></tr>
+<tr><td>use_Z_24</td><td>1</td><td class='settoimport'>1</td><td class='settoimport'>1</td></tr>
+<tr><td>use_Z_25</td><td>1</td><td class='settoimport'>1</td><td class='settoimport'>1</td></tr>
+<tr><td>use_Z_26</td><td>1</td><td class='settoimport'>1</td><td class='settoimport'>1</td></tr>
+<tr><td>use_Z_27</td><td>1</td><td class='settoimport'>1</td><td class='settoimport'>1</td></tr>
+<tr><td>use_Z_28</td><td>1</td><td class='settoimport'>1</td><td class='settoimport'>1</td></tr>
+<tr><td>use_Z_29</td><td>0</td><td class='settoimport'>0</td><td class='settoimport'>0</td></tr>
+<tr><td>use_Z_30</td><td>0</td><td class='settoimport'>0</td><td class='settoimport'>0</td></tr>
+<tr><td>total_cross_section</td><td>2</td><td class='settoimport'>2</td><td class='settoimport'>2</td></tr>
+<tr><td>cross_section_option</td><td>012</td><td class='settoimport'>012</td><td class='settoimport'>012</td></tr>
+<tr><td>t_half_limit</td><td>1.0e4</td><td class='settoimport'>1.0e4</td><td class='settoimport'>1.0e4</td></tr>
+<tr><td>primary_electrons</td><td>1</td><td class='settoimport'>1</td><td class='settoimport'>1</td></tr>
+<tr><td>secondary_electrons</td><td>1</td><td class='settoimport'>1</td><td class='settoimport'>1</td></tr>
+<tr><td>knock_on_electrons</td><td>0</td><td class='settoimport'>0</td><td class='settoimport'>0</td></tr>
+<tr><td>secondary_positrons</td><td>1</td><td class='settoimport'>1</td><td class='settoimport'>1</td></tr>
+<tr><td>secondary_protons</td><td>1</td><td class='settoimport'>1</td><td class='settoimport'>1</td></tr>
+<tr><td>secondary_antiproton</td><td>2</td><td class='settoimport'>1</td><td class='settoimport'>1</td></tr>
+<tr><td>tertiary_antiproton</td><td>1</td><td class='settoimport'>1</td><td class='settoimport'>1</td></tr>
+<tr><td>skymap_format</td><td>0</td><td class='settoimport'>3</td><td class='settoimport'>3</td></tr>
+<tr><td>output_gcr_full</td><td>0</td><td class='settoimport'>1</td><td class='settoimport'>1</td></tr>
+<tr><td>warm_start</td><td class='settodefault'>0</td><td>0</td><td class='settodefault'>0</td></tr>
+<tr><td>verbose</td><td>0</td><td class='settoimport'>0</td><td class='settoimport'>0</td></tr>
+<tr><td>test_suite</td><td class='settodefault'>0</td><td>0</td><td class='settodefault'>0</td></tr>
+</table><p> <b>Explanation: </b>The table <i>Import Results</i> shows the decisions of the import routine with regards to the value of each imported parameter. Normally, every parameter is set to the <span class='settoimport'>value in the imported file</span>. However, if a parameter <span class='settodefault'>is defined as fixed</span> or is <span class='notdefined'>not found in the imported file</span>, it is set to the default value.</p><h2>Unrecognized Parameters</h2><table><tr><th>Parameter Name</th><th>Default Value for ver. 54</th><th>Imported Value</th><th>Set To</th></tr></table><p> <b>Explanation:</b> The table <i>Unrecognized Parameters</i> shows parameters that were present in the input file, but did not have a default value in WebRun. These parameters <span class='notdefined'>were skipped</span>. This may happen if a configuration for a recent GALPROP version is imported into an older version (i.e., migrated), or if the parameter is optional and not supported by the WebRun service.</p></div></body></html>

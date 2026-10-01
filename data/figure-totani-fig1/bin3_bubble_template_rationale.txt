@@ -1,0 +1,59 @@
+# 4.31 GeV (Bin3) を Fermi バブルテンプレート構築に用いる根拠
+# Totani (2025) §3.1 (p.5-6) の引用 + 本解析での採用方法の対応
+# 関連図: fermi_bubbles_1p5_4p3_GeV.png (Totani Fig.1 相当の再現)
+# 関連コード: code/plot_skymap_all_subtracted.py:176 build_fermi_bubble_template()
+
+## 1. Totani (2025) の記述（原文引用、§3.1 p.5-6）
+
+Totani は最初にバブルテンプレート構築のため 1.5 GeV と 4.3 GeV の2エネルギービンで
+「flat (isotropic) template」をフィットし（Figure 1, 2バンド比較画像を作成）、続いて
+構造化テンプレート（structured bubble template）を作る際に **4.3 GeV のみ** を選択した。
+その選定理由が本文に明記されている:
+
+  "Among the two energy bins, the 4.3 GeV map is chosen as the source to create the
+   structured bubble template, because the Fermi bubbles are more clearly seen.
+   In the map shown in figure 1, the positive flux regions are dominated by the
+   Fermi bubbles." (§3.1, p.5-6)
+
+直前の段落では、1.5 GeV 側で見える問題点も明記されている:
+
+  "in the northern region (b ~ 10-15 deg), negative residuals are clearly visible,
+   especially at the lower energy bin of 1.5 GeV. This feature corresponds to the
+   regions of particularly strong flux in the gas component map of GALPROP ...
+   and is likely due to discrepancies between the GALPROP model and the data."
+   (§3.1, p.6)
+
+## 2. 物理的読み解き（Totani の記述から再構成、本解析による解釈であり Totani の明言ではない部分は [解釈] と明記）
+
+- 1.5 GeV: GALPROP銀河拡散放射（特にガス成分）の強度が強く、GALPROPモデルと実データの
+  不一致（系統誤差）がバブル領域の正の超過信号に対して相対的に大きい → 残差マップが
+  「バブル成分」と「GALPROP不一致による系統的な負残差」の混合になり、バブル形状の
+  抽出が難しい（Totani 本文に明記）
+- 4.3 GeV: [解釈] バブルのスペクトルは GALPROP拡散成分（特にガス由来のπ0崩壊成分）より
+  硬い（Totani Fig.2-3 のスペクトル比較で ICS/バブルの傾きがガス成分より緩やかに見える
+  ことと整合）ため、エネルギーが上がるとバブル/背景のコントラストが相対的に改善し、
+  「正の残差領域 ≈ バブルが支配的」という Totani の記述（"positive flux regions are
+  dominated by the Fermi bubbles"）が成立する条件に近づく
+- 4.3 GeV を超えてさらに高いエネルギーを選ばない理由: [解釈] 光子統計が急減する
+  （本解析 all_bins_nfw_fit.py の実測値で Bin3 (n=556,193) → Bin6 (n=56,540) →
+  Bin9 (n=5,469) と桁で減少, all_bins_nfw_results.json 参照）ため、テンプレート
+  構築に十分な統計を確保しつつバブルが明瞭に見える最小エネルギーとして 4.3 GeV が
+  選ばれたと考えられる（Totani は統計量を選定理由として明記してはいないが、1.5 と
+  4.3 の「2ビンのみ」を候補としたこと自体がこのトレードオフを示唆する）
+
+## 3. 本解析での採用（plot_skymap_all_subtracted.py:176-208 build_fermi_bubble_template）
+
+- Totani と同じ Bin3 (4.31 GeV, E∈[3.31, 5.60] GeV) の [Iso+GALPROP+点源] 差引後
+  残差マップを「正の値の領域のみ」抽出してテンプレート化（コード内コメントで
+  "Totani Section 3.1: 4.3 GeV residual を bubble template に使用" と明記済み）
+- Totani との相違点（既出 `compare_6component_totani.py` 比較表 ⑤ より再掲）:
+  Totani は (a) 固定境界でなく iterative に改善した境界、(b) 正領域テンプレートに
+  加えて GALPROP不一致を補正する負領域テンプレートも独立に導入、(c) Gaussian
+  smoothing (σ=1°) を適用。本解析は (a) 固定矩形境界 (|l|<22°, 10°<|b|<55°)、
+  (b) 正残差のみの単一テンプレート、(c) smoothing なし、という簡略版
+
+## 4. 結論（スライド用一文）
+
+「4.31 GeV を選ぶのは Totani 自身の選定根拠と同一: 『この2候補(1.5/4.3 GeV)のうち
+ 4.3 GeV の方がバブルがより明瞭に見えるため』(§3.1)。低エネルギー側はGALPROPガス
+ 成分との不一致が系統的な負残差として残り、バブル形状抽出の妨げになる。」

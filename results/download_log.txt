@@ -1,0 +1,150 @@
+=== Fermi-LAT 780週分 全天ダウンロード ===
+完了: 0/780 週
+残り: 780 週
+出力: /root/nakamura-darkmatter/data/CSV/allsky_780w.csv
+
+[1/780] w009 ... OK | 8146 ev, Bin6=76, M31区域=13
+[3/780] w010 ... OK | 28506 ev, Bin6=289, M31区域=50
+[5/780] w011 ... OK | 25583 ev, Bin6=293, M31区域=32
+[7/780] w012 ... OK | 27052 ev, Bin6=311, M31区域=28
+[9/780] w013 ... OK | 25565 ev, Bin6=300, M31区域=95
+[11/780] w014 ... OK | 25612 ev, Bin6=292, M31区域=186
+[13/780] w015 ... OK | 25473 ev, Bin6=260, M31区域=37
+[15/780] w016 ... OK | 26066 ev, Bin6=287, M31区域=39
+[17/780] w017 ... OK | 38736 ev, Bin6=321, M31区域=55
+[19/780] w018 ... OK | 27422 ev, Bin6=292, M31区域=34
+[21/780] w019 ... OK | 26298 ev, Bin6=308, M31区域=38
+[23/780] w020 ... OK | 26753 ev, Bin6=292, M31区域=34
+[25/780] w021 ... OK | 24132 ev, Bin6=253, M31区域=145
+[27/780] w022 ... OK | 28732 ev, Bin6=279, M31区域=113
+[29/780] w023 ... OK | 24968 ev, Bin6=305, M31区域=25
+[31/780] w024 ... OK | 26779 ev, Bin6=257, M31区域=41
+[33/780] w025 ... OK | 35214 ev, Bin6=335, M31区域=90
+[35/780] w026 ... OK | 28829 ev, Bin6=294, M31区域=35
+[37/780] w027 ... OK | 24704 ev, Bin6=276, M31区域=44
+[39/780] w028 ... OK | 22884 ev, Bin6=247, M31区域=32
+[41/780] w029 ... OK | 37025 ev, Bin6=367, M31区域=300
+[43/780] w030 ... OK | 40657 ev, Bin6=352, M31区域=101
+[45/780] w031 ... OK | 25988 ev, Bin6=275, M31区域=41
+[47/780] w032 ... OK | 27649 ev, Bin6=297, M31区域=45
+[49/780] w033 ... OK | 28605 ev, Bin6=286, M31区域=48
+[51/780] w034 ... OK | 34090 ev, Bin6=327, M31区域=42
+[53/780] w035 ... エラー: Command '['wget', '-q', '--timeout=180', '-t', '3', 'https://heasarc.gsfc.nasa.gov/FTP/fermi/data/lat/weekly/photon/lat_photon_weekly_w035_p305_v001.fits', '-O', '/tmp/fermi_dl/w035.fits']' timed out after 300 seconds
+[54/780] w036 ... OK | 25673 ev, Bin6=286, M31区域=105
+[56/780] w037 ... OK | 25963 ev, Bin6=266, M31区域=155
+[58/780] w038 ... OK | 25459 ev, Bin6=272, M31区域=46
+[60/780] w039 ... OK | 46179 ev, Bin6=412, M31区域=176
+[62/780] w040 ... OK | 24242 ev, Bin6=273, M31区域=42
+[64/780] w041 ... OK | 12855 ev, Bin6=129, M31区域=17
+[66/780] w042 ... OK | 46296 ev, Bin6=416, M31区域=33
+[68/780] w043 ... OK | 47375 ev, Bin6=401, M31区域=42
+[70/780] w044 ... OK | 33472 ev, Bin6=321, M31区域=218
+[72/780] w045 ... OK | 31846 ev, Bin6=326, M31区域=118
+[74/780] w046 ... OK | 25295 ev, Bin6=284, M31区域=31
+[76/780] w047 ... OK | 27120 ev, Bin6=272, M31区域=48
+[78/780] w048 ... OK | 25230 ev, Bin6=266, M31区域=48
+[80/780] w049 ... === Fermi-LAT 780週分 全天ダウンロード ===
+完了: 40/780 週
+残り: 740 週
+出力: /root/nakamura-darkmatter/data/CSV/allsky_780w.csv
+
+[41/780] w035 ... エラー: Command '['wget', '-q', '--timeout=180', '-t', '3', 'https://heasarc.gsfc.nasa.gov/FTP/fermi/data/lat/weekly/photon/lat_photon_weekly_w035_p305_v001.fits', '-O', '/tmp/fermi_dl/w035.fits']' timed out after 300 seconds
+[42/780] w050 ... OK | 39484 ev, Bin6=385, M31区域=40
+[44/780] w051 ... OK | 24566 ev, Bin6=286, M31区域=55
+[46/780] w052 ... OK | 37332 ev, Bin6=361, M31区域=123
+[48/780] w053 ... OK | 25149 ev, Bin6=271, M31区域=36
+[50/780] w054 ... OK | 35042 ev, Bin6=370, M31区域=82
+[52/780] w055 ... OK | 26295 ev, Bin6=285, M31区域=44
+[54/780] w056 ... OK | 27886 ev, Bin6=286, M31区域=40
+[56/780] w057 ... OK | 25978 ev, Bin6=276, M31区域=29
+[58/780] w058 ... OK | 36416 ev, Bin6=378, M31区域=72
+[60/780] w059 ... OK | 63766 ev, Bin6=472, M31区域=685
+[62/780] w060 ... OK | 40776 ev, Bin6=321, M31区域=460
+[64/780] w061 ... OK | 40168 ev, Bin6=330, M31区域=64
+[66/780] w062 ... OK | 45853 ev, Bin6=343, M31区域=46
+[68/780] w063 ... OK | 69406 ev, Bin6=541, M31区域=141
+[70/780] w064 ... OK | 64743 ev, Bin6=507, M31区域=53
+[72/780] w065 ... OK | 69462 ev, Bin6=520, M31区域=28
+[74/780] w066 ... OK | 133759 ev, Bin6=960, M31区域=726
+[76/780] w067 ... OK | 148239 ev, Bin6=1008, M31区域=3252
+[78/780] w068 ... エラー: Command '['wget', '-q', '--timeout=180', '-t', '3', 'https://heasarc.gsfc.nasa.gov/FTP/fermi/data/lat/weekly/photon/lat_photon_weekly_w068_p305_v001.fits', '-O', '/tmp/fermi_dl/w068.fits']' timed out after 300 seconds
+[79/780] w069 ... エラー: Command '['wget', '-q', '--timeout=180', '-t', '3', 'https://heasarc.gsfc.nasa.gov/FTP/fermi/data/lat/weekly/photon/lat_photon_weekly_w069_p305_v001.fits', '-O', '/tmp/fermi_dl/w069.fits']' timed out after 300 seconds
+[80/780] w070 ... エラー: Command '['wget', '-q', '--timeout=180', '-t', '3', 'https://heasarc.gsfc.nasa.gov/FTP/fermi/data/lat/weekly/photon/lat_photon_weekly_w070_p305_v001.fits', '-O', '/tmp/fermi_dl/w070.fits']' timed out after 300 seconds
+[81/780] w071 ... === Fermi-LAT 780週分 全天ダウンロード ===
+完了: 58/780 週
+残り: 722 週
+出力: /root/nakamura-darkmatter/data/CSV/allsky_780w.csv
+
+[59/780] w035 ... === Fermi-LAT 780週分 全天ダウンロード ===
+完了: 62/780 週
+残り: 718 週
+出力: /root/nakamura-darkmatter/data/CSV/allsky_780w.csv
+
+[63/780] w071 ... === Fermi-LAT 780週分 全天ダウンロード ===
+完了: 71/780 週
+残り: 709 週
+出力: /root/nakamura-darkmatter/data/CSV/allsky_780w.csv
+
+[72/780] w080 ... === Fermi-LAT 780週分 全天ダウンロード ===
+完了: 81/780 週
+残り: 699 週
+出力: /root/nakamura-darkmatter/data/CSV/allsky_780w.csv
+
+[82/780] w090 ... スキップ
+[83/780] w091 ... スキップ
+[84/780] w092 ... スキップ
+[85/780] w093 ... エラー: Command '['wget', '-q', '--timeout=180', '-t', '3', 'https://heasarc.gsfc.nasa.gov/FTP/fermi/data/lat/weekly/photon/lat_photon_weekly_w093_p305_v001.fits', '-O', '/tmp/fermi_dl/w093.fits']' timed out after 300 seconds
+[86/780] w094 ... エラー: Command '['wget', '-q', '--timeout=180', '-t', '3', 'https://heasarc.gsfc.nasa.gov/FTP/fermi/data/lat/weekly/photon/lat_photon_weekly_w094_p305_v001.fits', '-O', '/tmp/fermi_dl/w094.fits']' timed out after 300 seconds
+[87/780] w095 ... エラー: Command '['wget', '-q', '--timeout=180', '-t', '3', 'https://heasarc.gsfc.nasa.gov/FTP/fermi/data/lat/weekly/photon/lat_photon_weekly_w095_p305_v001.fits', '-O', '/tmp/fermi_dl/w095.fits']' timed out after 300 seconds
+[88/780] w096 ... === Fermi-LAT 780週分 全天ダウンロード ===
+完了: 91/780 週
+残り: 689 週
+出力: /root/nakamura-darkmatter/data/CSV/allsky_780w.csv
+
+[92/780] w100 ... スキップ
+[93/780] w101 ... スキップ
+[94/780] w102 ... スキップ
+[95/780] w103 ... スキップ
+[96/780] w104 ... スキップ
+[97/780] w105 ... スキップ
+[98/780] w106 ... スキップ
+[99/780] w107 ... スキップ
+[100/780] w108 ... === Fermi-LAT 780週分 全天ダウンロード ===
+完了: 106/780 週
+残り: 674 週
+出力: /root/nakamura-darkmatter/data/CSV/allsky_780w.csv
+
+[107/780] w115 ... スキップ
+[108/780] w116 ... スキップ
+[109/780] w117 ... スキップ
+[110/780] w118 ... スキップ
+[111/780] w119 ... エラー: Command '['wget', '-q', '--timeout=180', '-t', '3', 'https://heasarc.gsfc.nasa.gov/FTP/fermi/data/lat/weekly/photon/lat_photon_weekly_w119_p305_v001.fits', '-O', '/tmp/fermi_dl/w119.fits']' timed out after 300 seconds
+[112/780] w120 ... スキップ
+[113/780] w121 ... エラー: Command '['wget', '-q', '--timeout=180', '-t', '3', 'https://heasarc.gsfc.nasa.gov/FTP/fermi/data/lat/weekly/photon/lat_photon_weekly_w121_p305_v001.fits', '-O', '/tmp/fermi_dl/w121.fits']' timed out after 300 seconds
+[114/780] w122 ... スキップ
+[115/780] w123 ... スキップ
+[116/780] w124 ... エラー: Command '['wget', '-q', '--timeout=180', '-t', '3', 'https://heasarc.gsfc.nasa.gov/FTP/fermi/data/lat/weekly/photon/lat_photon_weekly_w124_p305_v001.fits', '-O', '/tmp/fermi_dl/w124.fits']' timed out after 300 seconds
+[117/780] w125 ... エラー: Command '['wget', '-q', '--timeout=180', '-t', '3', 'https://heasarc.gsfc.nasa.gov/FTP/fermi/data/lat/weekly/photon/lat_photon_weekly_w125_p305_v001.fits', '-O', '/tmp/fermi_dl/w125.fits']' timed out after 300 seconds
+[118/780] w126 ... スキップ
+[119/780] w127 ... スキップ
+[120/780] w128 ... === Fermi-LAT 780週分 全天ダウンロード ===
+完了: 126/780 週
+残り: 654 週
+出力: /root/nakamura-darkmatter/data/CSV/allsky_780w.csv
+
+[127/780] w135 ... === Fermi-LAT 780週分 全天ダウンロード ===
+完了: 126/780 週
+残り: 654 週
+出力: /root/nakamura-darkmatter/data/CSV/allsky_780w.csv
+
+[127/780] w135 ... スキップ
+[128/780] w136 ... スキップ
+[129/780] w137 ... スキップ
+[130/780] w138 ... スキップ
+[131/780] w139 ... スキップ
+[132/780] w140 ... === Fermi-LAT 780週分 全天ダウンロード ===
+完了: 67/780 週
+残り: 713 週
+出力: /root/nakamura-darkmatter/data/CSV/allsky_780w.csv
+
+[68/780] w035 ... 

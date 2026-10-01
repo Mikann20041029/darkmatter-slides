@@ -1,0 +1,73 @@
+{
+ "purpose": "v15→v16 のバブル構築 3 変更の個別効果 (TOTANI_SPEC §4.1/§4.6/§3.2)",
+ "commit": "d5e5522c278bf2be3bd94a90c1f11f2bf4d73fe5",
+ "timestamp_utc": "20260723T010700Z",
+ "pixel_deg": "0.125",
+ "ultraclean": "1",
+ "disk_bubble": "1",
+ "boundary_iters": "3",
+ "boundary_frac": "0.25",
+ "seed": null,
+ "cases": [
+  {
+   "label": "v15 相当 (3変更すべて OFF)",
+   "env": {
+    "MCMC_BUBBLE_FLUX_SMOOTH": "0",
+    "MCMC_BUBBLE_BOUNDARY_2BIN": "0",
+    "MCMC_BUBBLE_MASK_SMOOTH": "0"
+   },
+   "area_frac": 0.33,
+   "inside_frac": 0.577832510753325,
+   "concentration": 1.751007608343409,
+   "in_out_ratio": 2.7789328346517714,
+   "pos_sum": 116624.87598781448,
+   "neg_sum": 78470.51105687692,
+   "neg_over_pos": 0.6728453976240532
+  },
+  {
+   "label": "+ フラックス変換後に平滑化 (§4.6)",
+   "env": {
+    "MCMC_BUBBLE_FLUX_SMOOTH": "1",
+    "MCMC_BUBBLE_BOUNDARY_2BIN": "0",
+    "MCMC_BUBBLE_MASK_SMOOTH": "0"
+   },
+   "area_frac": 0.33,
+   "inside_frac": 0.5779037503885971,
+   "concentration": 1.7512234860260518,
+   "in_out_ratio": 2.7797445173172113,
+   "pos_sum": 116616.15211463298,
+   "neg_sum": 78443.00775837092,
+   "neg_over_pos": 0.6726598874679205
+  },
+  {
+   "label": "+ 拡張源を平滑化から除外 (§3.2)",
+   "env": {
+    "MCMC_BUBBLE_FLUX_SMOOTH": "1",
+    "MCMC_BUBBLE_BOUNDARY_2BIN": "0",
+    "MCMC_BUBBLE_MASK_SMOOTH": "1"
+   },
+   "area_frac": 0.33,
+   "inside_frac": 0.5829782109359806,
+   "concentration": 1.766600639199941,
+   "in_out_ratio": 2.8382747839640006,
+   "pos_sum": 113365.75275349713,
+   "neg_sum": 77205.05586289962,
+   "neg_over_pos": 0.6810262710536096
+  },
+  {
+   "label": "+ 境界改善を 2 ビンで (§4.1) = v16",
+   "env": {
+    "MCMC_BUBBLE_FLUX_SMOOTH": "1",
+    "MCMC_BUBBLE_BOUNDARY_2BIN": "1",
+    "MCMC_BUBBLE_MASK_SMOOTH": "1"
+   },
+   "area_frac": 0.33,
+   "inside_frac": 0.5753839516191539,
+   "concentration": 1.7435877321792541,
+   "in_out_ratio": 2.7512002549473022,
+   "pos_sum": 114578.42551750998,
+   "neg_sum": 76633.37131791301,
+   "neg_over_pos": 0.6688289786823945
+  }
+ ]
+}

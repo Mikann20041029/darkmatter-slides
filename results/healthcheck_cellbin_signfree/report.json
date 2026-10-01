@@ -1,0 +1,81 @@
+{
+  "H1_cell_partition": {
+    "n_cells_total": 144,
+    "n_active_cells_disk_excluded": 120,
+    "expected_active_cells": 120,
+    "pass_active_count": true,
+    "pixels_per_cell_unique": [
+      100
+    ],
+    "pass_100_pixels_each": true,
+    "disk_rows_all_empty": true,
+    "n_active_cells_realbin6": 120
+  },
+  "H2_affinity": {
+    "max_abs_residual": 1.1368683772161603e-13,
+    "scale_ref": 853.6227154333903,
+    "pass_affine": true
+  },
+  "H3_gradient_check": {
+    "param_names": [
+      "f_gas",
+      "f_ics",
+      "f_loopI_a",
+      "f_loopI_b",
+      "f_fb",
+      "f_fb_neg",
+      "f_halo"
+    ],
+    "grad_analytic": [
+      -2130.1878435367817,
+      -1439.5502082242224,
+      2.8041376856168307,
+      -20.843176536078303,
+      -1026.9399885295811,
+      -490.03718479040725,
+      -764.0885442963232
+    ],
+    "grad_finite_diff": [
+      -2130.1878441590816,
+      -1439.5502221304923,
+      2.8041249606758356,
+      -20.84317384287715,
+      -1026.9399790558964,
+      -490.03720050677657,
+      -764.088545111008
+    ],
+    "max_rel_error": 4.537936494837149e-06,
+    "pass_gradient": true,
+    "test_point_has_negative_halo": true
+  },
+  "H4_signfree_negative_search": {
+    "f_halo_true": -0.6,
+    "f_halo_recovered": -0.6000000488527774,
+    "recovered_is_negative": true,
+    "abs_error": 4.885277737898264e-08,
+    "pass_recover_negative": true,
+    "fun_spread_successful_only": 1.1641532182693481e-10,
+    "n_failed_starts": 0,
+    "bounds_halo": [
+      null,
+      null
+    ]
+  },
+  "H5_dimensional_consistency": {
+    "target_cell": 143,
+    "n_valid_pixels_in_cell": 93,
+    "direct_pixel_sum": 5.761047914322078,
+    "cellized_value": 5.761047914322079,
+    "abs_diff": 8.881784197001252e-16,
+    "pass_sum_identity": true
+  },
+  "environment": {
+    "git_commit": "f1d158c4ff7f16d91aa85b35e14dcfbf79d144bf",
+    "git_working_tree_dirty": "True",
+    "python": "3.12.3",
+    "numpy": "2.5.1",
+    "scipy": "1.18.0",
+    "emcee": "3.1.6"
+  },
+  "all_pass": true
+}

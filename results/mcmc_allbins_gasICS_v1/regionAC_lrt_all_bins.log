@@ -1,0 +1,19 @@
+2026-07-16 10:19:01,804 再現性シード固定: np.random.seed(42)
+2026-07-16 10:19:01,804 露出マップ・イベント読み込み中...
+2026-07-16 10:19:05,556 NFW J-map計算中...
+2026-07-16 10:19:05,656 バブル・Loop Iテンプレート構築中...
+2026-07-16 10:19:16,985 Bin1 (1.51 GeV): f_halo_A=+594.1 f_halo_C=+0 f_halo_shared=+71.59 LRT=252.9 p=6.092e-57 equiv_sigma=15.90 fun_spread_max=2.24e-08 delta_lnL_ok=True (8.0s)
+2026-07-16 10:19:23,852 Bin2 (2.55 GeV): f_halo_A=+217.3 f_halo_C=+0 f_halo_shared=+58.92 LRT=205 p=1.684e-46 equiv_sigma=14.32 fun_spread_max=1.40e-09 delta_lnL_ok=True (6.9s)
+2026-07-16 10:19:29,933 Bin3 (4.31 GeV): f_halo_A=+46.18 f_halo_C=+10.34 f_halo_shared=+30.4 LRT=17.74 p=2.534e-05 equiv_sigma=4.21 fun_spread_max=6.98e-10 delta_lnL_ok=True (6.1s)
+2026-07-16 10:19:35,431 Bin4 (7.28 GeV): f_halo_A=+24.75 f_halo_C=+6.078 f_halo_shared=+16.33 LRT=29.11 p=6.834e-08 equiv_sigma=5.40 fun_spread_max=2.91e-10 delta_lnL_ok=True (5.5s)
+2026-07-16 10:19:41,033 Bin5 (12.29 GeV): f_halo_A=+8.652 f_halo_C=+4.261 f_halo_shared=+6.661 LRT=9.822 p=1.724e-03 equiv_sigma=3.13 fun_spread_max=1.31e-10 delta_lnL_ok=True (5.6s)
+2026-07-16 10:19:46,454 Bin6 (20.76 GeV): f_halo_A=+3.258 f_halo_C=+1.726 f_halo_shared=+2.535 LRT=7.603 p=5.827e-03 equiv_sigma=2.76 fun_spread_max=2.18e-11 delta_lnL_ok=True (5.4s)
+2026-07-16 10:19:51,824 Bin7 (35.06 GeV): f_halo_A=+1.144 f_halo_C=+0.2135 f_halo_shared=+0.7124 LRT=17.2 p=3.360e-05 equiv_sigma=4.15 fun_spread_max=1.36e-12 delta_lnL_ok=True (5.4s)
+2026-07-16 10:19:57,277 Bin8 (59.22 GeV): f_halo_A=+0.2855 f_halo_C=+0.03987 f_halo_shared=+0.1743 LRT=7.424 p=6.435e-03 equiv_sigma=2.72 fun_spread_max=5.46e-12 delta_lnL_ok=True (5.5s)
+2026-07-16 10:20:03,997 Bin9 (100.02 GeV): f_halo_A=+0.101 f_halo_C=+0 f_halo_shared=+0.04635 LRT=9.899 p=1.654e-03 equiv_sigma=3.15 fun_spread_max=3.27e-11 delta_lnL_ok=True (6.7s)
+2026-07-16 10:20:12,289 Bin10 (168.93 GeV): f_halo_A=+0.02092 f_halo_C=+0.01281 f_halo_shared=+0.01732 LRT=0.3417 p=5.589e-01 equiv_sigma=0.58 fun_spread_max=1.47e-10 delta_lnL_ok=True (8.3s)
+2026-07-16 10:20:50,106 Bin11 (285.33 GeV): f_halo_A=+0 f_halo_C=+0.003951 f_halo_shared=+0 LRT=0.2287 p=6.325e-01 equiv_sigma=0.48 fun_spread_max=1.06e-07 delta_lnL_ok=True (37.8s)
+2026-07-16 10:22:03,202 Bin12 (481.93 GeV): f_halo_A=+0 f_halo_C=+0.0001451 f_halo_shared=+0 LRT=0.001128 p=9.732e-01 equiv_sigma=0.03 fun_spread_max=2.29e+03 delta_lnL_ok=True (73.1s)
+2026-07-16 10:22:29,329 Bin13 (814.00 GeV): f_halo_A=+0 f_halo_C=+0 f_halo_shared=+0 LRT=0 p=1.000e+00 equiv_sigma=0.00 fun_spread_max=2.44e+03 delta_lnL_ok=True (26.1s)
+2026-07-16 10:22:29,332 → /home/arsei/univ/nakamura-darkmatter/results/mcmc_allbins_gasICS_v1/regionAC_lrt_all_bins.json
+2026-07-16 10:22:29,332 完了: 13/13ビンでフィット成功、delta_lnL_LRT>=0が13/13ビンで成立、fun_spread<1e-6が11/13ビンで成立。

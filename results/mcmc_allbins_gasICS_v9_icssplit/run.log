@@ -1,0 +1,188 @@
+The chain is shorter than 50 times the integrated autocorrelation time for 10 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 30;
+tau: [ 56.85298791  71.26323732  75.93003805  76.02401031 137.04649165
+  63.97736601  77.93742947  74.17137799  72.79305946  74.37040277]
+The chain is shorter than 50 times the integrated autocorrelation time for 5 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 120;
+tau: [136.80536627 119.99244535 103.17511678 104.66805065 537.08033055
+ 158.90168421 116.10297343 124.47068946 138.26954897  99.39380608]
+The chain is shorter than 50 times the integrated autocorrelation time for 10 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 30;
+tau: [ 91.24934351  89.01926545 169.29280651  86.95190475 154.67460725
+  88.86573005  78.9557858   90.48554458  89.30336981  72.74991076]
+The chain is shorter than 50 times the integrated autocorrelation time for 10 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 120;
+tau: [138.23828247 121.38811434 563.99366695 565.27644411 547.89287083
+ 127.34573183 141.38825993 130.51955431 145.86794432 352.64568449]
+The chain is shorter than 50 times the integrated autocorrelation time for 10 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 30;
+tau: [ 68.16789527  77.43901409 150.89967737  80.33073746 154.68353062
+  61.3725362   71.76915782  64.98755019  77.76488718  73.83681411]
+The chain is shorter than 50 times the integrated autocorrelation time for 9 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 120;
+tau: [145.51605934 125.53820564 558.92699368 516.24301202 445.38867505
+ 138.3136106  127.16285172 111.05923473 125.96370858 173.31592884]
+The chain is shorter than 50 times the integrated autocorrelation time for 10 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 30;
+tau: [ 74.12846564  78.41521412 149.48348325  72.7081893  138.01503489
+  79.68780908  74.54803789  72.09664001  63.93213205  79.36252459]
+The chain is shorter than 50 times the integrated autocorrelation time for 10 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 120;
+tau: [134.37845021 135.28569657 504.19292447 535.63745678 583.84293815
+ 128.42111607 127.86380148 142.49223041 129.56850046 131.03983759]
+The chain is shorter than 50 times the integrated autocorrelation time for 10 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 30;
+tau: [ 68.96848466  79.4080922  143.27895195  81.67153431 146.76435572
+  68.06565118  73.97306223  85.15131119  70.01580867 100.27810655]
+The chain is shorter than 50 times the integrated autocorrelation time for 9 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 120;
+tau: [216.70155858 133.63202789 423.71297799 546.27439315 555.60820525
+ 140.71049991 128.44572905 110.65155221 124.98977712 167.40900698]
+The chain is shorter than 50 times the integrated autocorrelation time for 10 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 30;
+tau: [ 85.14445825  86.10856503 151.46237884  72.7455451  129.62456429
+  77.26955899  88.35260202  85.49952988  85.09302227  76.74846655]
+The chain is shorter than 50 times the integrated autocorrelation time for 10 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 120;
+tau: [177.51906672 171.77426629 445.30591884 620.76778573 655.46612671
+ 155.37346127 142.78750536 126.19186153 150.90363439 151.21697224]
+The chain is shorter than 50 times the integrated autocorrelation time for 10 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 30;
+tau: [ 80.78595917  87.36631321 140.91596938 133.71109664  87.61887796
+  80.13439761 125.03958139  77.67288079  83.81627881  66.75094665]
+The chain is shorter than 50 times the integrated autocorrelation time for 10 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 120;
+tau: [157.49866202 136.78180723 414.38440261 655.74933278 582.54745936
+ 150.41343447 333.72991046 153.42894481 168.59327359 248.66650094]
+The chain is shorter than 50 times the integrated autocorrelation time for 10 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 30;
+tau: [121.96204101  85.05409957 165.77810827 171.56658114 160.33208974
+ 179.2748819  167.03712107  95.16514206  80.29037122  78.56193049]
+The chain is shorter than 50 times the integrated autocorrelation time for 10 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 120;
+tau: [281.14467307 282.69467505 319.56789632 412.71185873 574.91172914
+ 236.00642517 242.10487541 202.68271067 166.77495171 237.21664814]
+The chain is shorter than 50 times the integrated autocorrelation time for 10 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 30;
+tau: [101.27274562  74.45546284 164.03840336 169.9446104   78.34947029
+ 107.4955234  152.41031462  81.6117115   84.30703858  89.92239774]
+The chain is shorter than 50 times the integrated autocorrelation time for 10 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 120;
+tau: [186.43390219 235.97698997 604.92624771 570.739352   550.95258903
+ 167.23744969 367.74553869 177.31823449 154.34669998 232.9040916 ]
+The chain is shorter than 50 times the integrated autocorrelation time for 10 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 30;
+tau: [ 93.38203446  98.09687642 162.0768154  168.74849884  93.58240778
+ 104.39871875 162.98648443  90.65245532  88.34420959  98.94694883]
+The chain is shorter than 50 times the integrated autocorrelation time for 10 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 120;
+tau: [188.43989895 230.72828036 505.9620569  673.26429713 499.67105706
+ 182.04968736 325.83919489 189.56371785 193.73632135 217.28338611]
+The chain is shorter than 50 times the integrated autocorrelation time for 10 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 30;
+tau: [ 91.47523794  82.15402354  88.60198139 170.57259432  93.26694099
+ 100.16118129 147.06893354  80.44350049 101.01915817  99.59779615]
+The chain is shorter than 50 times the integrated autocorrelation time for 10 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 120;
+tau: [179.21437099 211.9052808  225.36617039 647.02602974 240.18002459
+ 181.57223109 499.14458963 180.13087854 206.24082562 189.50205584]
+The chain is shorter than 50 times the integrated autocorrelation time for 10 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 30;
+tau: [ 87.37226616  98.87543497 157.0986474  163.71406409 160.3769982
+  89.22571723 174.23277688  97.67553922  85.42023835  84.21469235]
+The chain is shorter than 50 times the integrated autocorrelation time for 10 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 120;
+tau: [254.06027511 314.3282475  516.76510417 564.90118415 634.87080964
+ 214.1476166  285.18025436 203.95173011 185.89382197 270.56092453]
+The chain is shorter than 50 times the integrated autocorrelation time for 10 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 30;
+tau: [147.77885302 111.02945311 104.18752009 147.77742266 170.17203426
+ 168.12930953 178.35537193 172.68119265 104.31227262  98.38799456]
+The chain is shorter than 50 times the integrated autocorrelation time for 10 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 120;
+tau: [301.62885373 269.06053701 361.12355769 649.05838893 646.12794245
+ 297.20825604 289.79145109 538.69545882 229.04434766 311.89892614]
+再現性シード固定: np.random.seed(42)
+尤度セル束ね(CELL_MODE)=False  f_halo符号自由(SIGNFREE_HALO)=True
+  NONNEG_IDX=(0, 1, 2, 3, 4, 5, 6, 7)  SIGNFREE_IDX=(8, 9)  出力先=results/mcmc_allbins_gasICS_v9_icssplit
+実測露出マップ読み込み中...
+イベントデータ読み込み中...
+NFW J-factorマップ計算中(数分)...
+  NFW校正: norm=2.2847e-15 (基準: b=-59.5°, flux=6.803e-14 ph/cm2/s/sr/MeV, exposure=5.501e+11 cm2s)
+バブルテンプレート構築中(Bin3基準、正負2成分+Gaussian smoothing)...
+  disk込み構築: 全ROIイベント=11911671 (うち銀河面|b|<10=6459914)
+  バブルテンプレート構築(正負2成分): Bin3 (4.31 GeV)
+    バブル構築用GALPROP+GCEフィット: GALPROP+GCE(counts単位: A_gas=0.9016, A_ics=2.011, A_gce=0.1105, off=-5.8648)
+    有効ピクセル数(|b|>=10, ROI全域): 14400 | 正の残差ピクセル: 13720 | 負の残差ピクセル: 13358
+Loop I幾何シェルテンプレート計算中(2シェル視線積分)...
+
+--- Bin01 (1.51 GeV) ---
+  イベント数: 2286646
+  点源マスク: 1375ピクセル除外 / |b|<10除外込みで有効ピクセル数=10625
+  f_gas=0.8827  f_ics(計)=5.616  f_halo=-18.19  ΔlnL=0.10  有意度=0.44σ  凸性fun_spread(max)=1.01e-01  τ_max=537.0803305466977  50τ充足=False
+
+--- Bin02 (2.55 GeV) ---
+  イベント数: 1161203
+  点源マスク: 1375ピクセル除外 / |b|<10除外込みで有効ピクセル数=10625
+  f_gas=0.9388  f_ics(計)=8.326  f_halo=164.9  ΔlnL=83.32  有意度=12.91σ  凸性fun_spread(max)=1.30e-08  τ_max=565.2764441123211  50τ充足=False
+
+--- Bin03 (4.31 GeV) ---
+  イベント数: 556297
+  点源マスク: 1375ピクセル除外 / |b|<10除外込みで有効ピクセル数=10625
+  f_gas=0.9613  f_ics(計)=6.646  f_halo=73.54  ΔlnL=192.34  有意度=19.61σ  凸性fun_spread(max)=3.96e-09  τ_max=558.9269936766963  50τ充足=False
+
+--- Bin04 (7.28 GeV) ---
+  イベント数: 259646
+  点源マスク: 1375ピクセル除外 / |b|<10除外込みで有効ピクセル数=10625
+  f_gas=1.018  f_ics(計)=3.971  f_halo=35.27  ΔlnL=387.37  有意度=27.83σ  凸性fun_spread(max)=1.16e-09  τ_max=583.8429381479947  50τ充足=False
+
+--- Bin05 (12.29 GeV) ---
+  イベント数: 122684
+  点源マスク: 1375ピクセル除外 / |b|<10除外込みで有効ピクセル数=10625
+  f_gas=1.02  f_ics(計)=2.996  f_halo=13  ΔlnL=373.95  有意度=27.35σ  凸性fun_spread(max)=8.73e-11  τ_max=555.6082052526215  50τ充足=False
+
+--- Bin06 (20.76 GeV) ---
+  イベント数: 56533
+  点源マスク: 1375ピクセル除外 / |b|<10除外込みで有効ピクセル数=10625
+  f_gas=0.9848  f_ics(計)=1.469  f_halo=4.406  ΔlnL=295.09  有意度=24.29σ  凸性fun_spread(max)=8.73e-11  τ_max=655.4661267127755  50τ充足=False
+
+--- Bin07 (35.06 GeV) ---
+  イベント数: 27563
+  点源マスク: 1375ピクセル除外 / |b|<10除外込みで有効ピクセル数=10625
+  f_gas=1.021  f_ics(計)=4.646  f_halo=1.357  ΔlnL=166.62  有意度=18.25σ  凸性fun_spread(max)=1.82e-12  τ_max=655.7493327768805  50τ充足=False
+
+--- Bin08 (59.22 GeV) ---
+  イベント数: 12504
+  点源マスク: 1375ピクセル除外 / |b|<10除外込みで有効ピクセル数=10625
+  f_gas=1.107  f_ics(計)=0.7397  f_halo=0.356  ΔlnL=88.31  有意度=13.29σ  凸性fun_spread(max)=1.82e-12  τ_max=574.9117291381586  50τ充足=False
+
+--- Bin09 (100.02 GeV) ---
+  イベント数: 5468
+  点源マスク: 1375ピクセル除外 / |b|<10除外込みで有効ピクセル数=10625
+  f_gas=0.9123  f_ics(計)=6.976  f_halo=0.09337  ΔlnL=33.08  有意度=8.13σ  凸性fun_spread(max)=2.73e-12  τ_max=604.9262477145379  50τ充足=False
+
+--- Bin10 (168.93 GeV) ---
+  イベント数: 2471
+  点源マスク: 1375ピクセル除外 / |b|<10除外込みで有効ピクセル数=10625
+  f_gas=0.3964  f_ics(計)=11.53  f_halo=0.02638  ΔlnL=19.75  有意度=6.28σ  凸性fun_spread(max)=1.82e-12  τ_max=673.2642971295215  50τ充足=False
+
+--- Bin11 (285.33 GeV) ---
+  イベント数: 1128
+  点源マスク: 1375ピクセル除外 / |b|<10除外込みで有効ピクセル数=10625
+  f_gas=1.171  f_ics(計)=17.33  f_halo=0.003467  ΔlnL=2.13  有意度=2.06σ  凸性fun_spread(max)=5.00e-11  τ_max=647.0260297362116  50τ充足=False
+
+--- Bin12 (481.93 GeV) ---
+  イベント数: 528
+  点源マスク: 1375ピクセル除外 / |b|<10除外込みで有効ピクセル数=10625
+  f_gas=2.821  f_ics(計)=5.678  f_halo=0.0005191  ΔlnL=0.68  有意度=1.17σ  凸性fun_spread(max)=8.54e+03  τ_max=634.8708096374061  50τ充足=False
+
+--- Bin13 (814.00 GeV) ---
+  イベント数: 250
+  点源マスク: 1375ピクセル除外 / |b|<10除外込みで有効ピクセル数=10625
+  f_gas=1.491  f_ics(計)=15.86  f_halo=-2.306e-05  ΔlnL=0.07  有意度=0.37σ  凸性fun_spread(max)=3.80e+03  τ_max=649.0583889281713  50τ充足=False
+
+→ results/mcmc_allbins_gasICS_v9_icssplit/halo_spectrum.png
+
+→ results/mcmc_allbins_gasICS_v9_icssplit/halo_spectrum.json
+
+完了。

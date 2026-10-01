@@ -1,0 +1,6 @@
+  バブルテンプレート構築(正負2成分): Bin3 (4.31 GeV)
+    有効ピクセル数(|b|>=10, ROI全域): 12000 | 正の残差ピクセル: 12937 | 負の残差ピクセル: 12959
+Bin5 region_C unconstrained f_halo, init=positive-start: f_halo_MLE=+4.26055  fun=-14132.795943  fun_spread=None
+Bin5 region_C unconstrained f_halo, init=negative-start: f_halo_MLE=+4.26055  fun=-14132.795943  fun_spread=None
+Bin6 region_C unconstrained f_halo, init=positive-start: f_halo_MLE=+1.72622  fun=1518.694904  fun_spread=None
+Bin6 region_C unconstrained f_halo, init=negative-start: f_halo_MLE=+1.72622  fun=1518.694904  fun_spread=None

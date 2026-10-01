@@ -1,0 +1,59 @@
+UltraClean再取得: 780週中 780週 未処理 (DL並列=12, パース並列=3, メモリ上限=3.2GB, 保存先=/dev/sdd)
+  20/780週 完了 (6.5週/分, ETA 117分, halo=132465 disk=279324)
+  40/780週 完了 (6.5週/分, ETA 114分, halo=262792 disk=554078)
+  60/780週 完了 (4.7週/分, ETA 154分, halo=398356 disk=845503)
+  80/780週 完了 (3.9週/分, ETA 181分, halo=521456 disk=1116586)
+  100/780週 完了 (3.4週/分, ETA 198分, halo=642104 disk=1381375)
+  120/780週 完了 (2.9週/分, ETA 226分, halo=769466 disk=1662881)
+  w121: DL失敗
+  140/780週 完了 (2.7週/分, ETA 241分, halo=894177 disk=1936529)
+  160/780週 完了 (2.5週/分, ETA 249分, halo=1014027 disk=2203610)
+  180/780週 完了 (2.5週/分, ETA 241分, halo=1136627 disk=2472529)
+  200/780週 完了 (2.5週/分, ETA 236分, halo=1260968 disk=2747081)
+  220/780週 完了 (2.4週/分, ETA 237分, halo=1375551 disk=2995057)
+  240/780週 完了 (2.3週/分, ETA 233分, halo=1497432 disk=3260631)
+  w226: DL失敗
+  260/780週 完了 (2.3週/分, ETA 226分, halo=1614395 disk=3516970)
+  280/780週 完了 (2.2週/分, ETA 223分, halo=1752198 disk=3831966)
+  300/780週 完了 (2.2週/分, ETA 217分, halo=1920105 disk=4231922)
+  320/780週 完了 (2.1週/分, ETA 215分, halo=2087301 disk=4641469)
+  340/780週 完了 (2.1週/分, ETA 206分, halo=2246146 disk=5007252)
+  360/780週 完了 (2.1週/分, ETA 199分, halo=2388329 disk=5331186)
+  380/780週 完了 (2.1週/分, ETA 188分, halo=2511428 disk=5592704)
+  400/780週 完了 (2.1週/分, ETA 177分, halo=2639010 disk=5871495)
+  420/780週 完了 (2.1週/分, ETA 169分, halo=2768658 disk=6166622)
+  440/780週 完了 (2.1週/分, ETA 161分, halo=2899130 disk=6461959)
+/bin/bash: line 5: /tmp/darkmatter_venv/bin/python: No such file or directory
+WARNING: Could not memory map array with mode='readonly', falling back to mode='denywrite', which means that the array will be read-only [astropy.io.fits.file]
+WARNING: Could not memory map array with mode='readonly', falling back to mode='denywrite', which means that the array will be read-only [astropy.io.fits.file]
+UltraClean再取得: 780週中 339週 未処理 (DL並列=40, パース並列=6, メモリ上限=3.2GB, 保存先=/dev/sdd)
+  w489: パース失敗
+  w460: パース失敗
+  w455: パース失敗
+  w476: パース失敗
+  w464: パース失敗
+  w477: パース失敗
+  w512: DL失敗
+  20/339週 完了 (3.8週/分, ETA 84分, halo=3022575 disk=6727337)
+WARNING: Could not memory map array with mode='readonly', falling back to mode='denywrite', which means that the array will be read-only [astropy.io.fits.file]
+WARNING: Could not memory map array with mode='readonly', falling back to mode='denywrite', which means that the array will be read-only [astropy.io.fits.file]
+WARNING: Could not memory map array with mode='readonly', falling back to mode='denywrite', which means that the array will be read-only [astropy.io.fits.file]
+WARNING: Could not memory map array with mode='readonly', falling back to mode='denywrite', which means that the array will be read-only [astropy.io.fits.file]
+  w485: パース失敗
+  w448: パース失敗
+  w497: パース失敗
+  w500: パース失敗
+  w493: パース失敗
+  w504: パース失敗
+  40/339週 完了 (4.2週/分, ETA 71分, halo=3138579 disk=6977652)
+WARNING: Could not memory map array with mode='readonly', falling back to mode='denywrite', which means that the array will be read-only [astropy.io.fits.file]
+  w508: パース失敗
+  w519: パース失敗
+  w520: パース失敗
+  w502: パース失敗
+  w525: パース失敗
+  w503: パース失敗
+  60/339週 完了 (4.6週/分, ETA 60分, halo=3273603 disk=7263852)
+WARNING: Could not memory map array with mode='readonly', falling back to mode='denywrite', which means that the array will be read-only [astropy.io.fits.file]
+WARNING: Could not memory map array with mode='readonly', falling back to mode='denywrite', which means that the array will be read-only [astropy.io.fits.file]
+WARNING: Could not memory map array with mode='readonly', falling back to mode='denywrite', which means that the array will be read-only [astropy.io.fits.file]

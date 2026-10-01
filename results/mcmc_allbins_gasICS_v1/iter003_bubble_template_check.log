@@ -1,0 +1,6 @@
+  バブルテンプレート構築(正負2成分): Bin3 (4.31 GeV)
+    有効ピクセル数(|b|>=10, ROI全域): 12000 | 正の残差ピクセル: 12937 | 負の残差ピクセル: 12959
+=== outside bubble_region (|b|>=10) pixel stats ===
+n_pix_outside: 8040
+template_pos: n_nonzero= 8030 mean= 4.220325216722125 max= 445.7374773877491
+template_neg: n_nonzero= 8040 mean= 4.602766737916318 max= 22.85126063983399

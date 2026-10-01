@@ -1,0 +1,10 @@
+UltraClean再取得: 780週中 73週 未処理 (DL並列=20, パース並列=1, メモリ上限=3.2GB, 保存先=/dev/sdd)
+  w512: DL失敗
+  20/73週 完了 (1.1週/分, ETA 47分, halo=4552241 disk=9953352)
+  w121: DL失敗
+  40/73週 完了 (1.7週/分, ETA 20分, halo=4674685 disk=10214951)
+  60/73週 完了 (2.0週/分, ETA 6分, halo=4792921 disk=10466863)
+
+完了: 71週処理, 2週失敗, 32.2分
+  halo(|b|>=10): 4850468 事象 → /home/arsei/univ/nakamura-darkmatter/data/CSV/filtered_events_week780_ultraclean.csv
+  disk(|b|<10):  10582824 事象 → /home/arsei/univ/nakamura-darkmatter/data/CSV/disk_bl10_week780_ultraclean.csv

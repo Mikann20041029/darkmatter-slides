@@ -1,0 +1,7 @@
+n_pix_outside_bubble_region: 8040
+--- OLD (bug: zeroed outside bubble_region before smoothing) ---
+pos: n_nonzero= 1069 mean= 0.08867862210725046 max= 64.49567266804142
+neg: n_nonzero= 1131 mean= 0.06072397167375029 max= 6.977206872703695
+--- NEW (fixed: ROI全域|b|>=10) ---
+pos: n_nonzero= 8030 mean= 4.220325216722125 max= 445.7374773877491
+neg: n_nonzero= 8040 mean= 4.602766737916318 max= 22.85126063983399

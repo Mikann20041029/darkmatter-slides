@@ -1,0 +1,202 @@
+再現性シード固定: np.random.seed(42)
+尤度セル束ね(CELL_MODE)=True  f_halo符号自由(SIGNFREE_HALO)=True
+  NONNEG_IDX=(0, 1, 2, 3, 4, 5)  SIGNFREE_IDX=(6, 7)  出力先=results/mcmc_allbins_gasICS_v13_cellconstruct
+実測露出マップ読み込み中...
+  露出マップを (120, 120) → (960, 960) に補間アップサンプル
+イベントデータ読み込み中...
+NFW J-factorマップ計算中(数分)...
+  NFW校正: norm=2.3166e-15 (基準: b=-59.9°, flux=6.803e-14 ph/cm2/s/sr/MeV, exposure=5.485e+11 cm2s)
+バブルテンプレート構築中(Bin3基準、正負2成分+Gaussian smoothing)...
+  disk込み構築: 全ROIイベント=15433292 (うち銀河面|b|<10=10582824)
+  バブルテンプレート構築(正負2成分): Bin3 (4.31 GeV)
+    バブル構築用GALPROP+GCEフィット: GALPROP+GCE+flat(counts単位: A_gas=1.615, A_ics=1.85, A_gce=0.678, A_flat=0.1103, off=-0.1719)
+    有効ピクセル数(|b|>=10, ROI全域): 921600 | 正の残差ピクセル: 921600 | 負の残差ピクセル: 921600
+Loop I幾何シェルテンプレート計算中(2シェル視線積分)...
+
+--- Bin01 (1.51 GeV) ---
+  イベント数: 2042272
+  点源マスク: 1425ピクセル除外 / |b|<10除外込みで有効ピクセル数=766575
+  セル束ね: 有効セル数=120/144
+The chain is shorter than 50 times the integrated autocorrelation time for 8 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 30;
+tau: [163.62048822  61.23759109  71.35234507 149.67761209  69.35793067
+  76.89578488  74.61410105  69.12424094]
+The chain is shorter than 50 times the integrated autocorrelation time for 3 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 120;
+tau: [200.82941257 106.08582784 112.7538477  331.06602468 102.3252293
+ 104.50946272 138.59628596 110.61975225]
+  f_gas=1.129  f_ics(計)=1.718  f_halo=-110.9  ΔlnL=21.48  有意度=6.55σ  凸性fun_spread(max)=0.00e+00  τ_max=331.06602467931214  50τ充足=False
+
+--- Bin02 (2.55 GeV) ---
+  イベント数: 1062865
+  点源マスク: 1425ピクセル除外 / |b|<10除外込みで有効ピクセル数=766575
+  セル束ね: 有効セル数=120/144
+The chain is shorter than 50 times the integrated autocorrelation time for 8 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 30;
+tau: [163.02613781  73.70035238  58.358274    69.5134145   66.73619803
+  76.65271319  63.75906515  68.52495508]
+The chain is shorter than 50 times the integrated autocorrelation time for 1 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 120;
+tau: [245.08828697 102.90909363 104.08222401  97.73723334  91.75718955
+  88.37203986  99.19768345  97.97329574]
+  f_gas=1.283  f_ics(計)=1.587  f_halo=49.61  ΔlnL=28.77  有意度=7.59σ  凸性fun_spread(max)=1.30e-08  τ_max=245.08828697350427  50τ充足=False
+
+--- Bin03 (4.31 GeV) ---
+  イベント数: 508158
+  点源マスク: 1425ピクセル除外 / |b|<10除外込みで有効ピクセル数=766575
+  セル束ね: 有効セル数=120/144
+The chain is shorter than 50 times the integrated autocorrelation time for 8 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 30;
+tau: [164.16270053  64.70984879  71.82823394  83.06061022  60.80601769
+  62.90977579  68.85016622  62.26099443]
+The chain is shorter than 50 times the integrated autocorrelation time for 1 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 120;
+tau: [298.16165994  97.79644506  97.84814301 113.1968242   96.96132549
+  94.03583667 110.7909343  102.11991952]
+  f_gas=1.386  f_ics(計)=1.426  f_halo=36.61  ΔlnL=101.63  有意度=14.26σ  凸性fun_spread(max)=2.79e-09  τ_max=298.1616599358286  50τ充足=False
+
+--- Bin04 (7.28 GeV) ---
+  イベント数: 229889
+  点源マスク: 1425ピクセル除外 / |b|<10除外込みで有効ピクセル数=766575
+  セル束ね: 有効セル数=120/144
+The chain is shorter than 50 times the integrated autocorrelation time for 8 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 30;
+tau: [168.10692308  74.74420491  65.97577357  78.1126732  161.88715819
+  85.50549734  98.81071456  85.11562964]
+The chain is shorter than 50 times the integrated autocorrelation time for 8 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 120;
+tau: [416.10799786 165.31380001 121.55025065 141.05632809 205.50332145
+ 127.05797204 247.68352743 137.92802692]
+  f_gas=1.428  f_ics(計)=1.116  f_halo=20.22  ΔlnL=204.89  有意度=20.24σ  凸性fun_spread(max)=4.66e-10  τ_max=416.1079978592342  50τ充足=False
+
+--- Bin05 (12.29 GeV) ---
+  イベント数: 104788
+  点源マスク: 1425ピクセル除外 / |b|<10除外込みで有効ピクセル数=766575
+  セル束ね: 有効セル数=120/144
+The chain is shorter than 50 times the integrated autocorrelation time for 8 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 30;
+tau: [ 60.54650732  63.91975121  55.19579244  69.39179341 170.27159363
+  72.85590417  57.9298396   67.09295191]
+The chain is shorter than 50 times the integrated autocorrelation time for 1 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 120;
+tau: [105.24312937  95.64827501  99.39743793 111.3600529  240.98760375
+  93.76106314 101.19611111  91.32265577]
+  f_gas=1.522  f_ics(計)=0.8766  f_halo=8.648  ΔlnL=244.10  有意度=22.10σ  凸性fun_spread(max)=4.38e-08  τ_max=240.98760375229708  50τ充足=False
+
+--- Bin06 (20.76 GeV) ---
+  イベント数: 47498
+  点源マスク: 1425ピクセル除外 / |b|<10除外込みで有効ピクセル数=766575
+  セル束ね: 有効セル数=120/144
+The chain is shorter than 50 times the integrated autocorrelation time for 8 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 30;
+tau: [ 65.04784872  64.9095548   77.05266293  65.93275892 155.34307168
+  61.28572933  62.65161321  79.95347383]
+The chain is shorter than 50 times the integrated autocorrelation time for 1 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 120;
+tau: [101.54698562  97.40622325  86.87693242 100.65190182 223.07111118
+  93.76691431 102.68689558  98.44509903]
+  f_gas=1.699  f_ics(計)=0.7157  f_halo=3.083  ΔlnL=204.01  有意度=20.20σ  凸性fun_spread(max)=2.04e-10  τ_max=223.07111117669223  50τ充足=False
+
+--- Bin07 (35.06 GeV) ---
+  イベント数: 22583
+  点源マスク: 1425ピクセル除外 / |b|<10除外込みで有効ピクセル数=766575
+  セル束ね: 有効セル数=120/144
+The chain is shorter than 50 times the integrated autocorrelation time for 8 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 30;
+tau: [ 91.91786831  73.30654854  63.96364696  76.56606193 165.40883706
+  70.05603019  94.77959758  66.75113567]
+The chain is shorter than 50 times the integrated autocorrelation time for 6 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 120;
+tau: [134.10994626 126.88017351 109.7146902  124.63451115 198.21955646
+ 122.1581167  120.25152708 117.96966015]
+  f_gas=1.801  f_ics(計)=0.6513  f_halo=0.9812  ΔlnL=128.10  有意度=16.01σ  凸性fun_spread(max)=4.80e-08  τ_max=198.21955646207877  50τ充足=False
+
+--- Bin08 (59.22 GeV) ---
+  イベント数: 9768
+  点源マスク: 1425ピクセル除外 / |b|<10除外込みで有効ピクセル数=766575
+  セル束ね: 有効セル数=120/144
+The chain is shorter than 50 times the integrated autocorrelation time for 8 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 30;
+tau: [ 69.78435176  68.16955363  85.84185838 172.14918797 162.19600591
+  69.32499018  62.96806868  86.0771046 ]
+The chain is shorter than 50 times the integrated autocorrelation time for 5 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 120;
+tau: [145.09008096 114.97181015 119.7850485  196.9890903  187.82995492
+ 128.10010829 129.02975217 114.92346669]
+  f_gas=2.218  f_ics(計)=0.339  f_halo=0.2747  ΔlnL=66.48  有意度=11.53σ  凸性fun_spread(max)=3.70e-08  τ_max=196.98909029867292  50τ充足=False
+
+--- Bin09 (100.02 GeV) ---
+  イベント数: 4014
+  点源マスク: 1425ピクセル除外 / |b|<10除外込みで有効ピクセル数=766575
+  セル束ね: 有効セル数=120/144
+The chain is shorter than 50 times the integrated autocorrelation time for 8 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 30;
+tau: [ 71.31511813  73.73478009  74.57996083 104.57835667 130.3996836
+  74.01547617  71.75523984  68.5807165 ]
+The chain is shorter than 50 times the integrated autocorrelation time for 4 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 120;
+tau: [115.303177   110.83995686 120.9142143  131.7914484  192.19891436
+ 109.17992043 112.95647101 137.65730472]
+  f_gas=2.88  f_ics(計)=0.7115  f_halo=0.06715  ΔlnL=27.01  有意度=7.35σ  凸性fun_spread(max)=5.51e-08  τ_max=192.19891436044173  50τ充足=False
+
+--- Bin10 (168.93 GeV) ---
+  イベント数: 1591
+  点源マスク: 1425ピクセル除外 / |b|<10除外込みで有効ピクセル数=766575
+  セル束ね: 有効セル数=120/144
+The chain is shorter than 50 times the integrated autocorrelation time for 8 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 30;
+tau: [156.37402153  75.66585896  84.24325405  65.74361151 131.45480704
+  70.78193942  84.68304918  69.1344033 ]
+The chain is shorter than 50 times the integrated autocorrelation time for 7 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 120;
+tau: [246.1606607  164.5672871  126.42607934 125.316761   166.82892794
+ 105.7016592  155.63073972 121.0283061 ]
+  f_gas=1.806  f_ics(計)=0.8596  f_halo=0.0205  ΔlnL=18.81  有意度=6.13σ  凸性fun_spread(max)=9.55e-12  τ_max=246.16066069618884  50τ充足=False
+
+--- Bin11 (285.33 GeV) ---
+  イベント数: 607
+  点源マスク: 1425ピクセル除外 / |b|<10除外込みで有効ピクセル数=766575
+  セル束ね: 有効セル数=120/144
+The chain is shorter than 50 times the integrated autocorrelation time for 8 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 30;
+tau: [153.07351297 105.73832607  76.89426061 127.41692032 109.8433135
+  70.47835518 113.26487832  77.17904429]
+The chain is shorter than 50 times the integrated autocorrelation time for 7 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 120;
+tau: [192.58570279 156.49367059 153.09401259 210.63417892 180.94939666
+ 120.1738118  175.9763393  108.65982926]
+  f_gas=2.663  f_ics(計)=1.225  f_halo=0.003396  ΔlnL=3.54  有意度=2.66σ  凸性fun_spread(max)=1.38e+04  τ_max=210.63417892466933  50τ充足=False
+
+--- Bin12 (481.93 GeV) ---
+  イベント数: 188
+  点源マスク: 1425ピクセル除外 / |b|<10除外込みで有効ピクセル数=766575
+  セル束ね: 有効セル数=120/144
+The chain is shorter than 50 times the integrated autocorrelation time for 8 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 30;
+tau: [170.73109328  94.1061466  158.23083622  92.91711903  97.58071731
+  88.37312892 112.5001781   98.11469388]
+The chain is shorter than 50 times the integrated autocorrelation time for 8 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 120;
+tau: [194.98644653 178.97951211 578.5684584  153.73111728 207.34118781
+ 160.54236958 196.64305282 261.95189802]
+  f_gas=3.324  f_ics(計)=0.6869  f_halo=0.0006083  ΔlnL=1.51  有意度=1.74σ  凸性fun_spread(max)=4.20e+03  τ_max=578.568458404347  50τ充足=False
+
+--- Bin13 (814.00 GeV) ---
+  イベント数: 82
+  点源マスク: 1425ピクセル除外 / |b|<10除外込みで有効ピクセル数=766575
+  セル束ね: 有効セル数=120/144
+The chain is shorter than 50 times the integrated autocorrelation time for 8 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 30;
+tau: [157.97977859 109.34436459  98.65689772 106.5404753   85.0958659
+  88.8333895  123.44559931 123.90961332]
+The chain is shorter than 50 times the integrated autocorrelation time for 8 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 120;
+tau: [243.50746994 132.465003   159.8420408  208.94071672 167.1299998
+ 166.56958154 191.11446193 190.25421197]
+  f_gas=0.996  f_ics(計)=9.269  f_halo=0.0001782  ΔlnL=0.00  有意度=0.00σ  凸性fun_spread(max)=1.02e-12  τ_max=243.50746993867952  50τ充足=False
+
+→ results/mcmc_allbins_gasICS_v13_cellconstruct/halo_spectrum.png
+
+→ results/mcmc_allbins_gasICS_v13_cellconstruct/halo_spectrum.json
+
+完了。

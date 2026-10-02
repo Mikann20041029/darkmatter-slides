@@ -1,0 +1,129 @@
+--- a/code/mcmc_fit_all_bins.py
++++ b/code/mcmc_fit_all_bins.py
+@@ -196,6 +196,13 @@
+ #   MCMC_BINS="5,6" : 指定ビン (1-index) のみ処理する。
+ SKIP_MCMC: bool = _os.environ.get("MCMC_SKIP_MCMC", "0") == "1"
+ _BINS_ENV = _os.environ.get("MCMC_BINS", "").strip()
++# [2026-10-02 Totani 準拠] 最良値の求め方。Totani (2025) §2.2「the best-fit values and statistical errors of
++# the fitting parameters f_l are obtained by maximizing the likelihood function using the MCMC method」に従い、
++# 既定は MCMC で踏んだ点のうち尤度が最大の点を最良値とする (§2.3 の初期値から出発)。ハローなしのモデルも同じく
++# MCMC で求め、有意度は両者の最大 ln L の差から出す。MCMC_TOTANI_BESTFIT=0 で旧方式 (L-BFGS-B で最良値、
++# MCMC は最良値の近くから出発して誤差だけ) に戻る。旧方式は 2026-07 に本人の了解なく導入されたもの。
++TOTANI_BESTFIT: bool = _os.environ.get("MCMC_TOTANI_BESTFIT", "1") == "1"
++TOTANI_N_STEPS: int = int(_os.environ.get("MCMC_TOTANI_N_STEPS", "6000"))
+ ONLY_BINS: set[int] | None = (
+     {int(s) for s in _BINS_ENV.replace(" ", "").split(",") if s} if _BINS_ENV else None)
+ 
+@@ -843,6 +850,103 @@
+     return flat, diag
+ 
+ 
++def run_mcmc_totani(
++    x0: Sequence[float],
++    counts: NDArray[np.float64],
++    templates: TemplateDict,
++    *,
++    with_halo: bool,
++    n_walkers: int = 32,
++    n_burn: int = 400,
++) -> tuple[NDArray[np.float64], float, NDArray[np.float64], dict[str, object]]:
++    """[2026-10-02 Totani 準拠] Totani §2.3 の初期値 x0 から emcee を走らせ、チェーン中で ln L が最大の点を返す。
++    with_halo=False のときは f_halo を 0 に固定した (NDIM-1) 次元で走らせる。
++    戻り値: (最大点, 最大 ln L, バーンイン後の flat chain, 診断)"""
++    dim = NDIM if with_halo else NDIM - 1
++    start = np.asarray(x0, dtype=float)[:dim]
++    # 歩行者を初期値のまわりに少しだけばらまく (0 の成分は正の小さな値に)
++    pos = start + 1e-3 * np.abs(start).clip(min=1e-3) * np.abs(np.random.randn(n_walkers, dim))
++    signfree = [i for i in SIGNFREE_IDX if i < dim]
++    pos[:, signfree] = start[signfree] + 1e-3 * np.random.randn(n_walkers, len(signfree))
++
++    def lp(q: NDArray[np.float64]) -> float:
++        full = list(q) if with_halo else list(q) + [0.0]
++        v = log_probability(full, counts, templates)
++        return v if with_halo or np.isfinite(v) else -np.inf
++
++    sampler = emcee.EnsembleSampler(n_walkers, dim, lp)
++    sampler.run_mcmc(pos, TOTANI_N_STEPS, progress=False)
++    lpc = sampler.get_log_prob()
++    k = np.unravel_index(int(np.argmax(lpc)), lpc.shape)
++    best = np.asarray(sampler.get_chain()[k], dtype=float)
++    # 事前分布は範囲内で一定 (0) なので log_probability の最大 = ln L の最大
++    best_full = list(best) if with_halo else list(best) + [0.0]
++    lnl_max = -float(neg_log_likelihood_and_grad(best_full, counts, templates)[0])
++    try:
++        tau_max = float(np.max(sampler.get_autocorr_time(quiet=True)))
++    except Exception:
++        tau_max = float("nan")
++    post = TOTANI_N_STEPS - n_burn
++    diag: dict[str, object] = dict(
++        method="totani_mcmc_max", n_walkers=n_walkers, n_steps=TOTANI_N_STEPS, n_burn=n_burn,
++        tau_max=(tau_max if np.isfinite(tau_max) else None),
++        meets_50tau_recommendation=bool(np.isfinite(tau_max) and post >= 50 * tau_max),
++        acceptance_fraction_mean=float(np.mean(sampler.acceptance_fraction)))
++    flat = sampler.get_chain(discard=n_burn, thin=5, flat=True)
++    return best, lnl_max, flat, diag
++
++
++def fit_one_bin_totani(
++    ib: int,
++    counts: NDArray[np.float64],
++    templates: TemplateDict,
++    x0: Sequence[float],
++) -> dict[str, object]:
++    """[2026-10-02 Totani 準拠] 最良値・誤差ともに MCMC (Totani §2.2)。ハローあり・なしの両方を
++    §2.3 の初期値から MCMC で求め、チェーン中の最大 ln L の差から有意度を出す。"""
++    best_nh, lnL_noh, _, diag_nh = run_mcmc_totani(x0, counts, templates, with_halo=False)
++    best, lnL_with, flat, diag_wh = run_mcmc_totani(x0, counts, templates, with_halo=True)
++    delta_lnL = lnL_with - lnL_noh
++    significance = float(np.sqrt(2 * max(delta_lnL, 0)))
++    # 確認用 (結果には使わない): MCMC が尤度の頂上にどれだけ近づけたか。勾配法で頂上の ln L を求めて差を記録する
++    _nnh = NDIM - 1
++
++    def _nll_nh(q):
++        v, g = neg_log_likelihood_and_grad(list(q) + [0.0], counts, templates)
++        return v, g[:_nnh]
++
++    _r_nh, _ = _multistart_minimize(_nll_nh, list(best_nh), _bounds_no_halo())
++    _r_wh, _ = _multistart_minimize(lambda q: neg_log_likelihood_and_grad(q, counts, templates),
++                                    list(best), _bounds_with_halo())
++    peak_check = dict(
++        note="確認用。勾配法 (L-BFGS-B) で求めた ln L の頂上と、MCMC のチェーン中の最大との差。結果には使っていない",
++        gap_with_halo=float(-_r_wh.fun - lnL_with), gap_no_halo=float(-_r_nh.fun - lnL_noh),
++        significance_if_peak=float(np.sqrt(2 * max(-_r_wh.fun + _r_nh.fun, 0))))
++    medians = np.median(flat, axis=0)
++    lo, hi = np.percentile(flat, [16, 84], axis=0)
++    valid_px = templates.get("valid_pixel", templates["valid"])
++    return dict(
++        bin=ib + 1, e_center_gev=float(BIN_CENTERS[ib]),
++        iso_level_fixed=templates["iso_level"],
++        peak_check=peak_check,
++        bestfit_method="totani_mcmc_max (Totani 2025 §2.2: MCMC で踏んだ点のうち尤度最大の点)",
++        params={n: {"best": float(b), "median": float(m), "lo16": float(l), "hi84": float(h)}
++                for n, b, m, l, h in zip(PARAM_NAMES, best, medians, lo, hi)},
++        params_no_halo_pointest={n: float(v) for n, v in zip(PARAM_NAMES[:NDIM - 1], best_nh)},
++        lnL_no_halo=float(lnL_noh), lnL_with_halo=float(lnL_with),
++        gas_flux_mean_valid_phcm2sMeV=float(np.mean(templates["gas_flux_raw"][valid_px])),
++        ics_flux_mean_valid_phcm2sMeV=float(np.mean(templates["ics_flux_raw"][valid_px])),
++        delta_lnL=float(delta_lnL), significance_sigma=significance,
++        n_events=int(templates.get("counts_total", int(counts.sum()))),
++        # 既存の集計コードと同じ形のキー (勾配法を使わないので凸性チェックは無し)
++        convexity_check=dict(no_halo={"fun_spread_successful_only": None},
++                             with_halo={"fun_spread_successful_only": None}),
++        autocorr_check=dict(no_halo=diag_nh, with_halo=diag_wh,
++                            tau_max=diag_wh["tau_max"],
++                            meets_50tau_recommendation=diag_wh["meets_50tau_recommendation"]),
++    )
++
++
+ def fit_one_bin(
+     ib: int,
+     counts: NDArray[np.float64],
+@@ -1069,7 +1173,7 @@
+         else:
+             counts_ll, templates_ll = counts, templates
+         try:
+-            r = fit_one_bin(ib, counts_ll, templates_ll, x0)
++            r = (fit_one_bin_totani if TOTANI_BESTFIT else fit_one_bin)(ib, counts_ll, templates_ll, x0)
+         except Exception as e:
+             print(f"  フィット失敗: {e}")
+             r = dict(bin=ib + 1, e_center_gev=float(BIN_CENTERS[ib]), error=str(e))

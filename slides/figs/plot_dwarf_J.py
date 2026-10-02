@@ -11,7 +11,8 @@ import numpy as np
 plt.rcParams["font.family"] = ["Noto Sans CJK JP", "DejaVu Sans"]
 
 # 各天体の「予測」と「実測」を読む (20 GeV のビン)
-d = json.load(open("cloud_reports/2026-10-02_v20r_targets/dwarf_consistency.json"))  # 天の川は v20r
+import sys
+d = json.load(open(sys.argv[1] if len(sys.argv) > 1 else "cloud_reports/2026-10-02_totani_mode/dwarf_consistency.json"))  # 天の川は Totani 方式の最良値
 ib = d["bin_index_20gev"]
 D = Path("cloud_reports/2026-10-02_v20r_targets/targets")
 pred, meas = [], []
@@ -51,6 +52,6 @@ for s in ("top", "right"):
     ax.spines[s].set_visible(False)
 ax.legend(frameon=False, fontsize=11)
 fig.tight_layout()
-fig.savefig("slides/figs/fig_dwarf_J_uncertainty.png")
+fig.savefig(sys.argv[2] if len(sys.argv) > 2 else "slides/figs/fig_dwarf_J_uncertainty_totani.png")
 print(f"天体 {w.size}、実測 {T_obs:.2f}、予測 {T_noJ:.2f}、J あり中央値 {np.median(T_J):.2f}"
       f" (68%: {np.percentile(T_J,16):.2f}–{np.percentile(T_J,84):.2f})")

@@ -1,0 +1,69 @@
+diff --git a/code/apply_v20_method_targets.py b/code/apply_v20_method_targets.py
+index a02cf00..3fd9891 100644
+--- a/code/apply_v20_method_targets.py
++++ b/code/apply_v20_method_targets.py
+@@ -402,6 +402,44 @@ def _fit(counts: NDArray[np.float64], tmpls: list[NDArray[np.float64]],
+     return best_f, best_x
+ 
+ 
++# [2026-10-02 Totani 準拠] 最良値を Totani (2025) §2.2 と同じく MCMC で求める (踏んだ点のうち尤度最大の点)。
++# 既定 ON。TARGET_TOTANI_BESTFIT=0 で旧方式 (L-BFGS-B) に戻る。
++TOTANI_BESTFIT = os.environ.get("TARGET_TOTANI_BESTFIT", "1") == "1"
++TOTANI_N_STEPS = int(os.environ.get("TARGET_TOTANI_N_STEPS", "6000"))
++
++
++def _fit_mcmc(counts: NDArray[np.float64], tmpls: list[NDArray[np.float64]],
++              bounds: list[tuple[float, float | None]], x0: NDArray[np.float64],
++              n_walkers: int = 32, seed: int = 42) -> tuple[float, NDArray[np.float64]]:
++    """emcee で歩き、踏んだ点のうち -ln L が最小 (尤度最大) の点を返す。事前分布は bounds の範囲で一様。"""
++    import emcee
++    T = np.asarray(tmpls)                      # (成分, セル)
++    lo = np.array([b[0] if b[0] is not None else -np.inf for b in bounds])
++    hi = np.array([b[1] if b[1] is not None else np.inf for b in bounds])
++
++    def lp(P: NDArray[np.float64]) -> NDArray[np.float64]:   # 歩行者をまとめて計算
++        raw = P @ T
++        mu = np.clip(raw, 1e-10, None)
++        v = -np.sum(mu - counts * np.log(mu), axis=1)
++        # [2026-10-02 本人了承] 予測光子数が負になる倍率の組は物理的にありえないので選ばない。
++        # 以前は負の予測を 1e-10 に切り上げていたため、光子 0 個のビンで「等方 → +∞・ハロー → −∞」が
++        # 当てはまり最良に見え、歩行者が無限遠へ発散した (LMC・M31・M33・対照の一部)
++        bad = np.any((P < lo) | (P > hi), axis=1) | np.any(raw < 0, axis=1)
++        v[bad] = -np.inf
++        return v
++
++    rng = np.random.default_rng(seed)
++    dim = len(x0)
++    pos = x0 + 1e-3 * np.maximum(np.abs(x0), 1e-3) * rng.normal(size=(n_walkers, dim))
++    pos = np.where(np.isfinite(lo), np.maximum(pos, lo + 1e-12), pos)
++    s = emcee.EnsembleSampler(n_walkers, dim, lp, vectorize=True)
++    s.random_state = np.random.RandomState(seed).get_state()
++    s.run_mcmc(pos, TOTANI_N_STEPS, progress=False)
++    lpc = s.get_log_prob()
++    k = np.unravel_index(int(np.argmax(lpc)), lpc.shape)
++    return float(-lpc[k]), np.asarray(s.get_chain()[k], dtype=float)
++
++
+ def analyze_target(t: tg.Target, df: pd.DataFrame, expz: dict[str, Any],
+                    cell_deg: float | None, exclude_src_deg: float = 0.0,
+                    theta_scale: float = 1.0, keep_ext_deg: float = 0.0) -> dict[str, Any]:
+@@ -497,8 +535,17 @@ def analyze_target(t: tg.Target, df: pd.DataFrame, expz: dict[str, Any],
+         # FREE_BG=True で拘束を外すと、帰無分布の偏りがこの効果由来かどうかが分かる。
+         bnd: list[tuple[float, float | None]] = (
+             [(None, None)] * 4 if FREE_BG else [(0.0, None)] * 4)
+-        f_nh, x_nh = _fit(c, tm, bnd, x0)
+-        f_h, x_h = _fit(c, tm + [th], bnd + [(None, None)], np.append(x_nh, 0.0))
++        if TOTANI_BESTFIT:
++            # Totani 方式: ハローなし・ありとも同じ初期値 (ハローは 0) から MCMC
++            f_nh, x_nh = _fit_mcmc(c, tm, bnd, x0)
++            f_h, x_h = _fit_mcmc(c, tm + [th], bnd + [(None, None)], np.append(x0, 0.0))
++            # 確認用 (結果には使わない): 勾配法で求めた頂上との差
++            g_nh, _ = _fit(c, tm, bnd, x0)
++            g_h, _ = _fit(c, tm + [th], bnd + [(None, None)], np.append(x0, 0.0))
++            out.setdefault("peak_gap_lnL", []).append([float(f_h - g_h), float(f_nh - g_nh)])
++        else:
++            f_nh, x_nh = _fit(c, tm, bnd, x0)
++            f_h, x_h = _fit(c, tm + [th], bnd + [(None, None)], np.append(x_nh, 0.0))
+ 
+         dlnl = max(f_nh - f_h, 0.0)
+         fh = float(x_h[-1])

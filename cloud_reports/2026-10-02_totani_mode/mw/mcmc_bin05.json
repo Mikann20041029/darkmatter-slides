@@ -1,0 +1,132 @@
+{
+  "bin": 5,
+  "e_center_gev": 12.29,
+  "iso_level_fixed": 0.05684895833333333,
+  "peak_check": {
+    "note": "確認用。勾配法 (L-BFGS-B) で求めた ln L の頂上と、MCMC のチェーン中の最大との差。結果には使っていない",
+    "gap_with_halo": 0.2164097335189581,
+    "gap_no_halo": 0.2793439942179248,
+    "significance_if_peak": 20.215704413580653
+  },
+  "bestfit_method": "totani_mcmc_max (Totani 2025 §2.2: MCMC で踏んだ点のうち尤度最大の点)",
+  "params": {
+    "f_iso": {
+      "best": 0.007466551212681029,
+      "median": 0.008556059332978452,
+      "lo16": 0.006033149536402805,
+      "hi84": 0.015736493683832443
+    },
+    "f_gas": {
+      "best": 1.5487190382143228,
+      "median": 1.5451161575916124,
+      "lo16": 1.5024836246158508,
+      "hi84": 1.590463992972792
+    },
+    "f_ics": {
+      "best": 0.7844861322390996,
+      "median": 0.7743174011115116,
+      "lo16": 0.6780373912915099,
+      "hi84": 0.8585877127212
+    },
+    "f_ps": {
+      "best": 1.1983316526517258,
+      "median": 1.2077568804341823,
+      "lo16": 1.1705689852399097,
+      "hi84": 1.2983406674915938
+    },
+    "f_loopI_a": {
+      "best": 0.013806215030965534,
+      "median": 0.012997072099875436,
+      "lo16": 0.007613248827066018,
+      "hi84": 0.014831076095800649
+    },
+    "f_loopI_b": {
+      "best": 0.00017086235678876176,
+      "median": 0.0005143620438034988,
+      "lo16": 0.00015174626625924276,
+      "hi84": 0.0018583365735936322
+    },
+    "f_fb": {
+      "best": 0.7058831762277276,
+      "median": 0.6911336559911894,
+      "lo16": 0.30896679241951497,
+      "hi84": 0.7199447011246161
+    },
+    "f_fb_neg": {
+      "best": -0.4762465032014574,
+      "median": -0.47219990221485614,
+      "lo16": -0.5144761099741177,
+      "hi84": -0.43600365600518326
+    },
+    "f_halo": {
+      "best": 3.955988770495675,
+      "median": 4.0350807133223,
+      "lo16": 3.7706081096121653,
+      "hi84": 4.386330718381474
+    }
+  },
+  "params_no_halo_pointest": {
+    "f_iso": 0.00612875375324325,
+    "f_gas": 1.7034333143550962,
+    "f_ics": 1.4267014587731481,
+    "f_ps": 1.2233705300266982,
+    "f_loopI_a": 0.014530731722436373,
+    "f_loopI_b": 2.585610346514438e-05,
+    "f_fb": 0.7849234448093296,
+    "f_fb_neg": -0.6500761299159928
+  },
+  "lnL_no_halo": 609624.7227856936,
+  "lnL_with_halo": 609829.1230724229,
+  "gas_flux_mean_valid_phcm2sMeV": 2.347858580969773e-12,
+  "ics_flux_mean_valid_phcm2sMeV": 1.5514525047536344e-12,
+  "delta_lnL": 204.40028672933113,
+  "significance_sigma": 20.218817311075895,
+  "n_events": 104788,
+  "convexity_check": {
+    "no_halo": {
+      "fun_spread_successful_only": null
+    },
+    "with_halo": {
+      "fun_spread_successful_only": null
+    }
+  },
+  "autocorr_check": {
+    "no_halo": {
+      "method": "totani_mcmc_max",
+      "n_walkers": 32,
+      "n_steps": 6000,
+      "n_burn": 400,
+      "tau_max": 779.584518961275,
+      "meets_50tau_recommendation": false,
+      "acceptance_fraction_mean": 0.43476041666666665
+    },
+    "with_halo": {
+      "method": "totani_mcmc_max",
+      "n_walkers": 32,
+      "n_steps": 6000,
+      "n_burn": 400,
+      "tau_max": 751.035452665105,
+      "meets_50tau_recommendation": false,
+      "acceptance_fraction_mean": 0.4309791666666667
+    },
+    "tau_max": 751.035452665105,
+    "meets_50tau_recommendation": false
+  },
+  "environment": {
+    "git_commit": "a64c6c6b05b07f62d21ece5bc631db282e41b101",
+    "git_working_tree_dirty": "True",
+    "python": "3.12.11",
+    "numpy": "2.5.1",
+    "scipy": "1.18.0",
+    "emcee": "3.1.6"
+  },
+  "env_flags": {
+    "MCMC_ALLBINS_OUTDIR": "/tmp/v20t",
+    "MCMC_CELL_LIKELIHOOD": "1",
+    "MCMC_DISK_BUBBLE": "1",
+    "MCMC_PIXEL_DEG": "0.125",
+    "MCMC_SIGNFREE_HALO": "1",
+    "MCMC_TOTANI_BESTFIT": "1",
+    "MCMC_ULTRACLEAN": "1"
+  }
+}

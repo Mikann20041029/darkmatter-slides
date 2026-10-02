@@ -43,7 +43,7 @@ def chain(with_halo, n_walkers, n_steps, seed):
 
 
 out = []
-configs = [(32, 6000, 42), (16, 6000, 42), (64, 6000, 42), (32, 6000, 1), (32, 6000, 2), (32, 20000, 42)]
+configs = [(32, 6000, 42), (20, 6000, 42), (64, 6000, 42), (32, 6000, 1), (32, 6000, 2), (32, 20000, 42)]
 for nw, ns, seed in configs:
     t0 = time.time()
     s1 = chain(True, nw, ns, seed)
